@@ -47,15 +47,15 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.picInsert = new System.Windows.Forms.PictureBox();
-            this.picReset = new System.Windows.Forms.PictureBox();
-            this.picDelete = new System.Windows.Forms.PictureBox();
             this.picUpdate = new System.Windows.Forms.PictureBox();
+            this.picDelete = new System.Windows.Forms.PictureBox();
+            this.picReset = new System.Windows.Forms.PictureBox();
+            this.picInsert = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGriewClients)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInsert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInsert)).BeginInit();
             this.SuspendLayout();
             // 
             // mtxtbTelephone
@@ -282,25 +282,15 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // picInsert
+            // picUpdate
             // 
-            this.picInsert.Image = global::ProjetoAguas.Properties.Resources.Insert;
-            this.picInsert.Location = new System.Drawing.Point(648, 108);
-            this.picInsert.Name = "picInsert";
-            this.picInsert.Size = new System.Drawing.Size(31, 26);
-            this.picInsert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picInsert.TabIndex = 36;
-            this.picInsert.TabStop = false;
-            // 
-            // picReset
-            // 
-            this.picReset.Image = global::ProjetoAguas.Properties.Resources.Reset;
-            this.picReset.Location = new System.Drawing.Point(762, 179);
-            this.picReset.Name = "picReset";
-            this.picReset.Size = new System.Drawing.Size(31, 26);
-            this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picReset.TabIndex = 37;
-            this.picReset.TabStop = false;
+            this.picUpdate.Image = global::ProjetoAguas.Properties.Resources.Update;
+            this.picUpdate.Location = new System.Drawing.Point(753, 106);
+            this.picUpdate.Name = "picUpdate";
+            this.picUpdate.Size = new System.Drawing.Size(31, 26);
+            this.picUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUpdate.TabIndex = 39;
+            this.picUpdate.TabStop = false;
             // 
             // picDelete
             // 
@@ -312,15 +302,25 @@
             this.picDelete.TabIndex = 38;
             this.picDelete.TabStop = false;
             // 
-            // picUpdate
+            // picReset
             // 
-            this.picUpdate.Image = global::ProjetoAguas.Properties.Resources.Update;
-            this.picUpdate.Location = new System.Drawing.Point(753, 106);
-            this.picUpdate.Name = "picUpdate";
-            this.picUpdate.Size = new System.Drawing.Size(31, 26);
-            this.picUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picUpdate.TabIndex = 39;
-            this.picUpdate.TabStop = false;
+            this.picReset.Image = global::ProjetoAguas.Properties.Resources.Reset;
+            this.picReset.Location = new System.Drawing.Point(762, 179);
+            this.picReset.Name = "picReset";
+            this.picReset.Size = new System.Drawing.Size(31, 26);
+            this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picReset.TabIndex = 37;
+            this.picReset.TabStop = false;
+            // 
+            // picInsert
+            // 
+            this.picInsert.Image = global::ProjetoAguas.Properties.Resources.Insert;
+            this.picInsert.Location = new System.Drawing.Point(648, 108);
+            this.picInsert.Name = "picInsert";
+            this.picInsert.Size = new System.Drawing.Size(31, 26);
+            this.picInsert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInsert.TabIndex = 36;
+            this.picInsert.TabStop = false;
             // 
             // UcClients
             // 
@@ -353,10 +353,10 @@
             this.Size = new System.Drawing.Size(992, 539);
             this.Load += new System.EventHandler(this.UcClients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGriewClients)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInsert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picInsert)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

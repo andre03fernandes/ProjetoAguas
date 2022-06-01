@@ -109,6 +109,9 @@
     <Compile Include="UserControls\UcStatistics.Designer.cs">
       <DependentUpon>UcStatistics.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\UcInvoices.resx">
+      <DependentUpon>UcInvoices.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DcAguas.dbml.layout">
       <DependentUpon>DcAguas.dbml</DependentUpon>
     </None>
@@ -117,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcClients.resx">
       <DependentUpon>UcClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcConsumptions.resx">
+      <DependentUpon>UcConsumptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcContracts.resx">
       <DependentUpon>UcContracts.cs</DependentUpon>
