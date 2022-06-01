@@ -10,7 +10,7 @@
       <Column Name="Morada" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="CodigoPostal" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="ModificacaoData" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
-      <Association Name="Cliente_Contrato" Member="Contratos" ThisKey="IdCliente" OtherKey="IdCliente" Type="Contratos" />
+      <Association Name="Clientes_Contrato" Member="Contratos" ThisKey="IdCliente" OtherKey="IdCliente" Type="Contratos" />
     </Type>
   </Table>
   <Table Name="Contrato.Contratos" Member="Contratos">
@@ -23,8 +23,8 @@
       <Column Name="Morada" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="CodigoPostal" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
       <Column Name="ModificacaoData" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
-      <Association Name="Contrato_Consumo" Member="Consumos" ThisKey="IdContrato" OtherKey="IdContrato" Type="Consumos" />
-      <Association Name="Cliente_Contrato" Member="Clientes" ThisKey="IdCliente" OtherKey="IdCliente" Type="Clientes" IsForeignKey="true" />
+      <Association Name="Contratos_Consumo" Member="Consumos" ThisKey="IdContrato" OtherKey="IdContrato" Type="Consumos" />
+      <Association Name="Clientes_Contrato" Member="Clientes" ThisKey="IdCliente" OtherKey="IdCliente" Type="Clientes" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="Leitura.Consumos" Member="Consumos">
@@ -33,26 +33,24 @@
       <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="IdFatura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Escaloes" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
       <Column Name="DataConsumo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ConsumoTotal" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
       <Column Name="ModificacaoData" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
-      <Association Name="Contrato_Consumo" Member="Contratos" ThisKey="IdContrato" OtherKey="IdContrato" Type="Contratos" IsForeignKey="true" />
-      <Association Name="Fatura_Consumo" Member="Faturas" ThisKey="IdFatura" OtherKey="IdFatura" Type="Faturas" IsForeignKey="true" />
+      <Association Name="Contratos_Consumo" Member="Contratos" ThisKey="IdContrato" OtherKey="IdContrato" Type="Contratos" IsForeignKey="true" />
+      <Association Name="Fatura_Consumos" Member="Faturas" ThisKey="IdFatura" OtherKey="IdFatura" Type="Faturas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="Contrato.Faturas" Member="Faturas">
     <Type Name="Faturas">
       <Column Name="IdFatura" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IdLeitura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="AtualizacaoFatura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DataFatura" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Cliente" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ConsumoMensal" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
       <Column Name="ValorPagar" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
       <Column Name="ModificacaoData" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
-      <Association Name="Fatura_Consumo" Member="Consumos" ThisKey="IdFatura" OtherKey="IdFatura" Type="Consumos" />
+      <Association Name="Fatura_Consumos" Member="Consumos" ThisKey="IdFatura" OtherKey="IdFatura" Type="Consumos" />
     </Type>
   </Table>
 </Database>

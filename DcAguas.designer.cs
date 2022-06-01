@@ -319,7 +319,7 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Contrato", Storage="_Contratos", ThisKey="IdCliente", OtherKey="IdCliente")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Clientes_Contrato", Storage="_Contratos", ThisKey="IdCliente", OtherKey="IdCliente")]
 		public EntitySet<Contratos> Contratos
 		{
 			get
@@ -584,7 +584,7 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Consumo", Storage="_Consumos", ThisKey="IdContrato", OtherKey="IdContrato")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contratos_Consumo", Storage="_Consumos", ThisKey="IdContrato", OtherKey="IdContrato")]
 		public EntitySet<Consumos> Consumos
 		{
 			get
@@ -597,7 +597,7 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Contrato", Storage="_Clientes", ThisKey="IdCliente", OtherKey="IdCliente", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Clientes_Contrato", Storage="_Clientes", ThisKey="IdCliente", OtherKey="IdCliente", IsForeignKey=true)]
 		public Clientes Clientes
 		{
 			get
@@ -678,11 +678,11 @@ namespace ProjetoAguas
 		
 		private decimal _Escaloes;
 		
+		private decimal _ValorUnitario;
+		
 		private string _DataConsumo;
 		
 		private string _ConsumoTotal;
-		
-		private decimal _ValorUnitario;
 		
 		private System.DateTime _ModificacaoData;
 		
@@ -702,12 +702,12 @@ namespace ProjetoAguas
     partial void OnIdFaturaChanged();
     partial void OnEscaloesChanging(decimal value);
     partial void OnEscaloesChanged();
+    partial void OnValorUnitarioChanging(decimal value);
+    partial void OnValorUnitarioChanged();
     partial void OnDataConsumoChanging(string value);
     partial void OnDataConsumoChanged();
     partial void OnConsumoTotalChanging(string value);
     partial void OnConsumoTotalChanged();
-    partial void OnValorUnitarioChanging(decimal value);
-    partial void OnValorUnitarioChanged();
     partial void OnModificacaoDataChanging(System.DateTime value);
     partial void OnModificacaoDataChanged();
     #endregion
@@ -807,6 +807,26 @@ namespace ProjetoAguas
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValorUnitario", DbType="Decimal(5,2) NOT NULL")]
+		public decimal ValorUnitario
+		{
+			get
+			{
+				return this._ValorUnitario;
+			}
+			set
+			{
+				if ((this._ValorUnitario != value))
+				{
+					this.OnValorUnitarioChanging(value);
+					this.SendPropertyChanging();
+					this._ValorUnitario = value;
+					this.SendPropertyChanged("ValorUnitario");
+					this.OnValorUnitarioChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataConsumo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string DataConsumo
 		{
@@ -847,26 +867,6 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValorUnitario", DbType="Decimal(5,2) NOT NULL")]
-		public decimal ValorUnitario
-		{
-			get
-			{
-				return this._ValorUnitario;
-			}
-			set
-			{
-				if ((this._ValorUnitario != value))
-				{
-					this.OnValorUnitarioChanging(value);
-					this.SendPropertyChanging();
-					this._ValorUnitario = value;
-					this.SendPropertyChanged("ValorUnitario");
-					this.OnValorUnitarioChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificacaoData", DbType="DateTime2 NOT NULL")]
 		public System.DateTime ModificacaoData
 		{
@@ -887,7 +887,7 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Consumo", Storage="_Contratos", ThisKey="IdContrato", OtherKey="IdContrato", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contratos_Consumo", Storage="_Contratos", ThisKey="IdContrato", OtherKey="IdContrato", IsForeignKey=true)]
 		public Contratos Contratos
 		{
 			get
@@ -921,7 +921,7 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fatura_Consumo", Storage="_Faturas", ThisKey="IdFatura", OtherKey="IdFatura", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fatura_Consumos", Storage="_Faturas", ThisKey="IdFatura", OtherKey="IdFatura", IsForeignKey=true)]
 		public Faturas Faturas
 		{
 			get
@@ -986,10 +986,6 @@ namespace ProjetoAguas
 		
 		private int _IdContrato;
 		
-		private int _IdLeitura;
-		
-		private int _AtualizacaoFatura;
-		
 		private string _DataFatura;
 		
 		private string _Cliente;
@@ -1010,10 +1006,6 @@ namespace ProjetoAguas
     partial void OnIdFaturaChanged();
     partial void OnIdContratoChanging(int value);
     partial void OnIdContratoChanged();
-    partial void OnIdLeituraChanging(int value);
-    partial void OnIdLeituraChanged();
-    partial void OnAtualizacaoFaturaChanging(int value);
-    partial void OnAtualizacaoFaturaChanged();
     partial void OnDataFaturaChanging(string value);
     partial void OnDataFaturaChanged();
     partial void OnClienteChanging(string value);
@@ -1068,46 +1060,6 @@ namespace ProjetoAguas
 					this._IdContrato = value;
 					this.SendPropertyChanged("IdContrato");
 					this.OnIdContratoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdLeitura", DbType="Int NOT NULL")]
-		public int IdLeitura
-		{
-			get
-			{
-				return this._IdLeitura;
-			}
-			set
-			{
-				if ((this._IdLeitura != value))
-				{
-					this.OnIdLeituraChanging(value);
-					this.SendPropertyChanging();
-					this._IdLeitura = value;
-					this.SendPropertyChanged("IdLeitura");
-					this.OnIdLeituraChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AtualizacaoFatura", DbType="Int NOT NULL")]
-		public int AtualizacaoFatura
-		{
-			get
-			{
-				return this._AtualizacaoFatura;
-			}
-			set
-			{
-				if ((this._AtualizacaoFatura != value))
-				{
-					this.OnAtualizacaoFaturaChanging(value);
-					this.SendPropertyChanging();
-					this._AtualizacaoFatura = value;
-					this.SendPropertyChanged("AtualizacaoFatura");
-					this.OnAtualizacaoFaturaChanged();
 				}
 			}
 		}
@@ -1212,7 +1164,7 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fatura_Consumo", Storage="_Consumos", ThisKey="IdFatura", OtherKey="IdFatura")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fatura_Consumos", Storage="_Consumos", ThisKey="IdFatura", OtherKey="IdFatura")]
 		public EntitySet<Consumos> Consumos
 		{
 			get
