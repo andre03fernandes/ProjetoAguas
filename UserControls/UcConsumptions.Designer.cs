@@ -36,26 +36,26 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.cbPaymentType = new System.Windows.Forms.ComboBox();
-            this.dtpContractDate = new System.Windows.Forms.DateTimePicker();
+            this.cbEchelons = new System.Windows.Forms.ComboBox();
+            this.dtpConsumeDate = new System.Windows.Forms.DateTimePicker();
             this.cbContractType = new System.Windows.Forms.ComboBox();
             this.cbClients = new System.Windows.Forms.ComboBox();
-            this.lblName = new System.Windows.Forms.Label();
+            this.lblClient = new System.Windows.Forms.Label();
             this.lblContractType = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblPaymentType = new System.Windows.Forms.Label();
-            this.lblPostalCode = new System.Windows.Forms.Label();
-            this.lblContractDate = new System.Windows.Forms.Label();
+            this.lblEchelons = new System.Windows.Forms.Label();
+            this.lblConsumeDate = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.mtxtbPostalCode = new System.Windows.Forms.MaskedTextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.DataGriewClients = new System.Windows.Forms.DataGridView();
+            this.DataGriewConsumes = new System.Windows.Forms.DataGridView();
+            this.lblTotalConsume = new System.Windows.Forms.Label();
+            this.txtTotalConsume = new System.Windows.Forms.TextBox();
+            this.lblUnitaryValue = new System.Windows.Forms.Label();
+            this.txtUnitaryValue = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInsert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGriewClients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGriewConsumes)).BeginInit();
             this.SuspendLayout();
             // 
             // picUpdate
@@ -158,23 +158,23 @@
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = false;
             // 
-            // cbPaymentType
+            // cbEchelons
             // 
-            this.cbPaymentType.FormattingEnabled = true;
-            this.cbPaymentType.Location = new System.Drawing.Point(190, 179);
-            this.cbPaymentType.Name = "cbPaymentType";
-            this.cbPaymentType.Size = new System.Drawing.Size(145, 21);
-            this.cbPaymentType.TabIndex = 91;
+            this.cbEchelons.FormattingEnabled = true;
+            this.cbEchelons.Location = new System.Drawing.Point(190, 179);
+            this.cbEchelons.Name = "cbEchelons";
+            this.cbEchelons.Size = new System.Drawing.Size(94, 21);
+            this.cbEchelons.TabIndex = 91;
             // 
-            // dtpContractDate
+            // dtpConsumeDate
             // 
-            this.dtpContractDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.dtpContractDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpContractDate.Location = new System.Drawing.Point(250, 226);
-            this.dtpContractDate.Name = "dtpContractDate";
-            this.dtpContractDate.Size = new System.Drawing.Size(91, 20);
-            this.dtpContractDate.TabIndex = 90;
-            this.dtpContractDate.Value = new System.DateTime(2022, 1, 6, 0, 0, 0, 0);
+            this.dtpConsumeDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.dtpConsumeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpConsumeDate.Location = new System.Drawing.Point(250, 226);
+            this.dtpConsumeDate.Name = "dtpConsumeDate";
+            this.dtpConsumeDate.Size = new System.Drawing.Size(91, 20);
+            this.dtpConsumeDate.TabIndex = 90;
+            this.dtpConsumeDate.Value = new System.DateTime(2022, 1, 6, 0, 0, 0, 0);
             // 
             // cbContractType
             // 
@@ -192,15 +192,15 @@
             this.cbClients.Size = new System.Drawing.Size(145, 21);
             this.cbClients.TabIndex = 88;
             // 
-            // lblName
+            // lblClient
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(285, 50);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(53, 18);
-            this.lblName.TabIndex = 87;
-            this.lblName.Text = "Name";
+            this.lblClient.AutoSize = true;
+            this.lblClient.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClient.Location = new System.Drawing.Point(285, 50);
+            this.lblClient.Name = "lblClient";
+            this.lblClient.Size = new System.Drawing.Size(51, 18);
+            this.lblClient.TabIndex = 87;
+            this.lblClient.Text = "Client";
             // 
             // lblContractType
             // 
@@ -212,45 +212,25 @@
             this.lblContractType.TabIndex = 86;
             this.lblContractType.Text = "Contract Type";
             // 
-            // lblAddress
+            // lblEchelons
             // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(343, 146);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(66, 18);
-            this.lblAddress.TabIndex = 85;
-            this.lblAddress.Text = "Address";
+            this.lblEchelons.AutoSize = true;
+            this.lblEchelons.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEchelons.Location = new System.Drawing.Point(110, 180);
+            this.lblEchelons.Name = "lblEchelons";
+            this.lblEchelons.Size = new System.Drawing.Size(74, 18);
+            this.lblEchelons.TabIndex = 84;
+            this.lblEchelons.Text = "Echelons";
             // 
-            // lblPaymentType
+            // lblConsumeDate
             // 
-            this.lblPaymentType.AutoSize = true;
-            this.lblPaymentType.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentType.Location = new System.Drawing.Point(83, 179);
-            this.lblPaymentType.Name = "lblPaymentType";
-            this.lblPaymentType.Size = new System.Drawing.Size(111, 18);
-            this.lblPaymentType.TabIndex = 84;
-            this.lblPaymentType.Text = "Payment Type";
-            // 
-            // lblPostalCode
-            // 
-            this.lblPostalCode.AutoSize = true;
-            this.lblPostalCode.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostalCode.Location = new System.Drawing.Point(399, 216);
-            this.lblPostalCode.Name = "lblPostalCode";
-            this.lblPostalCode.Size = new System.Drawing.Size(96, 18);
-            this.lblPostalCode.TabIndex = 83;
-            this.lblPostalCode.Text = "Postal Code";
-            // 
-            // lblContractDate
-            // 
-            this.lblContractDate.AutoSize = true;
-            this.lblContractDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContractDate.Location = new System.Drawing.Point(143, 226);
-            this.lblContractDate.Name = "lblContractDate";
-            this.lblContractDate.Size = new System.Drawing.Size(111, 18);
-            this.lblContractDate.TabIndex = 82;
-            this.lblContractDate.Text = "Contract Date";
+            this.lblConsumeDate.AutoSize = true;
+            this.lblConsumeDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConsumeDate.Location = new System.Drawing.Point(135, 226);
+            this.lblConsumeDate.Name = "lblConsumeDate";
+            this.lblConsumeDate.Size = new System.Drawing.Size(117, 18);
+            this.lblConsumeDate.TabIndex = 82;
+            this.lblConsumeDate.Text = "Consume Date";
             // 
             // lblID
             // 
@@ -261,29 +241,6 @@
             this.lblID.Size = new System.Drawing.Size(23, 18);
             this.lblID.TabIndex = 81;
             this.lblID.Text = "ID";
-            // 
-            // mtxtbPostalCode
-            // 
-            this.mtxtbPostalCode.BackColor = System.Drawing.SystemColors.Control;
-            this.mtxtbPostalCode.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtbPostalCode.ForeColor = System.Drawing.Color.Black;
-            this.mtxtbPostalCode.Location = new System.Drawing.Point(495, 215);
-            this.mtxtbPostalCode.Mask = "9999-999";
-            this.mtxtbPostalCode.Name = "mtxtbPostalCode";
-            this.mtxtbPostalCode.Size = new System.Drawing.Size(68, 22);
-            this.mtxtbPostalCode.TabIndex = 80;
-            this.mtxtbPostalCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.BackColor = System.Drawing.SystemColors.Control;
-            this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtAddress.Location = new System.Drawing.Point(410, 137);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(192, 38);
-            this.txtAddress.TabIndex = 79;
             // 
             // txtID
             // 
@@ -297,34 +254,77 @@
             this.txtID.Size = new System.Drawing.Size(31, 23);
             this.txtID.TabIndex = 78;
             // 
-            // DataGriewClients
+            // DataGriewConsumes
             // 
-            this.DataGriewClients.AllowUserToDeleteRows = false;
-            this.DataGriewClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGriewClients.Location = new System.Drawing.Point(86, 293);
-            this.DataGriewClients.Name = "DataGriewClients";
-            this.DataGriewClients.ReadOnly = true;
-            this.DataGriewClients.Size = new System.Drawing.Size(813, 215);
-            this.DataGriewClients.TabIndex = 92;
+            this.DataGriewConsumes.AllowUserToDeleteRows = false;
+            this.DataGriewConsumes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGriewConsumes.Location = new System.Drawing.Point(86, 293);
+            this.DataGriewConsumes.Name = "DataGriewConsumes";
+            this.DataGriewConsumes.ReadOnly = true;
+            this.DataGriewConsumes.Size = new System.Drawing.Size(813, 215);
+            this.DataGriewConsumes.TabIndex = 92;
+            // 
+            // lblTotalConsume
+            // 
+            this.lblTotalConsume.AutoSize = true;
+            this.lblTotalConsume.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalConsume.Location = new System.Drawing.Point(400, 218);
+            this.lblTotalConsume.Name = "lblTotalConsume";
+            this.lblTotalConsume.Size = new System.Drawing.Size(116, 18);
+            this.lblTotalConsume.TabIndex = 94;
+            this.lblTotalConsume.Text = "Total Consume";
+            // 
+            // txtTotalConsume
+            // 
+            this.txtTotalConsume.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTotalConsume.Enabled = false;
+            this.txtTotalConsume.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalConsume.ForeColor = System.Drawing.Color.Black;
+            this.txtTotalConsume.Location = new System.Drawing.Point(519, 216);
+            this.txtTotalConsume.Multiline = true;
+            this.txtTotalConsume.Name = "txtTotalConsume";
+            this.txtTotalConsume.Size = new System.Drawing.Size(70, 23);
+            this.txtTotalConsume.TabIndex = 93;
+            // 
+            // lblUnitaryValue
+            // 
+            this.lblUnitaryValue.AutoSize = true;
+            this.lblUnitaryValue.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnitaryValue.Location = new System.Drawing.Point(352, 152);
+            this.lblUnitaryValue.Name = "lblUnitaryValue";
+            this.lblUnitaryValue.Size = new System.Drawing.Size(107, 18);
+            this.lblUnitaryValue.TabIndex = 96;
+            this.lblUnitaryValue.Text = "Unitary Value";
+            // 
+            // txtUnitaryValue
+            // 
+            this.txtUnitaryValue.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUnitaryValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnitaryValue.ForeColor = System.Drawing.Color.Black;
+            this.txtUnitaryValue.Location = new System.Drawing.Point(464, 150);
+            this.txtUnitaryValue.Multiline = true;
+            this.txtUnitaryValue.Name = "txtUnitaryValue";
+            this.txtUnitaryValue.Size = new System.Drawing.Size(71, 23);
+            this.txtUnitaryValue.TabIndex = 95;
             // 
             // UcConsumptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.DataGriewClients);
-            this.Controls.Add(this.cbPaymentType);
-            this.Controls.Add(this.dtpContractDate);
+            this.Controls.Add(this.lblUnitaryValue);
+            this.Controls.Add(this.txtUnitaryValue);
+            this.Controls.Add(this.lblTotalConsume);
+            this.Controls.Add(this.txtTotalConsume);
+            this.Controls.Add(this.DataGriewConsumes);
+            this.Controls.Add(this.cbEchelons);
+            this.Controls.Add(this.dtpConsumeDate);
             this.Controls.Add(this.cbContractType);
             this.Controls.Add(this.cbClients);
-            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblClient);
             this.Controls.Add(this.lblContractType);
-            this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.lblPaymentType);
-            this.Controls.Add(this.lblPostalCode);
-            this.Controls.Add(this.lblContractDate);
+            this.Controls.Add(this.lblEchelons);
+            this.Controls.Add(this.lblConsumeDate);
             this.Controls.Add(this.lblID);
-            this.Controls.Add(this.mtxtbPostalCode);
-            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.picUpdate);
             this.Controls.Add(this.picDelete);
@@ -340,7 +340,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInsert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGriewClients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGriewConsumes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,20 +356,20 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.ComboBox cbPaymentType;
-        private System.Windows.Forms.DateTimePicker dtpContractDate;
+        private System.Windows.Forms.ComboBox cbEchelons;
+        private System.Windows.Forms.DateTimePicker dtpConsumeDate;
         private System.Windows.Forms.ComboBox cbContractType;
         private System.Windows.Forms.ComboBox cbClients;
-        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblClient;
         private System.Windows.Forms.Label lblContractType;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label lblPaymentType;
-        private System.Windows.Forms.Label lblPostalCode;
-        private System.Windows.Forms.Label lblContractDate;
+        private System.Windows.Forms.Label lblEchelons;
+        private System.Windows.Forms.Label lblConsumeDate;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.MaskedTextBox mtxtbPostalCode;
-        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.DataGridView DataGriewClients;
+        private System.Windows.Forms.DataGridView DataGriewConsumes;
+        private System.Windows.Forms.Label lblTotalConsume;
+        private System.Windows.Forms.TextBox txtTotalConsume;
+        private System.Windows.Forms.Label lblUnitaryValue;
+        private System.Windows.Forms.TextBox txtUnitaryValue;
     }
 }
