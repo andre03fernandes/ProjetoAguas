@@ -12,7 +12,7 @@
 
             Consumo c = new Consumo();
 
-            MessageBox.Show((c.TotalConsumo()).ToString());
+           // MessageBox.Show((c.TotalConsumo()).ToString());
         }
 
         #region Buttons

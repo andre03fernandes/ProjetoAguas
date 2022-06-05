@@ -47,10 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Cliente.cs" />
     <Compile Include="Classes\Consumo.cs" />
-    <Compile Include="Classes\Contrato.cs" />
-    <Compile Include="Classes\Fatura.cs" />
     <Compile Include="DcAguas.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

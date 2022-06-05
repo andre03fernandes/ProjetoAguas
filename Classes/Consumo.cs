@@ -8,7 +8,7 @@
         decimal totalConsumo = 0;
         decimal escalao = 30;
         decimal max = 0;
-        decimal limite = 0;
+        decimal aux = 0;
 
         #region Propriedades
 
@@ -38,12 +38,12 @@
                 {
                     if(totalConsumo - consumo.Escaloes >= 0)
                     {
-                        totalConsumo += consumo.ValorUnitario * (consumo.Escaloes - limite);
-                        limite = consumo.Escaloes;
+                        totalConsumo = totalConsumo + consumo.ValorUnitario * (consumo.Escaloes - aux);
+                        aux = consumo.Escaloes;
                     }
                     else
                     {
-                        totalConsumo += consumo.ValorUnitario * (consumo.Escaloes - totalConsumo);                      
+                        totalConsumo = totalConsumo + consumo.ValorUnitario * (consumo.Escaloes - totalConsumo);                      
                     }
                 }
             }

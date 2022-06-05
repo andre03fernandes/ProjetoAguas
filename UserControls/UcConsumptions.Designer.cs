@@ -36,7 +36,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.cbEchelons = new System.Windows.Forms.ComboBox();
             this.dtpConsumeDate = new System.Windows.Forms.DateTimePicker();
             this.cbContractType = new System.Windows.Forms.ComboBox();
             this.cbClients = new System.Windows.Forms.ComboBox();
@@ -51,6 +50,7 @@
             this.txtTotalConsume = new System.Windows.Forms.TextBox();
             this.lblUnitaryValue = new System.Windows.Forms.Label();
             this.txtUnitaryValue = new System.Windows.Forms.TextBox();
+            this.txtEchelons = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
@@ -157,14 +157,6 @@
             this.btnInsert.TabIndex = 40;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = false;
-            // 
-            // cbEchelons
-            // 
-            this.cbEchelons.FormattingEnabled = true;
-            this.cbEchelons.Location = new System.Drawing.Point(190, 179);
-            this.cbEchelons.Name = "cbEchelons";
-            this.cbEchelons.Size = new System.Drawing.Size(94, 21);
-            this.cbEchelons.TabIndex = 91;
             // 
             // dtpConsumeDate
             // 
@@ -307,16 +299,27 @@
             this.txtUnitaryValue.Size = new System.Drawing.Size(71, 23);
             this.txtUnitaryValue.TabIndex = 95;
             // 
+            // txtEchelons
+            // 
+            this.txtEchelons.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEchelons.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEchelons.ForeColor = System.Drawing.Color.Black;
+            this.txtEchelons.Location = new System.Drawing.Point(190, 179);
+            this.txtEchelons.Multiline = true;
+            this.txtEchelons.Name = "txtEchelons";
+            this.txtEchelons.Size = new System.Drawing.Size(71, 23);
+            this.txtEchelons.TabIndex = 97;
+            // 
             // UcConsumptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtEchelons);
             this.Controls.Add(this.lblUnitaryValue);
             this.Controls.Add(this.txtUnitaryValue);
             this.Controls.Add(this.lblTotalConsume);
             this.Controls.Add(this.txtTotalConsume);
             this.Controls.Add(this.DataGriewConsumes);
-            this.Controls.Add(this.cbEchelons);
             this.Controls.Add(this.dtpConsumeDate);
             this.Controls.Add(this.cbContractType);
             this.Controls.Add(this.cbClients);
@@ -356,7 +359,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.ComboBox cbEchelons;
         private System.Windows.Forms.DateTimePicker dtpConsumeDate;
         private System.Windows.Forms.ComboBox cbContractType;
         private System.Windows.Forms.ComboBox cbClients;
@@ -371,5 +373,6 @@
         private System.Windows.Forms.TextBox txtTotalConsume;
         private System.Windows.Forms.Label lblUnitaryValue;
         private System.Windows.Forms.TextBox txtUnitaryValue;
+        private System.Windows.Forms.TextBox txtEchelons;
     }
 }
