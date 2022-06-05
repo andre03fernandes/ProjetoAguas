@@ -40,22 +40,22 @@
             this.cbContractType = new System.Windows.Forms.ComboBox();
             this.cbClients = new System.Windows.Forms.ComboBox();
             this.lblClient = new System.Windows.Forms.Label();
-            this.lblContractType = new System.Windows.Forms.Label();
             this.lblEchelons = new System.Windows.Forms.Label();
             this.lblConsumeDate = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.DataGriewConsumes = new System.Windows.Forms.DataGridView();
+            this.DataGriewConsumptions = new System.Windows.Forms.DataGridView();
             this.lblTotalConsume = new System.Windows.Forms.Label();
             this.txtTotalConsume = new System.Windows.Forms.TextBox();
             this.lblUnitaryValue = new System.Windows.Forms.Label();
             this.txtUnitaryValue = new System.Windows.Forms.TextBox();
             this.txtEchelons = new System.Windows.Forms.TextBox();
+            this.lblContractType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInsert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGriewConsumes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGriewConsumptions)).BeginInit();
             this.SuspendLayout();
             // 
             // picUpdate
@@ -112,6 +112,7 @@
             this.btnUpdate.TabIndex = 43;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -127,6 +128,7 @@
             this.btnDelete.TabIndex = 42;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReset
             // 
@@ -142,6 +144,7 @@
             this.btnReset.TabIndex = 41;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnInsert
             // 
@@ -157,6 +160,7 @@
             this.btnInsert.TabIndex = 40;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // dtpConsumeDate
             // 
@@ -171,7 +175,7 @@
             // cbContractType
             // 
             this.cbContractType.FormattingEnabled = true;
-            this.cbContractType.Location = new System.Drawing.Point(220, 104);
+            this.cbContractType.Location = new System.Drawing.Point(267, 108);
             this.cbContractType.Name = "cbContractType";
             this.cbContractType.Size = new System.Drawing.Size(145, 21);
             this.cbContractType.TabIndex = 89;
@@ -179,7 +183,7 @@
             // cbClients
             // 
             this.cbClients.FormattingEnabled = true;
-            this.cbClients.Location = new System.Drawing.Point(335, 49);
+            this.cbClients.Location = new System.Drawing.Point(334, 45);
             this.cbClients.Name = "cbClients";
             this.cbClients.Size = new System.Drawing.Size(145, 21);
             this.cbClients.TabIndex = 88;
@@ -188,21 +192,11 @@
             // 
             this.lblClient.AutoSize = true;
             this.lblClient.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClient.Location = new System.Drawing.Point(285, 50);
+            this.lblClient.Location = new System.Drawing.Point(284, 46);
             this.lblClient.Name = "lblClient";
             this.lblClient.Size = new System.Drawing.Size(51, 18);
             this.lblClient.TabIndex = 87;
             this.lblClient.Text = "Client";
-            // 
-            // lblContractType
-            // 
-            this.lblContractType.AutoSize = true;
-            this.lblContractType.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContractType.Location = new System.Drawing.Point(113, 105);
-            this.lblContractType.Name = "lblContractType";
-            this.lblContractType.Size = new System.Drawing.Size(111, 18);
-            this.lblContractType.TabIndex = 86;
-            this.lblContractType.Text = "Contract Type";
             // 
             // lblEchelons
             // 
@@ -228,7 +222,7 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(139, 50);
+            this.lblID.Location = new System.Drawing.Point(138, 46);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(23, 18);
             this.lblID.TabIndex = 81;
@@ -240,21 +234,22 @@
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.Black;
-            this.txtID.Location = new System.Drawing.Point(164, 48);
+            this.txtID.Location = new System.Drawing.Point(163, 44);
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(31, 23);
             this.txtID.TabIndex = 78;
             // 
-            // DataGriewConsumes
+            // DataGriewConsumptions
             // 
-            this.DataGriewConsumes.AllowUserToDeleteRows = false;
-            this.DataGriewConsumes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGriewConsumes.Location = new System.Drawing.Point(86, 293);
-            this.DataGriewConsumes.Name = "DataGriewConsumes";
-            this.DataGriewConsumes.ReadOnly = true;
-            this.DataGriewConsumes.Size = new System.Drawing.Size(813, 215);
-            this.DataGriewConsumes.TabIndex = 92;
+            this.DataGriewConsumptions.AllowUserToDeleteRows = false;
+            this.DataGriewConsumptions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGriewConsumptions.Location = new System.Drawing.Point(86, 293);
+            this.DataGriewConsumptions.Name = "DataGriewConsumptions";
+            this.DataGriewConsumptions.ReadOnly = true;
+            this.DataGriewConsumptions.Size = new System.Drawing.Size(813, 215);
+            this.DataGriewConsumptions.TabIndex = 92;
+            this.DataGriewConsumptions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGriewConsumptions_CellClick);
             // 
             // lblTotalConsume
             // 
@@ -269,7 +264,6 @@
             // txtTotalConsume
             // 
             this.txtTotalConsume.BackColor = System.Drawing.SystemColors.Control;
-            this.txtTotalConsume.Enabled = false;
             this.txtTotalConsume.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalConsume.ForeColor = System.Drawing.Color.Black;
             this.txtTotalConsume.Location = new System.Drawing.Point(519, 216);
@@ -310,6 +304,16 @@
             this.txtEchelons.Size = new System.Drawing.Size(71, 23);
             this.txtEchelons.TabIndex = 97;
             // 
+            // lblContractType
+            // 
+            this.lblContractType.AutoSize = true;
+            this.lblContractType.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContractType.Location = new System.Drawing.Point(160, 109);
+            this.lblContractType.Name = "lblContractType";
+            this.lblContractType.Size = new System.Drawing.Size(111, 18);
+            this.lblContractType.TabIndex = 86;
+            this.lblContractType.Text = "Contract Type";
+            // 
             // UcConsumptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,7 +323,7 @@
             this.Controls.Add(this.txtUnitaryValue);
             this.Controls.Add(this.lblTotalConsume);
             this.Controls.Add(this.txtTotalConsume);
-            this.Controls.Add(this.DataGriewConsumes);
+            this.Controls.Add(this.DataGriewConsumptions);
             this.Controls.Add(this.dtpConsumeDate);
             this.Controls.Add(this.cbContractType);
             this.Controls.Add(this.cbClients);
@@ -339,11 +343,12 @@
             this.Controls.Add(this.btnInsert);
             this.Name = "UcConsumptions";
             this.Size = new System.Drawing.Size(992, 539);
+            this.Load += new System.EventHandler(this.UcConsumptions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInsert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGriewConsumes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGriewConsumptions)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,16 +368,16 @@
         private System.Windows.Forms.ComboBox cbContractType;
         private System.Windows.Forms.ComboBox cbClients;
         private System.Windows.Forms.Label lblClient;
-        private System.Windows.Forms.Label lblContractType;
         private System.Windows.Forms.Label lblEchelons;
         private System.Windows.Forms.Label lblConsumeDate;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.DataGridView DataGriewConsumes;
+        private System.Windows.Forms.DataGridView DataGriewConsumptions;
         private System.Windows.Forms.Label lblTotalConsume;
         private System.Windows.Forms.TextBox txtTotalConsume;
         private System.Windows.Forms.Label lblUnitaryValue;
         private System.Windows.Forms.TextBox txtUnitaryValue;
         private System.Windows.Forms.TextBox txtEchelons;
+        private System.Windows.Forms.Label lblContractType;
     }
 }

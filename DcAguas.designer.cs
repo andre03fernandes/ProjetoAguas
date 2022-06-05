@@ -36,12 +36,12 @@ namespace ProjetoAguas
     partial void InsertContratos(Contratos instance);
     partial void UpdateContratos(Contratos instance);
     partial void DeleteContratos(Contratos instance);
-    partial void InsertConsumos(Consumos instance);
-    partial void UpdateConsumos(Consumos instance);
-    partial void DeleteConsumos(Consumos instance);
     partial void InsertFaturas(Faturas instance);
     partial void UpdateFaturas(Faturas instance);
     partial void DeleteFaturas(Faturas instance);
+    partial void InsertConsumos(Consumos instance);
+    partial void UpdateConsumos(Consumos instance);
+    partial void DeleteConsumos(Consumos instance);
     #endregion
 		
 		public DcAguasDataContext() : 
@@ -90,19 +90,19 @@ namespace ProjetoAguas
 			}
 		}
 		
-		public System.Data.Linq.Table<Consumos> Consumos
-		{
-			get
-			{
-				return this.GetTable<Consumos>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Faturas> Faturas
 		{
 			get
 			{
 				return this.GetTable<Faturas>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Consumos> Consumos
+		{
+			get
+			{
+				return this.GetTable<Consumos>();
 			}
 		}
 	}
@@ -319,7 +319,7 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Clientes_Contrato", Storage="_Contratos", ThisKey="IdCliente", OtherKey="IdCliente")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Contrato", Storage="_Contratos", ThisKey="IdCliente", OtherKey="IdCliente")]
 		public EntitySet<Contratos> Contratos
 		{
 			get
@@ -584,7 +584,7 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contratos_Consumo", Storage="_Consumos", ThisKey="IdContrato", OtherKey="IdContrato")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Consumo", Storage="_Consumos", ThisKey="IdContrato", OtherKey="IdContrato")]
 		public EntitySet<Consumos> Consumos
 		{
 			get
@@ -597,7 +597,7 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Clientes_Contrato", Storage="_Clientes", ThisKey="IdCliente", OtherKey="IdCliente", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Contrato", Storage="_Clientes", ThisKey="IdCliente", OtherKey="IdCliente", IsForeignKey=true)]
 		public Clientes Clientes
 		{
 			get
@@ -661,6 +661,240 @@ namespace ProjetoAguas
 		{
 			this.SendPropertyChanging();
 			entity.Contratos = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Contrato.Faturas")]
+	public partial class Faturas : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdFatura;
+		
+		private int _IdContrato;
+		
+		private string _DataFatura;
+		
+		private string _Cliente;
+		
+		private decimal _ConsumoMensal;
+		
+		private decimal _ValorPagar;
+		
+		private System.DateTime _ModificacaoData;
+		
+		private EntitySet<Consumos> _Consumos;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdFaturaChanging(int value);
+    partial void OnIdFaturaChanged();
+    partial void OnIdContratoChanging(int value);
+    partial void OnIdContratoChanged();
+    partial void OnDataFaturaChanging(string value);
+    partial void OnDataFaturaChanged();
+    partial void OnClienteChanging(string value);
+    partial void OnClienteChanged();
+    partial void OnConsumoMensalChanging(decimal value);
+    partial void OnConsumoMensalChanged();
+    partial void OnValorPagarChanging(decimal value);
+    partial void OnValorPagarChanged();
+    partial void OnModificacaoDataChanging(System.DateTime value);
+    partial void OnModificacaoDataChanged();
+    #endregion
+		
+		public Faturas()
+		{
+			this._Consumos = new EntitySet<Consumos>(new Action<Consumos>(this.attach_Consumos), new Action<Consumos>(this.detach_Consumos));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdFatura", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdFatura
+		{
+			get
+			{
+				return this._IdFatura;
+			}
+			set
+			{
+				if ((this._IdFatura != value))
+				{
+					this.OnIdFaturaChanging(value);
+					this.SendPropertyChanging();
+					this._IdFatura = value;
+					this.SendPropertyChanged("IdFatura");
+					this.OnIdFaturaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdContrato", DbType="Int NOT NULL")]
+		public int IdContrato
+		{
+			get
+			{
+				return this._IdContrato;
+			}
+			set
+			{
+				if ((this._IdContrato != value))
+				{
+					this.OnIdContratoChanging(value);
+					this.SendPropertyChanging();
+					this._IdContrato = value;
+					this.SendPropertyChanged("IdContrato");
+					this.OnIdContratoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataFatura", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string DataFatura
+		{
+			get
+			{
+				return this._DataFatura;
+			}
+			set
+			{
+				if ((this._DataFatura != value))
+				{
+					this.OnDataFaturaChanging(value);
+					this.SendPropertyChanging();
+					this._DataFatura = value;
+					this.SendPropertyChanged("DataFatura");
+					this.OnDataFaturaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cliente", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Cliente
+		{
+			get
+			{
+				return this._Cliente;
+			}
+			set
+			{
+				if ((this._Cliente != value))
+				{
+					this.OnClienteChanging(value);
+					this.SendPropertyChanging();
+					this._Cliente = value;
+					this.SendPropertyChanged("Cliente");
+					this.OnClienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsumoMensal", DbType="Decimal(5,2) NOT NULL")]
+		public decimal ConsumoMensal
+		{
+			get
+			{
+				return this._ConsumoMensal;
+			}
+			set
+			{
+				if ((this._ConsumoMensal != value))
+				{
+					this.OnConsumoMensalChanging(value);
+					this.SendPropertyChanging();
+					this._ConsumoMensal = value;
+					this.SendPropertyChanged("ConsumoMensal");
+					this.OnConsumoMensalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValorPagar", DbType="Decimal(7,2) NOT NULL")]
+		public decimal ValorPagar
+		{
+			get
+			{
+				return this._ValorPagar;
+			}
+			set
+			{
+				if ((this._ValorPagar != value))
+				{
+					this.OnValorPagarChanging(value);
+					this.SendPropertyChanging();
+					this._ValorPagar = value;
+					this.SendPropertyChanged("ValorPagar");
+					this.OnValorPagarChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificacaoData", DbType="DateTime2 NOT NULL")]
+		public System.DateTime ModificacaoData
+		{
+			get
+			{
+				return this._ModificacaoData;
+			}
+			set
+			{
+				if ((this._ModificacaoData != value))
+				{
+					this.OnModificacaoDataChanging(value);
+					this.SendPropertyChanging();
+					this._ModificacaoData = value;
+					this.SendPropertyChanged("ModificacaoData");
+					this.OnModificacaoDataChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fatura_Consumo", Storage="_Consumos", ThisKey="IdFatura", OtherKey="IdFatura")]
+		public EntitySet<Consumos> Consumos
+		{
+			get
+			{
+				return this._Consumos;
+			}
+			set
+			{
+				this._Consumos.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Consumos(Consumos entity)
+		{
+			this.SendPropertyChanging();
+			entity.Faturas = this;
+		}
+		
+		private void detach_Consumos(Consumos entity)
+		{
+			this.SendPropertyChanging();
+			entity.Faturas = null;
 		}
 	}
 	
@@ -887,7 +1121,7 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contratos_Consumo", Storage="_Contratos", ThisKey="IdContrato", OtherKey="IdContrato", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contrato_Consumo", Storage="_Contratos", ThisKey="IdContrato", OtherKey="IdContrato", IsForeignKey=true)]
 		public Contratos Contratos
 		{
 			get
@@ -921,7 +1155,7 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fatura_Consumos", Storage="_Faturas", ThisKey="IdFatura", OtherKey="IdFatura", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fatura_Consumo", Storage="_Faturas", ThisKey="IdFatura", OtherKey="IdFatura", IsForeignKey=true)]
 		public Faturas Faturas
 		{
 			get
@@ -973,240 +1207,6 @@ namespace ProjetoAguas
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Contrato.Faturas")]
-	public partial class Faturas : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdFatura;
-		
-		private int _IdContrato;
-		
-		private string _DataFatura;
-		
-		private string _Cliente;
-		
-		private decimal _ConsumoMensal;
-		
-		private decimal _ValorPagar;
-		
-		private System.DateTime _ModificacaoData;
-		
-		private EntitySet<Consumos> _Consumos;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdFaturaChanging(int value);
-    partial void OnIdFaturaChanged();
-    partial void OnIdContratoChanging(int value);
-    partial void OnIdContratoChanged();
-    partial void OnDataFaturaChanging(string value);
-    partial void OnDataFaturaChanged();
-    partial void OnClienteChanging(string value);
-    partial void OnClienteChanged();
-    partial void OnConsumoMensalChanging(decimal value);
-    partial void OnConsumoMensalChanged();
-    partial void OnValorPagarChanging(decimal value);
-    partial void OnValorPagarChanged();
-    partial void OnModificacaoDataChanging(System.DateTime value);
-    partial void OnModificacaoDataChanged();
-    #endregion
-		
-		public Faturas()
-		{
-			this._Consumos = new EntitySet<Consumos>(new Action<Consumos>(this.attach_Consumos), new Action<Consumos>(this.detach_Consumos));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdFatura", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdFatura
-		{
-			get
-			{
-				return this._IdFatura;
-			}
-			set
-			{
-				if ((this._IdFatura != value))
-				{
-					this.OnIdFaturaChanging(value);
-					this.SendPropertyChanging();
-					this._IdFatura = value;
-					this.SendPropertyChanged("IdFatura");
-					this.OnIdFaturaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdContrato", DbType="Int NOT NULL")]
-		public int IdContrato
-		{
-			get
-			{
-				return this._IdContrato;
-			}
-			set
-			{
-				if ((this._IdContrato != value))
-				{
-					this.OnIdContratoChanging(value);
-					this.SendPropertyChanging();
-					this._IdContrato = value;
-					this.SendPropertyChanged("IdContrato");
-					this.OnIdContratoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataFatura", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string DataFatura
-		{
-			get
-			{
-				return this._DataFatura;
-			}
-			set
-			{
-				if ((this._DataFatura != value))
-				{
-					this.OnDataFaturaChanging(value);
-					this.SendPropertyChanging();
-					this._DataFatura = value;
-					this.SendPropertyChanged("DataFatura");
-					this.OnDataFaturaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cliente", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Cliente
-		{
-			get
-			{
-				return this._Cliente;
-			}
-			set
-			{
-				if ((this._Cliente != value))
-				{
-					this.OnClienteChanging(value);
-					this.SendPropertyChanging();
-					this._Cliente = value;
-					this.SendPropertyChanged("Cliente");
-					this.OnClienteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsumoMensal", DbType="Decimal(5,2) NOT NULL")]
-		public decimal ConsumoMensal
-		{
-			get
-			{
-				return this._ConsumoMensal;
-			}
-			set
-			{
-				if ((this._ConsumoMensal != value))
-				{
-					this.OnConsumoMensalChanging(value);
-					this.SendPropertyChanging();
-					this._ConsumoMensal = value;
-					this.SendPropertyChanged("ConsumoMensal");
-					this.OnConsumoMensalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValorPagar", DbType="Decimal(7,2) NOT NULL")]
-		public decimal ValorPagar
-		{
-			get
-			{
-				return this._ValorPagar;
-			}
-			set
-			{
-				if ((this._ValorPagar != value))
-				{
-					this.OnValorPagarChanging(value);
-					this.SendPropertyChanging();
-					this._ValorPagar = value;
-					this.SendPropertyChanged("ValorPagar");
-					this.OnValorPagarChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModificacaoData", DbType="DateTime2 NOT NULL")]
-		public System.DateTime ModificacaoData
-		{
-			get
-			{
-				return this._ModificacaoData;
-			}
-			set
-			{
-				if ((this._ModificacaoData != value))
-				{
-					this.OnModificacaoDataChanging(value);
-					this.SendPropertyChanging();
-					this._ModificacaoData = value;
-					this.SendPropertyChanged("ModificacaoData");
-					this.OnModificacaoDataChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fatura_Consumos", Storage="_Consumos", ThisKey="IdFatura", OtherKey="IdFatura")]
-		public EntitySet<Consumos> Consumos
-		{
-			get
-			{
-				return this._Consumos;
-			}
-			set
-			{
-				this._Consumos.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Consumos(Consumos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Faturas = this;
-		}
-		
-		private void detach_Consumos(Consumos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Faturas = null;
 		}
 	}
 }

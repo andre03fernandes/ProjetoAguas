@@ -106,12 +106,12 @@
     <Compile Include="UserControls\UcStatistics.Designer.cs">
       <DependentUpon>UcStatistics.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\UcInvoices.resx">
-      <DependentUpon>UcInvoices.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="DcAguas.dbml.layout">
       <DependentUpon>DcAguas.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="UserControls\UcInvoices.resx">
+      <DependentUpon>UcInvoices.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcAbout.resx">
       <DependentUpon>UcAbout.cs</DependentUpon>
     </EmbeddedResource>

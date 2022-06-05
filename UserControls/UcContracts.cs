@@ -46,7 +46,7 @@ namespace ProjetoAguas.UserControls
 
         private void UcContracts_Load(object sender, EventArgs e)
         {
-            DataGriewContracts.Columns.Add("colID", "IdContrato");
+            DataGriewContracts.Columns.Add("colID", "IdContract");
             DataGriewContracts.Columns.Add("colClient", "Client");
             DataGriewContracts.Columns.Add("colContractType", "Contract Type");
             DataGriewContracts.Columns.Add("colPaymentType", "Payment Type");
