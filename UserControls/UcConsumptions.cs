@@ -12,38 +12,44 @@
         decimal maxPagar = 0;
         decimal aux = 0;
 
-        public UcConsumptions() { InitializeComponent(); }
+        public UcConsumptions() { InitializeComponent();}
 
         DcAguasDataContext dc = new DcAguasDataContext();
 
         #region Consumos
 
-        public decimal ModuloConsumos()
+        public void ModuloConsumos()
         {
-            decimal esc = decimal.Parse(txtEchelons.Text);
-            decimal TotalConsumo = Convert.ToDecimal(txtTotalConsume.Text);
-            decimal Vunitario = Convert.ToDecimal(txtUnitaryValue.Text);
-
-            foreach (Consumos consumos in limiteEscaloes)
+            try
             {
-                esc = consumos.Escaloes;
-                Vunitario = consumos.ValorUnitario;
-                TotalConsumo = Convert.ToDecimal(consumos.ConsumoTotal);
+                decimal esc = decimal.Parse(txtEchelons.Text);
+                decimal TotalConsumo = Convert.ToDecimal(txtTotalConsume.Text);
+                decimal Vunitario = Convert.ToDecimal(txtContractType.Text);
 
-                if (esc == 0)
-                    maxPagar = Vunitario;
-                else
+                foreach (Consumos consumos in limiteEscaloes)
                 {
-                    if (TotalConsumo - esc >= 0)
-                    {
-                        TotalConsumo += Vunitario * (esc - aux);
-                        aux = esc;
-                    }
+                    esc = consumos.Escaloes;
+                    Vunitario = consumos.ValorUnitario;
+                    TotalConsumo = Convert.ToDecimal(consumos.ConsumoTotal);
+
+                    if (esc == 0)
+                        maxPagar = Vunitario;
                     else
-                        TotalConsumo += Vunitario * (esc - TotalConsumo);
-                }
+                    {
+                        if (TotalConsumo - esc >= 0)
+                        {
+                            TotalConsumo += Vunitario * (esc - aux);
+                            aux = esc;
+                        }
+                        else
+                            TotalConsumo += Vunitario * (esc - TotalConsumo);
+                    }
+                } 
             }
-            return TotalConsumo;
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
         }
 
         #endregion
@@ -64,22 +70,14 @@
                 DataGriewConsumptions.Rows.Add(registo);
 
                 DataGriewConsumptions.Rows[linha].Cells[0].Value = consumo.IdConsumo;
-
-                var listaContratos = (from Contratos in dc.Contratos
-                                      where Contratos.IdContrato == consumo.IdContrato
-                                      select Contratos).Single();
-
-                DataGriewConsumptions.Rows[linha].Cells[2].Value = listaContratos.TipoContrato;
-
-                var listaFaturas = (from Faturas in dc.Faturas
-                                    where Faturas.IdFatura == consumo.IdFatura
-                                    select Faturas).Single();
-
-                DataGriewConsumptions.Rows[linha].Cells[3].Value = listaFaturas.Cliente;
-                DataGriewConsumptions.Rows[linha].Cells[4].Value = consumo.Escaloes;
-                DataGriewConsumptions.Rows[linha].Cells[5].Value = consumo.ValorUnitario;
-                DataGriewConsumptions.Rows[linha].Cells[6].Value = consumo.DataConsumo;
-                DataGriewConsumptions.Rows[linha].Cells[7].Value = consumo.ConsumoTotal;
+                DataGriewConsumptions.Rows[linha].Cells[1].Value = consumo.IdContrato;
+                DataGriewConsumptions.Rows[linha].Cells[2].Value = consumo.IdFatura;
+                DataGriewConsumptions.Rows[linha].Cells[3].Value = consumo.NomeCliente;
+                DataGriewConsumptions.Rows[linha].Cells[4].Value = consumo.TipoContrato;
+                DataGriewConsumptions.Rows[linha].Cells[5].Value = consumo.Escaloes;
+                DataGriewConsumptions.Rows[linha].Cells[6].Value = consumo.ValorUnitario;
+                DataGriewConsumptions.Rows[linha].Cells[7].Value = consumo.DataConsumo;
+                DataGriewConsumptions.Rows[linha].Cells[8].Value = consumo.ConsumoTotal;
 
                 linha++;
             }
@@ -88,8 +86,10 @@
         private void UcConsumptions_Load(object sender, EventArgs e)
         {
             DataGriewConsumptions.Columns.Add("colID", "IdConsumption");
+            DataGriewConsumptions.Columns.Add("colIDcontract", "IdContract");
+            DataGriewConsumptions.Columns.Add("colIDfatura", "IDinvoice");
+            DataGriewConsumptions.Columns.Add("colClient", "Client");
             DataGriewConsumptions.Columns.Add("colContractType", "Contract Type");
-            DataGriewConsumptions.Columns.Add("colCliente", "Client");
             DataGriewConsumptions.Columns.Add("colEscaloes", "Echelons");
             DataGriewConsumptions.Columns.Add("colValorUnitario", "Unitary Value");
             DataGriewConsumptions.Columns.Add("colDataConsumo", "Consume Date");
@@ -97,6 +97,7 @@
 
             ComboBoxs();
             AtualizaDataGriewConsumptions();
+            //cbIDcontract.SelectedIndex = 0;
             //ModuloConsumos();
         }
 
@@ -107,8 +108,10 @@
                 DataGridViewRow row = this.DataGriewConsumptions.Rows[e.RowIndex];
 
                 txtID.Text = row.Cells["colID"].Value.ToString();
-                cbContractType.Text = row.Cells["colContractType"].Value.ToString();
-                cbClients.Text = row.Cells["colCliente"].Value.ToString();
+                cbIDcontract.Text = row.Cells["colIDcontract"].Value.ToString();
+                cbIDinvoices.Text = row.Cells["colIDfatura"].Value.ToString();
+                txtClients.Text = row.Cells["colClient"].Value.ToString();
+                txtContractType.Text = row.Cells["colContractType"].Value.ToString();
                 txtEchelons.Text = row.Cells["colEscaloes"].Value.ToString();
                 txtUnitaryValue.Text = row.Cells["colValorUnitario"].Value.ToString();
                 dtpConsumeDate.Text = row.Cells["colDataConsumo"].Value.ToString();
@@ -122,15 +125,41 @@
 
         private void ComboBoxs()
         {
-            var listaClientes = from Clientes in dc.Clientes select Clientes;
+            var IDcontract = from Contratos in dc.Contratos select Contratos;
 
-            cbClients.DataSource = listaClientes;
-            cbClients.DisplayMember = "Nome";
+            cbIDcontract.DataSource = IDcontract;
+            cbIDcontract.DisplayMember = "IdContrato";
 
-            cbContractType.Items.Add("Doméstico");
-            cbContractType.Items.Add("Agrícola");
-            cbContractType.Items.Add("Comércio");
-            cbContractType.Items.Add("Industrial");
+            //cbIDcontract.Items.Add("Selecione uma opção");
+
+            //foreach(Contratos cont in IDcontract)
+            //    cbIDcontract.Items.Add(cont.IdContrato);
+
+            var IDinvoice = from Faturas in dc.Faturas select Faturas;
+
+            cbIDinvoices.DataSource = IDinvoice;
+            cbIDinvoices.DisplayMember = "IdFatura";
+        }
+
+        private void cbIDcontract_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var TipoContrato = from Contratos
+                                    in dc.Contratos
+                                    where Contratos.IdContrato == int.Parse(cbIDcontract.Text)
+                                    select Contratos;
+
+                foreach (Contratos contratos in TipoContrato)
+                {
+                    txtClients.Text = contratos.Clientes.Nome;
+                    txtContractType.Text = contratos.TipoContrato;
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
         }
 
         #endregion
@@ -139,8 +168,10 @@
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            Clientes NomeCliente = (Clientes)cbClients.SelectedItem;
-            Contratos ContractType = (Contratos)cbContractType.SelectedItem;
+            Contratos Id = (Contratos)cbIDcontract.SelectedItem;
+            Faturas IdInvoice = (Faturas)cbIDinvoices.SelectedItem;
+            string Client = txtClients.Text;
+            string ContractType = txtContractType.Text;
             string Escaloes = txtEchelons.Text;
             string Vunitario = txtUnitaryValue.Text;
             string DataConsumo = dtpConsumeDate.Text;
@@ -148,8 +179,10 @@
 
             Consumos c = new Consumos
             {
-                IdContrato = ContractType.IdContrato,
-                IdFatura = NomeCliente.IdCliente,
+                IdContrato = Id.IdContrato,
+                IdFatura = IdInvoice.IdFatura,
+                NomeCliente = Client.ToString(),
+                TipoContrato = ContractType,
                 Escaloes = (decimal.Parse(Escaloes)),
                 ValorUnitario = (decimal.Parse(Vunitario)),
                 DataConsumo = DataConsumo,
@@ -167,8 +200,9 @@
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int Id = int.Parse(txtID.Text);
-            string ContractType = Convert.ToString(cbContractType.SelectedItem);
-            Clientes NomeCliente = (Clientes)cbClients.SelectedItem;
+            Contratos IdContract = (Contratos)cbIDcontract.SelectedItem;
+            Clientes nCli = (Clientes)txtClients.Container;
+            string ContractType = txtContractType.Text;
             string Escaloes = txtEchelons.Text;
             string Vunitario = txtUnitaryValue.Text;
             string DataConsumo = dtpConsumeDate.Text;
@@ -178,8 +212,9 @@
                           where Consumos.IdConsumo == Id
                           select Consumos).First();
 
-            //c.IdContrato = ContractType;
-            c.IdFatura = NomeCliente.IdCliente;
+            c.IdContrato = IdContract.IdContrato;
+            c.IdFatura = nCli.IdCliente;
+            c.TipoContrato = ContractType;
             c.Escaloes = (decimal.Parse(Escaloes));
             c.ValorUnitario = (decimal.Parse(Vunitario));
             c.DataConsumo = DataConsumo;
@@ -212,10 +247,13 @@
 
         private void LimpaCampos()
         {
-            txtUnitaryValue.ResetText();
+            cbIDcontract.ResetText();
+            cbIDinvoices.ResetText();
+            txtClients.ResetText();
+            txtContractType.ResetText();
             txtEchelons.ResetText();
+            txtUnitaryValue.ResetText();
             txtTotalConsume.ResetText();
-            dtpConsumeDate.ResetText();
         }
 
         #endregion

@@ -674,6 +674,8 @@ namespace ProjetoAguas
 		
 		private int _IdContrato;
 		
+		private string _TipoPagamento;
+		
 		private string _DataFatura;
 		
 		private string _Cliente;
@@ -694,6 +696,8 @@ namespace ProjetoAguas
     partial void OnIdFaturaChanged();
     partial void OnIdContratoChanging(int value);
     partial void OnIdContratoChanged();
+    partial void OnTipoPagamentoChanging(string value);
+    partial void OnTipoPagamentoChanged();
     partial void OnDataFaturaChanging(string value);
     partial void OnDataFaturaChanged();
     partial void OnClienteChanging(string value);
@@ -748,6 +752,26 @@ namespace ProjetoAguas
 					this._IdContrato = value;
 					this.SendPropertyChanged("IdContrato");
 					this.OnIdContratoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoPagamento", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string TipoPagamento
+		{
+			get
+			{
+				return this._TipoPagamento;
+			}
+			set
+			{
+				if ((this._TipoPagamento != value))
+				{
+					this.OnTipoPagamentoChanging(value);
+					this.SendPropertyChanging();
+					this._TipoPagamento = value;
+					this.SendPropertyChanged("TipoPagamento");
+					this.OnTipoPagamentoChanged();
 				}
 			}
 		}
@@ -910,6 +934,10 @@ namespace ProjetoAguas
 		
 		private int _IdFatura;
 		
+		private string _NomeCliente;
+		
+		private string _TipoContrato;
+		
 		private decimal _Escaloes;
 		
 		private decimal _ValorUnitario;
@@ -934,6 +962,10 @@ namespace ProjetoAguas
     partial void OnIdContratoChanged();
     partial void OnIdFaturaChanging(int value);
     partial void OnIdFaturaChanged();
+    partial void OnNomeClienteChanging(string value);
+    partial void OnNomeClienteChanged();
+    partial void OnTipoContratoChanging(string value);
+    partial void OnTipoContratoChanged();
     partial void OnEscaloesChanging(decimal value);
     partial void OnEscaloesChanged();
     partial void OnValorUnitarioChanging(decimal value);
@@ -1017,6 +1049,46 @@ namespace ProjetoAguas
 					this._IdFatura = value;
 					this.SendPropertyChanged("IdFatura");
 					this.OnIdFaturaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NomeCliente", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string NomeCliente
+		{
+			get
+			{
+				return this._NomeCliente;
+			}
+			set
+			{
+				if ((this._NomeCliente != value))
+				{
+					this.OnNomeClienteChanging(value);
+					this.SendPropertyChanging();
+					this._NomeCliente = value;
+					this.SendPropertyChanged("NomeCliente");
+					this.OnNomeClienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoContrato", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string TipoContrato
+		{
+			get
+			{
+				return this._TipoContrato;
+			}
+			set
+			{
+				if ((this._TipoContrato != value))
+				{
+					this.OnTipoContratoChanging(value);
+					this.SendPropertyChanging();
+					this._TipoContrato = value;
+					this.SendPropertyChanged("TipoContrato");
+					this.OnTipoContratoChanged();
 				}
 			}
 		}
