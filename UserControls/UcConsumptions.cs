@@ -7,12 +7,11 @@
 
     public partial class UcConsumptions : UserControl
     {
-        List<Consumos> limiteEscaloes;
         decimal escalao = 30;
         decimal maxPagar = 0;
         decimal aux = 0;
 
-        public UcConsumptions() { InitializeComponent();}
+        public UcConsumptions() { InitializeComponent(); }
 
         DcAguasDataContext dc = new DcAguasDataContext();
 
@@ -20,35 +19,19 @@
 
         public void ModuloConsumos()
         {
-            try
-            {
-                decimal esc = decimal.Parse(txtEchelons.Text);
-                decimal TotalConsumo = Convert.ToDecimal(txtTotalConsume.Text);
-                decimal Vunitario = Convert.ToDecimal(txtContractType.Text);
+            var listaEsc = from Consumos in dc.Consumos select Consumos;
 
-                foreach (Consumos consumos in limiteEscaloes)
+            foreach (Consumos consumos in listaEsc)
+            {
+                decimal e = Convert.ToDecimal(txtEchelons.Text);
+                decimal uv = Convert.ToDecimal(txtUnitaryValue.Text);
+
+                if (e == 0)
+                    txtTotalConsume.Text = "0";
+                else if(e != 0)
                 {
-                    esc = consumos.Escaloes;
-                    Vunitario = consumos.ValorUnitario;
-                    TotalConsumo = Convert.ToDecimal(consumos.ConsumoTotal);
-
-                    if (esc == 0)
-                        maxPagar = Vunitario;
-                    else
-                    {
-                        if (TotalConsumo - esc >= 0)
-                        {
-                            TotalConsumo += Vunitario * (esc - aux);
-                            aux = esc;
-                        }
-                        else
-                            TotalConsumo += Vunitario * (esc - TotalConsumo);
-                    }
-                } 
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message);
+                    txtTotalConsume.Text = (e * uv).ToString();
+                }
             }
         }
 
@@ -64,7 +47,7 @@
 
             var listaConsumos = from consumo in dc.Consumos select consumo;
 
-            foreach(Consumos consumo in listaConsumos)
+            foreach (Consumos consumo in listaConsumos)
             {
                 DataGridViewRow registo = new DataGridViewRow();
                 DataGriewConsumptions.Rows.Add(registo);
@@ -97,13 +80,11 @@
 
             ComboBoxs();
             AtualizaDataGriewConsumptions();
-            //cbIDcontract.SelectedIndex = 0;
-            //ModuloConsumos();
         }
 
         private void DataGriewConsumptions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.DataGriewConsumptions.Rows[e.RowIndex];
 
@@ -117,6 +98,11 @@
                 dtpConsumeDate.Text = row.Cells["colDataConsumo"].Value.ToString();
                 txtTotalConsume.Text = row.Cells["colConsumoTotal"].Value.ToString();
             }
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            ModuloConsumos();
         }
 
         #endregion
@@ -147,8 +133,8 @@
             {
                 var TipoContrato = from Contratos
                                     in dc.Contratos
-                                    where Contratos.IdContrato == int.Parse(cbIDcontract.Text)
-                                    select Contratos;
+                                   where Contratos.IdContrato == int.Parse(cbIDcontract.Text)
+                                   select Contratos;
 
                 foreach (Contratos contratos in TipoContrato)
                 {
@@ -195,13 +181,20 @@
 
             AtualizaDataGriewConsumptions();
             LimpaCampos();
+
+            //if(txtUnitaryValue.Text == null)
+            //{
+            //    MessageBox.Show("Do you want to generate a total consume from an estimate?",
+            //                    "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //}
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int Id = int.Parse(txtID.Text);
             Contratos IdContract = (Contratos)cbIDcontract.SelectedItem;
-            Clientes nCli = (Clientes)txtClients.Container;
+            Faturas Idinvoice = (Faturas)cbIDinvoices.SelectedItem;
+            string Client = txtClients.Text;
             string ContractType = txtContractType.Text;
             string Escaloes = txtEchelons.Text;
             string Vunitario = txtUnitaryValue.Text;
@@ -213,12 +206,18 @@
                           select Consumos).First();
 
             c.IdContrato = IdContract.IdContrato;
-            c.IdFatura = nCli.IdCliente;
+            c.IdFatura = Idinvoice.IdFatura;
+            c.NomeCliente = Client;
             c.TipoContrato = ContractType;
             c.Escaloes = (decimal.Parse(Escaloes));
             c.ValorUnitario = (decimal.Parse(Vunitario));
             c.DataConsumo = DataConsumo;
             c.ConsumoTotal = ConsumoTotal;
+
+            try { dc.SubmitChanges(); } catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+            AtualizaDataGriewConsumptions();
+            LimpaCampos();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -247,6 +246,7 @@
 
         private void LimpaCampos()
         {
+            txtID.ResetText();
             cbIDcontract.ResetText();
             cbIDinvoices.ResetText();
             txtClients.ResetText();
@@ -257,5 +257,91 @@
         }
 
         #endregion
+
+        #region Validações
+
+        private void txtEchelons_TextChanged(object sender, EventArgs e)
+        {
+            foreach (char Escalao in txtEchelons.Text)
+            {
+                if (!(char.IsDigit(Escalao) || Escalao == ' '))
+                {
+                    MessageBox.Show("Atenção! Insera apenas dígitos!", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtEchelons.Clear();
+                    break;
+                }
+            }
+        }
+
+        private void txtEchelons_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                int intervalo = Convert.ToInt32(txtEchelons.Text);
+
+                if (txtEchelons.Text.Length == 0)
+                {
+                    MessageBox.Show("Campo Obrigatório! Introduza um escalão!",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (intervalo >= 0 && intervalo <= 5)
+                {
+                    lblEchelons.Text = "1st Echelon";
+                    txtUnitaryValue.Focus();
+                }
+                else if (intervalo >= 5 && intervalo <= 15)
+                {
+                    lblEchelons.Text = "2nd Echelon";
+                    txtUnitaryValue.Focus();
+                }
+                else if (intervalo > 15 && intervalo <= 25)
+                {
+                    lblEchelons.Text = "3rd Echelon";
+                    txtUnitaryValue.Focus();
+                }
+                else if (intervalo > 25)
+                {
+                    lblEchelons.Text = "4th Echelon";
+                    txtUnitaryValue.Focus();
+                }
+                e.Handled = true; // Assinala que o evento já foi executado e não emite som
+            }
+        }
+
+        private void txtUnitaryValue_TextChanged(object sender, EventArgs e)
+        {
+            foreach (char Value in txtUnitaryValue.Text)
+            {
+                if (!(char.IsDigit(Value) || Value == ' '))
+                {
+                    MessageBox.Show("Atenção! Insera apenas dígitos!", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtUnitaryValue.Clear();
+                    return;
+                }
+            }
+        }
+
+        private void txtUnitaryValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (txtUnitaryValue.Text.Length == 0)
+                {
+                    MessageBox.Show("Campo Obrigatório! Introduza um valor unitário!",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    btnGenerate.Focus();
+                }
+                e.Handled = true; // Assinala que o evento já foi executado e não emite som
+
+            }
+        }
+
+        #endregion
+
     }
 }

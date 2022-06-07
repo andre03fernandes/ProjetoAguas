@@ -113,6 +113,16 @@ namespace ProjetoAguas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Euro {
+            get {
+                object obj = ResourceManager.GetObject("Euro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Exit {
             get {
                 object obj = ResourceManager.GetObject("Exit", resourceCulture);
@@ -187,6 +197,16 @@ namespace ProjetoAguas.Properties {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap m_3 {
+            get {
+                object obj = ResourceManager.GetObject("m_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
