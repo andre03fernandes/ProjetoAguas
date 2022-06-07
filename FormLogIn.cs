@@ -1,6 +1,5 @@
 ﻿namespace ProjetoAguas
 {
-    using ProjetoAguas.Classes;
     using System.Windows.Forms;
 
     public partial class FormLogIn : Form
@@ -8,11 +7,6 @@
         public FormLogIn() 
         { 
             InitializeComponent();
-
-
-            Consumo c = new Consumo();
-
-           // MessageBox.Show((c.TotalConsumo()).ToString());
         }
 
         #region Buttons

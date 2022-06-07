@@ -280,7 +280,7 @@
             {
                 int intervalo = Convert.ToInt32(txtEchelons.Text);
 
-                if (txtEchelons.Text.Length == 0)
+                if (txtEchelons.Text.Length == ' ')
                 {
                     MessageBox.Show("Campo Obrigatório! Introduza um escalão!",
                         "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -300,7 +300,7 @@
                     lblEchelons.Text = "3rd Echelon";
                     txtUnitaryValue.Focus();
                 }
-                else if (intervalo > 25)
+                else
                 {
                     lblEchelons.Text = "4th Echelon";
                     txtUnitaryValue.Focus();
@@ -318,7 +318,7 @@
                     MessageBox.Show("Atenção! Insera apenas dígitos!", "Aviso",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtUnitaryValue.Clear();
-                    return;
+                    break;
                 }
             }
         }
@@ -342,6 +342,5 @@
         }
 
         #endregion
-
     }
 }

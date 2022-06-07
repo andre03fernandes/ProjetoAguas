@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Consumo.cs" />
-    <Compile Include="DcAguas.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DcAguas.dbml</DependentUpon>
-    </Compile>
     <Compile Include="FormAguas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,9 +100,6 @@
     <Compile Include="UserControls\UcStatistics.Designer.cs">
       <DependentUpon>UcStatistics.cs</DependentUpon>
     </Compile>
-    <None Include="DcAguas.dbml.layout">
-      <DependentUpon>DcAguas.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="UserControls\UcInvoices.resx">
       <DependentUpon>UcInvoices.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,11 +131,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DcAguas.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DcAguas.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

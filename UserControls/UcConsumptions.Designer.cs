@@ -236,6 +236,7 @@
             this.txtTotalConsume.Name = "txtTotalConsume";
             this.txtTotalConsume.Size = new System.Drawing.Size(70, 23);
             this.txtTotalConsume.TabIndex = 93;
+            this.txtTotalConsume.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblContractType
             // 
@@ -270,6 +271,7 @@
             this.txtEchelons.Size = new System.Drawing.Size(62, 23);
             this.txtEchelons.TabIndex = 97;
             this.txtEchelons.TabStop = false;
+            this.txtEchelons.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEchelons.TextChanged += new System.EventHandler(this.txtEchelons_TextChanged);
             this.txtEchelons.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEchelons_KeyPress);
             // 
@@ -293,6 +295,7 @@
             this.txtUnitaryValue.Name = "txtUnitaryValue";
             this.txtUnitaryValue.Size = new System.Drawing.Size(71, 23);
             this.txtUnitaryValue.TabIndex = 100;
+            this.txtUnitaryValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtUnitaryValue.TextChanged += new System.EventHandler(this.txtUnitaryValue_TextChanged);
             this.txtUnitaryValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitaryValue_KeyPress);
             // 
