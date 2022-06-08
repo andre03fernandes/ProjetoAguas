@@ -8,9 +8,11 @@
     {
         public UcClients() { InitializeComponent(); }
 
-        DcAguasDataContext dc = new DcAguasDataContext();
+        DcAguasDataContext dc = new DcAguasDataContext(); // Dataclasse - base de dados Aguas
 
         #region DataGridView
+
+        // Preenche a datagridview com as colunas adequadas
 
         public void AtualizaDataGriewClients() // Preenchimento da datagridview dos clientes
         {
@@ -37,6 +39,8 @@
             }
         }
 
+        // Criação das colunas da datagridview
+
         private void UcClients_Load(object sender, EventArgs e)
         {
             DataGriewClients.Columns.Add("colID", "ID");
@@ -49,6 +53,8 @@
 
             AtualizaDataGriewClients();
         }
+
+        // Ao clicar numa linha da datagridview, os dados voltam aos seus campos
 
         private void DataGriewClients_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -71,6 +77,8 @@
 
         #region LimpaCampos
 
+        // Ao clicar no botão Reset (por exemplo), os campos ficam limpos
+
         private void LimpaCampos()
         {
             txtID.ResetText();
@@ -87,6 +95,8 @@
         #endregion
 
         #region Buttons
+
+        // Insere os dados na datagridview
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
@@ -114,6 +124,8 @@
             AtualizaDataGriewClients();
             LimpaCampos();
         }
+
+        // Atualiza os dados de uma linha selecionada da datagridview
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -143,6 +155,8 @@
             LimpaCampos();
         }
 
+        // Elimina os dados selecionados da datagridview
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Clientes c = (from Clientes
@@ -158,11 +172,13 @@
             LimpaCampos();
         }
 
+        // Ao clicar no botão reset, os dados são limpos
+
         private void btnReset_Click(object sender, EventArgs e)
         {
             LimpaCampos();
         }
 
-#endregion
+    #endregion
     }
 }

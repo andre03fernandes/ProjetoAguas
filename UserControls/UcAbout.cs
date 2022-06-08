@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace ProjetoAguas.UserControls
+﻿namespace ProjetoAguas.UserControls
 {
+    using System.Windows.Forms;
+
     public partial class UcAbout : UserControl
     {
-        public UcAbout()
-        {
-            InitializeComponent();
-        }
+        public UcAbout() { InitializeComponent(); }
+
+        // Este Form serve apenas para para mostrar a UFCD, o Formador, o Formando, a turma, a versão e o mês que compõem este projeto
     }
 }

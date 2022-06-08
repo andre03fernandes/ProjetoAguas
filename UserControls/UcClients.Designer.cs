@@ -63,7 +63,7 @@
             this.mtxtbTelephone.BackColor = System.Drawing.SystemColors.Control;
             this.mtxtbTelephone.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtbTelephone.ForeColor = System.Drawing.Color.Black;
-            this.mtxtbTelephone.Location = new System.Drawing.Point(209, 169);
+            this.mtxtbTelephone.Location = new System.Drawing.Point(194, 132);
             this.mtxtbTelephone.Name = "mtxtbTelephone";
             this.mtxtbTelephone.Size = new System.Drawing.Size(89, 22);
             this.mtxtbTelephone.TabIndex = 23;
@@ -74,7 +74,7 @@
             this.mtxtbPostalCode.BackColor = System.Drawing.SystemColors.Control;
             this.mtxtbPostalCode.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtbPostalCode.ForeColor = System.Drawing.Color.Black;
-            this.mtxtbPostalCode.Location = new System.Drawing.Point(407, 218);
+            this.mtxtbPostalCode.Location = new System.Drawing.Point(450, 234);
             this.mtxtbPostalCode.Mask = "9999-999";
             this.mtxtbPostalCode.Name = "mtxtbPostalCode";
             this.mtxtbPostalCode.Size = new System.Drawing.Size(68, 22);
@@ -86,7 +86,7 @@
             this.txtAddress.BackColor = System.Drawing.SystemColors.Control;
             this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtAddress.Location = new System.Drawing.Point(383, 149);
+            this.txtAddress.Location = new System.Drawing.Point(358, 171);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(192, 38);
@@ -97,7 +97,7 @@
             this.txtEmail.BackColor = System.Drawing.SystemColors.Control;
             this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(209, 109);
+            this.txtEmail.Location = new System.Drawing.Point(357, 106);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(192, 23);
@@ -108,7 +108,7 @@
             this.txtName.BackColor = System.Drawing.SystemColors.Control;
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(333, 73);
+            this.txtName.Location = new System.Drawing.Point(337, 48);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(192, 23);
@@ -119,7 +119,7 @@
             this.txtNIF.BackColor = System.Drawing.SystemColors.Control;
             this.txtNIF.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNIF.ForeColor = System.Drawing.Color.Black;
-            this.txtNIF.Location = new System.Drawing.Point(166, 217);
+            this.txtNIF.Location = new System.Drawing.Point(182, 218);
             this.txtNIF.Multiline = true;
             this.txtNIF.Name = "txtNIF";
             this.txtNIF.Size = new System.Drawing.Size(86, 23);
@@ -131,7 +131,7 @@
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.Black;
-            this.txtID.Location = new System.Drawing.Point(159, 71);
+            this.txtID.Location = new System.Drawing.Point(163, 46);
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(31, 23);
@@ -152,7 +152,7 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(134, 73);
+            this.lblID.Location = new System.Drawing.Point(138, 48);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(23, 18);
             this.lblID.TabIndex = 25;
@@ -162,7 +162,7 @@
             // 
             this.lblNIF.AutoSize = true;
             this.lblNIF.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNIF.Location = new System.Drawing.Point(135, 219);
+            this.lblNIF.Location = new System.Drawing.Point(151, 220);
             this.lblNIF.Name = "lblNIF";
             this.lblNIF.Size = new System.Drawing.Size(30, 18);
             this.lblNIF.TabIndex = 26;
@@ -172,7 +172,7 @@
             // 
             this.lblPostalCode.AutoSize = true;
             this.lblPostalCode.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostalCode.Location = new System.Drawing.Point(311, 219);
+            this.lblPostalCode.Location = new System.Drawing.Point(354, 235);
             this.lblPostalCode.Name = "lblPostalCode";
             this.lblPostalCode.Size = new System.Drawing.Size(96, 18);
             this.lblPostalCode.TabIndex = 27;
@@ -182,7 +182,7 @@
             // 
             this.lblTelephone.AutoSize = true;
             this.lblTelephone.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelephone.Location = new System.Drawing.Point(123, 169);
+            this.lblTelephone.Location = new System.Drawing.Point(108, 132);
             this.lblTelephone.Name = "lblTelephone";
             this.lblTelephone.Size = new System.Drawing.Size(86, 18);
             this.lblTelephone.TabIndex = 28;
@@ -192,7 +192,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(316, 158);
+            this.lblAddress.Location = new System.Drawing.Point(291, 180);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(66, 18);
             this.lblAddress.TabIndex = 29;
@@ -202,7 +202,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(161, 111);
+            this.lblEmail.Location = new System.Drawing.Point(309, 108);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(48, 18);
             this.lblEmail.TabIndex = 30;
@@ -212,7 +212,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(280, 75);
+            this.lblName.Location = new System.Drawing.Point(284, 50);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(53, 18);
             this.lblName.TabIndex = 31;

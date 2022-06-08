@@ -16,12 +16,16 @@
 
         #region Métodos
 
+        // Método que mostra o primeiro UserControl a ser apresentado pelo programa,o UserControl do About
+
         private void About()
         {
             btnAbout.FlatAppearance.BorderColor = Color.Red;
             UcAbout About = new UcAbout();
             addUserControl(About);
         }
+
+        // Método que substitui o panel do formAguas pelo respetivo UserControl pretendido
 
         private void addUserControl(UserControl userControl)
         {
@@ -34,6 +38,8 @@
         #endregion
 
         #region UserControls
+
+        // No evento Click de cada botão, o UserControl aparece novamente no lugar do panel do formAguas
 
         private void btnStatistics_Click(object sender, EventArgs e)
         {
@@ -75,6 +81,8 @@
 
         #region Data
 
+        // Mostra a data atual no formAguas
+
         DateTime Data = DateTime.Now;
 
         private void DataAtual()
@@ -88,6 +96,8 @@
 
         private void btnSignOut_Click(object sender, EventArgs e)
         {
+            // Ao clicar no botão SignOut, o programa dá-te a opção de retornar ao formLogIn
+
             btnSignOut.FlatAppearance.BorderColor = Color.Red;
             DialogResult dr = MessageBox.Show("Deseja regressar ao LogIn?", "LogIn",
                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -105,6 +115,9 @@
 
         private void picExit_Click(object sender, EventArgs e)
         {
+            // Ao clicar na imagem " em forma de x" ou seja a imagem de sair, terás a opção de
+            // sair do programa, senão permaneces no formAguas
+
             DialogResult dr = MessageBox.Show("Deseja sair?", "Sair",
                               MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
@@ -116,6 +129,9 @@
         #endregion
 
         #region BorderColor
+
+        // Ao clicar em um botão a sua borda ficará vermelha, se clicar noutro, a borda do anterior fica
+        // com uma cor azul enquanto o novo botão fica com a borda vermelha, e por assim em diante
 
         private void btnStatistics_MouseClick(object sender, MouseEventArgs e)
         {

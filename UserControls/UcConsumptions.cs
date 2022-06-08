@@ -1,21 +1,18 @@
 ﻿namespace ProjetoAguas.UserControls
 {
     using System;
-    using System.Collections.Generic;
-    using System.Windows.Forms;
     using System.Linq;
+    using System.Windows.Forms;
 
     public partial class UcConsumptions : UserControl
     {
-        decimal escalao = 30;
-        decimal maxPagar = 0;
-        decimal aux = 0;
-
         public UcConsumptions() { InitializeComponent(); }
 
         DcAguasDataContext dc = new DcAguasDataContext();
 
         #region Consumos
+
+        // Método que calcula o consumo total, dependendo do escalão e do valor unitário que se introduz
 
         public void ModuloConsumos()
         {
@@ -28,16 +25,16 @@
 
                 if (e == 0)
                     txtTotalConsume.Text = "0";
-                else if(e != 0)
-                {
+                else if (e != 0)
                     txtTotalConsume.Text = (e * uv).ToString();
-                }
             }
         }
 
         #endregion
 
         #region DataGridView
+
+        // Atualiza a datagridview com os dados que correspondem a cada coluna 
 
         public void AtualizaDataGriewConsumptions()
         {
@@ -66,6 +63,8 @@
             }
         }
 
+        // Cria as colunas da datagridview, na mesma ordem do método "AtualizaDataGriewConsumptions"
+
         private void UcConsumptions_Load(object sender, EventArgs e)
         {
             DataGriewConsumptions.Columns.Add("colID", "IdConsumption");
@@ -81,6 +80,8 @@
             ComboBoxs();
             AtualizaDataGriewConsumptions();
         }
+
+        // Ao clicar numa linha da datagridview, os dados retornam aos seus campos
 
         private void DataGriewConsumptions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -100,14 +101,11 @@
             }
         }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
-        {
-            ModuloConsumos();
-        }
-
         #endregion
 
         #region ComboBoxs
+
+        // Preenche as combobox's do IdContract e IdInvoice com os seus respetivos Id's
 
         private void ComboBoxs()
         {
@@ -116,16 +114,14 @@
             cbIDcontract.DataSource = IDcontract;
             cbIDcontract.DisplayMember = "IdContrato";
 
-            //cbIDcontract.Items.Add("Selecione uma opção");
-
-            //foreach(Contratos cont in IDcontract)
-            //    cbIDcontract.Items.Add(cont.IdContrato);
-
             var IDinvoice = from Faturas in dc.Faturas select Faturas;
 
             cbIDinvoices.DataSource = IDinvoice;
             cbIDinvoices.DisplayMember = "IdFatura";
         }
+
+        // Ao selecionar um Idcontract na combobox, tanto a textbox do client como do Contract Type, são preenchidas de acordo 
+        // com o Id do cliente associado ao contrato
 
         private void cbIDcontract_TextChanged(object sender, EventArgs e)
         {
@@ -142,15 +138,14 @@
                     txtContractType.Text = contratos.TipoContrato;
                 }
             }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message);
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         #endregion
 
         #region Buttons
+
+        // Insere os dados na datagridview
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
@@ -189,6 +184,8 @@
             //}
         }
 
+        // Atualiza os dados selecionados da datagridview
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int Id = int.Parse(txtID.Text);
@@ -220,6 +217,8 @@
             LimpaCampos();
         }
 
+        // Elimina um contrato selecionado
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Consumos c = (from Consumos
@@ -235,14 +234,25 @@
             LimpaCampos();
         }
 
+        // Ao clicar no botão reset, todos os campos serão limpos
+
         private void btnReset_Click(object sender, EventArgs e)
         {
             LimpaCampos();
         }
 
+        // Ao ser clicado gera o consumo total deste contrato
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            ModuloConsumos();
+        }
+
         #endregion
 
         #region LimpaCampos
+
+        // Método que limpa todos os campos 
 
         private void LimpaCampos()
         {
@@ -260,11 +270,13 @@
 
         #region Validações
 
+        // Só se poderá introduzir dígitos ou pontos (por ser decimal) na txt dos escalões
+
         private void txtEchelons_TextChanged(object sender, EventArgs e)
         {
             foreach (char Escalao in txtEchelons.Text)
             {
-                if (!(char.IsDigit(Escalao) || Escalao == ' '))
+                if (!(char.IsDigit(Escalao) || Escalao == '.'))
                 {
                     MessageBox.Show("Atenção! Insera apenas dígitos!", "Aviso",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -274,13 +286,16 @@
             }
         }
 
+        // Apresenta uma mensagem de erro se o campo não for preenchido e dependendo do valor 
+        // introduzido diz que a que escalão aquele valor pretence
+         
         private void txtEchelons_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                int intervalo = Convert.ToInt32(txtEchelons.Text);
+                decimal intervalo = Convert.ToDecimal(txtEchelons.Text);
 
-                if (txtEchelons.Text.Length == ' ')
+                if (txtEchelons.Text.Length == 0)
                 {
                     MessageBox.Show("Campo Obrigatório! Introduza um escalão!",
                         "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -309,11 +324,13 @@
             }
         }
 
+        // Só se poderá introduzir dígitos ou pontos (por ser decimal) na txt do valor unitário
+
         private void txtUnitaryValue_TextChanged(object sender, EventArgs e)
         {
             foreach (char Value in txtUnitaryValue.Text)
             {
-                if (!(char.IsDigit(Value) || Value == ' '))
+                if (!(char.IsDigit(Value) || Value == '.'))
                 {
                     MessageBox.Show("Atenção! Insera apenas dígitos!", "Aviso",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);

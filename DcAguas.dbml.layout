@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DcAguas">
+  <DataContextMoniker Name="/DcAguasDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dcccedfe-dc7d-420c-bbbf-b029b8cdd6c0" absoluteBounds="1, 1.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DcAguasDataContext/Clientes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6e42b0f-57a0-4778-b2d6-e79f6224b8e1" absoluteBounds="1.0150000000000001, 1.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86554d9f-01a6-454d-9e25-67aab7646966" absoluteBounds="3.625, 1, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DcAguasDataContext/Contratos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a43b7c0b-10cc-4428-a7ec-0c9d2805c73d" absoluteBounds="3.6399999999999997, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 2.23640055338542); (3.625 : 2.23640055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DcAguasDataContext/Clientes/Cliente_Contrato" />
+      <nodes>
+        <classShapeMoniker Id="dcccedfe-dc7d-420c-bbbf-b029b8cdd6c0" />
+        <classShapeMoniker Id="86554d9f-01a6-454d-9e25-67aab7646966" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a73b574e-c337-401b-9661-879740b0522b" absoluteBounds="3.5, 4.375, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DcAguasDataContext/Consumos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4fc6db49-12d3-4e2f-8e67-e026e8e9026f" absoluteBounds="3.5149999999999997, 4.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5625 : 3.34780110677083); (4.5625 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DcAguasDataContext/Contratos/Contrato_Consumo" />
+      <nodes>
+        <classShapeMoniker Id="86554d9f-01a6-454d-9e25-67aab7646966" />
+        <classShapeMoniker Id="a73b574e-c337-401b-9661-879740b0522b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bb6594aa-a5da-4633-90b7-de018c978cf6" absoluteBounds="0.625, 4.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DcAguasDataContext/Faturas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12dfaf05-8574-4093-b95c-59cf70cdd5bc" absoluteBounds="0.64000000000000012, 4.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 5.67390055338542); (3.5 : 5.67390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DcAguasDataContext/Faturas/Fatura_Consumo" />
+      <nodes>
+        <classShapeMoniker Id="bb6594aa-a5da-4633-90b7-de018c978cf6" />
+        <classShapeMoniker Id="a73b574e-c337-401b-9661-879740b0522b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

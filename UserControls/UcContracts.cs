@@ -1,10 +1,10 @@
-﻿using System;
-using System.Data;
-using System.Linq;
-using System.Windows.Forms;
-
-namespace ProjetoAguas.UserControls
+﻿namespace ProjetoAguas.UserControls
 {
+    using System;
+    using System.Data;
+    using System.Linq;
+    using System.Windows.Forms;
+
     public partial class UcContracts : UserControl
     {
         public UcContracts() { InitializeComponent(); }
@@ -12,6 +12,8 @@ namespace ProjetoAguas.UserControls
         DcAguasDataContext dc = new DcAguasDataContext();
 
         #region DataGridView
+
+        // Atualiza a datagridview com os dados que correspondem a cada coluna 
 
         public void AtualizaDataGriewContracts() // Preenchimento da datagridview dos clientes
         {
@@ -44,6 +46,8 @@ namespace ProjetoAguas.UserControls
             }
         }
 
+        // Cria as colunas da datagridview, na mesma ordem do método "AtualizaDataGriewContracts"
+
         private void UcContracts_Load(object sender, EventArgs e)
         {
             DataGriewContracts.Columns.Add("colID", "IdContract");
@@ -56,7 +60,10 @@ namespace ProjetoAguas.UserControls
 
             ComboBoxs();
             AtualizaDataGriewContracts();
+            LimpaCampos();
         }
+
+        // Ao clicar numa linha da datagridview, os dados retornam aos seus campos
 
         private void DataGriewContracts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -78,6 +85,9 @@ namespace ProjetoAguas.UserControls
 
         #region ComboBoxs
 
+        // Preenche a combobox do nome dos clientes com uma pesquisa à base de dados
+        // Preenche tanto a combobox do tipo de contrato quanto do tipo de pagamento de forma manual
+
         private void ComboBoxs()
         {
             var listaClientes = from Clientes in dc.Clientes select Clientes;
@@ -94,9 +104,32 @@ namespace ProjetoAguas.UserControls
             cbPaymentType.Items.Add("Transferência");
         }
 
+        // Ao selecionar um cliente na combobox do nome dos clientes, de forma automática, a textbox
+        // da morada e do código postal são preenchidas de acordo com o Id associado ao cliente
+
+        private void cbClients_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var dadosCliente = from Clientes
+                                   in dc.Clientes
+                                   where Clientes.Nome == cbClients.Text
+                                   select Clientes;
+
+                foreach(Clientes c in dadosCliente)
+                {
+                    txtAddress.Text = c.Morada;
+                    mtxtbPostalCode.Text = c.CodigoPostal;
+                }
+            }
+            catch(Exception ex) {  MessageBox.Show(ex.Message); }
+        }
+
         #endregion
 
         #region Buttons
+
+        // Insere os dados na datagridview
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
@@ -126,6 +159,8 @@ namespace ProjetoAguas.UserControls
 
         }
 
+        // Atualiza os dados selecionados da datagridview
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int Id = int.Parse(txtID.Text);
@@ -153,6 +188,8 @@ namespace ProjetoAguas.UserControls
             LimpaCampos();
         }
 
+        // Elimina um contrato selecionado
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Contratos c = (from Contratos
@@ -169,6 +206,8 @@ namespace ProjetoAguas.UserControls
             LimpaCampos();
         }
 
+        // Ao clicar no botão reset, todos os campos serão limpos
+
         private void btnReset_Click(object sender, EventArgs e)
         {
             LimpaCampos();
@@ -178,9 +217,15 @@ namespace ProjetoAguas.UserControls
 
         #region LimpaCampos
 
+        // Método que limpa todos os campos 
+
         private void LimpaCampos()
         {
+            txtID.ResetText();
+            cbClients.ResetText();
+            cbContractType.ResetText();
             txtAddress.ResetText();
+            cbPaymentType.ResetText();
             mtxtbPostalCode.ResetText();
             dtpContractDate.ResetText();
         }

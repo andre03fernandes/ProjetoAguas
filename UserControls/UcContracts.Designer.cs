@@ -208,6 +208,7 @@
             // mtxtbPostalCode
             // 
             this.mtxtbPostalCode.BackColor = System.Drawing.SystemColors.Control;
+            this.mtxtbPostalCode.Enabled = false;
             this.mtxtbPostalCode.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtbPostalCode.ForeColor = System.Drawing.Color.Black;
             this.mtxtbPostalCode.Location = new System.Drawing.Point(491, 211);
@@ -220,6 +221,7 @@
             // txtAddress
             // 
             this.txtAddress.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAddress.Enabled = false;
             this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.Location = new System.Drawing.Point(406, 133);
@@ -287,6 +289,7 @@
             this.cbClients.Name = "cbClients";
             this.cbClients.Size = new System.Drawing.Size(145, 21);
             this.cbClients.TabIndex = 70;
+            this.cbClients.SelectedIndexChanged += new System.EventHandler(this.cbClients_SelectedIndexChanged);
             // 
             // cbContractType
             // 
@@ -304,7 +307,7 @@
             this.dtpContractDate.Name = "dtpContractDate";
             this.dtpContractDate.Size = new System.Drawing.Size(91, 20);
             this.dtpContractDate.TabIndex = 76;
-            this.dtpContractDate.Value = new System.DateTime(2022, 1, 6, 0, 0, 0, 0);
+            this.dtpContractDate.Value = new System.DateTime(2022, 6, 7, 0, 0, 0, 0);
             // 
             // cbPaymentType
             // 
