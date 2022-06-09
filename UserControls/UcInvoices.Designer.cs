@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.DataGriewInvoices = new System.Windows.Forms.DataGridView();
-            this.cbPaymentType = new System.Windows.Forms.ComboBox();
             this.dtpInvoiceDate = new System.Windows.Forms.DateTimePicker();
-            this.cbClients = new System.Windows.Forms.ComboBox();
+            this.cbIDcontracts = new System.Windows.Forms.ComboBox();
             this.lblClient = new System.Windows.Forms.Label();
             this.lblPaymentType = new System.Windows.Forms.Label();
             this.lblInvoiceDate = new System.Windows.Forms.Label();
@@ -46,14 +45,22 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.lblMonthlyConsumption = new System.Windows.Forms.Label();
-            this.txtUnitaryValue = new System.Windows.Forms.TextBox();
+            this.txtMonthlyConsumption = new System.Windows.Forms.TextBox();
             this.lblAmountToPay = new System.Windows.Forms.Label();
             this.txtAmountToPay = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtPaymentType = new System.Windows.Forms.TextBox();
+            this.txtClients = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnGenerate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGriewInvoices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInsert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGriewInvoices
@@ -65,32 +72,26 @@
             this.DataGriewInvoices.ReadOnly = true;
             this.DataGriewInvoices.Size = new System.Drawing.Size(813, 215);
             this.DataGriewInvoices.TabIndex = 115;
-            // 
-            // cbPaymentType
-            // 
-            this.cbPaymentType.FormattingEnabled = true;
-            this.cbPaymentType.Location = new System.Drawing.Point(196, 99);
-            this.cbPaymentType.Name = "cbPaymentType";
-            this.cbPaymentType.Size = new System.Drawing.Size(145, 21);
-            this.cbPaymentType.TabIndex = 114;
+            this.DataGriewInvoices.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGriewInvoices_CellClick);
             // 
             // dtpInvoiceDate
             // 
             this.dtpInvoiceDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dtpInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInvoiceDate.Location = new System.Drawing.Point(261, 189);
+            this.dtpInvoiceDate.Location = new System.Drawing.Point(221, 170);
             this.dtpInvoiceDate.Name = "dtpInvoiceDate";
             this.dtpInvoiceDate.Size = new System.Drawing.Size(91, 20);
             this.dtpInvoiceDate.TabIndex = 113;
             this.dtpInvoiceDate.Value = new System.DateTime(2022, 1, 6, 0, 0, 0, 0);
             // 
-            // cbClients
+            // cbIDcontracts
             // 
-            this.cbClients.FormattingEnabled = true;
-            this.cbClients.Location = new System.Drawing.Point(340, 47);
-            this.cbClients.Name = "cbClients";
-            this.cbClients.Size = new System.Drawing.Size(145, 21);
-            this.cbClients.TabIndex = 111;
+            this.cbIDcontracts.FormattingEnabled = true;
+            this.cbIDcontracts.Location = new System.Drawing.Point(375, 47);
+            this.cbIDcontracts.Name = "cbIDcontracts";
+            this.cbIDcontracts.Size = new System.Drawing.Size(145, 21);
+            this.cbIDcontracts.TabIndex = 111;
+            this.cbIDcontracts.SelectedIndexChanged += new System.EventHandler(this.cbIDcontracts_SelectedIndexChanged);
             // 
             // lblClient
             // 
@@ -98,15 +99,15 @@
             this.lblClient.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClient.Location = new System.Drawing.Point(290, 48);
             this.lblClient.Name = "lblClient";
-            this.lblClient.Size = new System.Drawing.Size(51, 18);
+            this.lblClient.Size = new System.Drawing.Size(85, 18);
             this.lblClient.TabIndex = 110;
-            this.lblClient.Text = "Client";
+            this.lblClient.Text = "IDcontract";
             // 
             // lblPaymentType
             // 
             this.lblPaymentType.AutoSize = true;
             this.lblPaymentType.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentType.Location = new System.Drawing.Point(89, 99);
+            this.lblPaymentType.Location = new System.Drawing.Point(87, 115);
             this.lblPaymentType.Name = "lblPaymentType";
             this.lblPaymentType.Size = new System.Drawing.Size(111, 18);
             this.lblPaymentType.TabIndex = 107;
@@ -116,7 +117,7 @@
             // 
             this.lblInvoiceDate.AutoSize = true;
             this.lblInvoiceDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvoiceDate.Location = new System.Drawing.Point(154, 189);
+            this.lblInvoiceDate.Location = new System.Drawing.Point(114, 170);
             this.lblInvoiceDate.Name = "lblInvoiceDate";
             this.lblInvoiceDate.Size = new System.Drawing.Size(102, 18);
             this.lblInvoiceDate.TabIndex = 105;
@@ -198,6 +199,7 @@
             this.btnUpdate.TabIndex = 96;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -213,6 +215,7 @@
             this.btnDelete.TabIndex = 95;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReset
             // 
@@ -228,6 +231,7 @@
             this.btnReset.TabIndex = 94;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnInsert
             // 
@@ -243,33 +247,35 @@
             this.btnInsert.TabIndex = 93;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // lblMonthlyConsumption
             // 
             this.lblMonthlyConsumption.AutoSize = true;
             this.lblMonthlyConsumption.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonthlyConsumption.Location = new System.Drawing.Point(327, 141);
+            this.lblMonthlyConsumption.Location = new System.Drawing.Point(343, 237);
             this.lblMonthlyConsumption.Name = "lblMonthlyConsumption";
             this.lblMonthlyConsumption.Size = new System.Drawing.Size(168, 18);
             this.lblMonthlyConsumption.TabIndex = 119;
             this.lblMonthlyConsumption.Text = "Monthly Consumption";
             // 
-            // txtUnitaryValue
+            // txtMonthlyConsumption
             // 
-            this.txtUnitaryValue.BackColor = System.Drawing.SystemColors.Control;
-            this.txtUnitaryValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnitaryValue.ForeColor = System.Drawing.Color.Black;
-            this.txtUnitaryValue.Location = new System.Drawing.Point(499, 139);
-            this.txtUnitaryValue.Multiline = true;
-            this.txtUnitaryValue.Name = "txtUnitaryValue";
-            this.txtUnitaryValue.Size = new System.Drawing.Size(71, 23);
-            this.txtUnitaryValue.TabIndex = 118;
+            this.txtMonthlyConsumption.BackColor = System.Drawing.SystemColors.Control;
+            this.txtMonthlyConsumption.Enabled = false;
+            this.txtMonthlyConsumption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMonthlyConsumption.ForeColor = System.Drawing.Color.Black;
+            this.txtMonthlyConsumption.Location = new System.Drawing.Point(515, 235);
+            this.txtMonthlyConsumption.Multiline = true;
+            this.txtMonthlyConsumption.Name = "txtMonthlyConsumption";
+            this.txtMonthlyConsumption.Size = new System.Drawing.Size(71, 23);
+            this.txtMonthlyConsumption.TabIndex = 118;
             // 
             // lblAmountToPay
             // 
             this.lblAmountToPay.AutoSize = true;
             this.lblAmountToPay.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmountToPay.Location = new System.Drawing.Point(396, 225);
+            this.lblAmountToPay.Location = new System.Drawing.Point(372, 172);
             this.lblAmountToPay.Name = "lblAmountToPay";
             this.lblAmountToPay.Size = new System.Drawing.Size(114, 18);
             this.lblAmountToPay.TabIndex = 117;
@@ -281,24 +287,99 @@
             this.txtAmountToPay.Enabled = false;
             this.txtAmountToPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmountToPay.ForeColor = System.Drawing.Color.Black;
-            this.txtAmountToPay.Location = new System.Drawing.Point(511, 222);
+            this.txtAmountToPay.Location = new System.Drawing.Point(487, 169);
             this.txtAmountToPay.Multiline = true;
             this.txtAmountToPay.Name = "txtAmountToPay";
             this.txtAmountToPay.Size = new System.Drawing.Size(70, 23);
             this.txtAmountToPay.TabIndex = 116;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ProjetoAguas.Properties.Resources.Euro;
+            this.pictureBox2.Location = new System.Drawing.Point(553, 164);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 120;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProjetoAguas.Properties.Resources.Euro;
+            this.pictureBox1.Location = new System.Drawing.Point(583, 231);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 121;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtPaymentType
+            // 
+            this.txtPaymentType.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPaymentType.Enabled = false;
+            this.txtPaymentType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaymentType.ForeColor = System.Drawing.Color.Black;
+            this.txtPaymentType.Location = new System.Drawing.Point(199, 112);
+            this.txtPaymentType.Multiline = true;
+            this.txtPaymentType.Name = "txtPaymentType";
+            this.txtPaymentType.Size = new System.Drawing.Size(146, 23);
+            this.txtPaymentType.TabIndex = 122;
+            // 
+            // txtClients
+            // 
+            this.txtClients.BackColor = System.Drawing.SystemColors.Control;
+            this.txtClients.Enabled = false;
+            this.txtClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClients.ForeColor = System.Drawing.Color.Black;
+            this.txtClients.Location = new System.Drawing.Point(413, 98);
+            this.txtClients.Multiline = true;
+            this.txtClients.Name = "txtClients";
+            this.txtClients.Size = new System.Drawing.Size(146, 23);
+            this.txtClients.TabIndex = 124;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(363, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 18);
+            this.label1.TabIndex = 123;
+            this.label1.Text = "Client";
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnGenerate.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.btnGenerate.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerate.Location = new System.Drawing.Point(221, 227);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(90, 31);
+            this.btnGenerate.TabIndex = 125;
+            this.btnGenerate.Text = "Generate ";
+            this.btnGenerate.UseVisualStyleBackColor = false;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
             // UcInvoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblMonthlyConsumption);
-            this.Controls.Add(this.txtUnitaryValue);
-            this.Controls.Add(this.lblAmountToPay);
+            this.Controls.Add(this.btnGenerate);
+            this.Controls.Add(this.txtClients);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtPaymentType);
             this.Controls.Add(this.txtAmountToPay);
+            this.Controls.Add(this.txtMonthlyConsumption);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.lblMonthlyConsumption);
+            this.Controls.Add(this.lblAmountToPay);
             this.Controls.Add(this.DataGriewInvoices);
-            this.Controls.Add(this.cbPaymentType);
             this.Controls.Add(this.dtpInvoiceDate);
-            this.Controls.Add(this.cbClients);
+            this.Controls.Add(this.cbIDcontracts);
             this.Controls.Add(this.lblClient);
             this.Controls.Add(this.lblPaymentType);
             this.Controls.Add(this.lblInvoiceDate);
@@ -314,11 +395,14 @@
             this.Controls.Add(this.btnInsert);
             this.Name = "UcInvoices";
             this.Size = new System.Drawing.Size(992, 539);
+            this.Load += new System.EventHandler(this.UcInvoices_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGriewInvoices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInsert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,9 +411,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DataGriewInvoices;
-        private System.Windows.Forms.ComboBox cbPaymentType;
         private System.Windows.Forms.DateTimePicker dtpInvoiceDate;
-        private System.Windows.Forms.ComboBox cbClients;
+        private System.Windows.Forms.ComboBox cbIDcontracts;
         private System.Windows.Forms.Label lblClient;
         private System.Windows.Forms.Label lblPaymentType;
         private System.Windows.Forms.Label lblInvoiceDate;
@@ -344,8 +427,14 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Label lblMonthlyConsumption;
-        private System.Windows.Forms.TextBox txtUnitaryValue;
+        private System.Windows.Forms.TextBox txtMonthlyConsumption;
         private System.Windows.Forms.Label lblAmountToPay;
         private System.Windows.Forms.TextBox txtAmountToPay;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtPaymentType;
+        private System.Windows.Forms.TextBox txtClients;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnGenerate;
     }
 }

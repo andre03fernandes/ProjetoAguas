@@ -49,8 +49,6 @@
             this.txtUnitaryValue = new System.Windows.Forms.TextBox();
             this.lblUnitaryValue = new System.Windows.Forms.Label();
             this.txtClients = new System.Windows.Forms.TextBox();
-            this.cbIDinvoices = new System.Windows.Forms.ComboBox();
-            this.lblidInvoice = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picUpdate = new System.Windows.Forms.PictureBox();
@@ -59,6 +57,9 @@
             this.picInsert = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnGenerate = new System.Windows.Forms.Button();
+            this.txtMonthConsume = new System.Windows.Forms.TextBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblMonthConsumption = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGriewConsumptions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInsert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -77,7 +79,7 @@
             this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(844, 101);
+            this.btnUpdate.Location = new System.Drawing.Point(833, 70);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(84, 43);
             this.btnUpdate.TabIndex = 43;
@@ -93,7 +95,7 @@
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(728, 173);
+            this.btnDelete.Location = new System.Drawing.Point(719, 142);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 43);
             this.btnDelete.TabIndex = 42;
@@ -109,7 +111,7 @@
             this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(844, 173);
+            this.btnReset.Location = new System.Drawing.Point(835, 142);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(84, 43);
             this.btnReset.TabIndex = 41;
@@ -125,7 +127,7 @@
             this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(728, 101);
+            this.btnInsert.Location = new System.Drawing.Point(717, 70);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(87, 43);
             this.btnInsert.TabIndex = 40;
@@ -137,7 +139,7 @@
             // 
             this.dtpConsumeDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dtpConsumeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpConsumeDate.Location = new System.Drawing.Point(238, 242);
+            this.dtpConsumeDate.Location = new System.Drawing.Point(228, 252);
             this.dtpConsumeDate.Name = "dtpConsumeDate";
             this.dtpConsumeDate.Size = new System.Drawing.Size(91, 20);
             this.dtpConsumeDate.TabIndex = 90;
@@ -146,7 +148,7 @@
             // cbIDcontract
             // 
             this.cbIDcontract.FormattingEnabled = true;
-            this.cbIDcontract.Location = new System.Drawing.Point(267, 30);
+            this.cbIDcontract.Location = new System.Drawing.Point(304, 29);
             this.cbIDcontract.Name = "cbIDcontract";
             this.cbIDcontract.Size = new System.Drawing.Size(116, 21);
             this.cbIDcontract.TabIndex = 88;
@@ -156,7 +158,7 @@
             // 
             this.lblidContract.AutoSize = true;
             this.lblidContract.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblidContract.Location = new System.Drawing.Point(184, 31);
+            this.lblidContract.Location = new System.Drawing.Point(221, 30);
             this.lblidContract.Name = "lblidContract";
             this.lblidContract.Size = new System.Drawing.Size(85, 18);
             this.lblidContract.TabIndex = 87;
@@ -176,7 +178,7 @@
             // 
             this.lblConsumeDate.AutoSize = true;
             this.lblConsumeDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConsumeDate.Location = new System.Drawing.Point(124, 242);
+            this.lblConsumeDate.Location = new System.Drawing.Point(114, 252);
             this.lblConsumeDate.Name = "lblConsumeDate";
             this.lblConsumeDate.Size = new System.Drawing.Size(117, 18);
             this.lblConsumeDate.TabIndex = 82;
@@ -186,7 +188,7 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(82, 31);
+            this.lblID.Location = new System.Drawing.Point(119, 30);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(23, 18);
             this.lblID.TabIndex = 81;
@@ -198,7 +200,7 @@
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.Black;
-            this.txtID.Location = new System.Drawing.Point(107, 29);
+            this.txtID.Location = new System.Drawing.Point(144, 28);
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(31, 23);
@@ -219,7 +221,7 @@
             // 
             this.lblTotalConsume.AutoSize = true;
             this.lblTotalConsume.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalConsume.Location = new System.Drawing.Point(384, 239);
+            this.lblTotalConsume.Location = new System.Drawing.Point(346, 253);
             this.lblTotalConsume.Name = "lblTotalConsume";
             this.lblTotalConsume.Size = new System.Drawing.Size(116, 18);
             this.lblTotalConsume.TabIndex = 94;
@@ -231,7 +233,7 @@
             this.txtTotalConsume.Enabled = false;
             this.txtTotalConsume.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalConsume.ForeColor = System.Drawing.Color.Black;
-            this.txtTotalConsume.Location = new System.Drawing.Point(503, 237);
+            this.txtTotalConsume.Location = new System.Drawing.Point(465, 251);
             this.txtTotalConsume.Multiline = true;
             this.txtTotalConsume.Name = "txtTotalConsume";
             this.txtTotalConsume.Size = new System.Drawing.Size(70, 23);
@@ -288,6 +290,7 @@
             // txtUnitaryValue
             // 
             this.txtUnitaryValue.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUnitaryValue.Enabled = false;
             this.txtUnitaryValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnitaryValue.ForeColor = System.Drawing.Color.Black;
             this.txtUnitaryValue.Location = new System.Drawing.Point(493, 139);
@@ -296,8 +299,6 @@
             this.txtUnitaryValue.Size = new System.Drawing.Size(71, 23);
             this.txtUnitaryValue.TabIndex = 100;
             this.txtUnitaryValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtUnitaryValue.TextChanged += new System.EventHandler(this.txtUnitaryValue_TextChanged);
-            this.txtUnitaryValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitaryValue_KeyPress);
             // 
             // lblUnitaryValue
             // 
@@ -320,24 +321,6 @@
             this.txtClients.Name = "txtClients";
             this.txtClients.Size = new System.Drawing.Size(125, 23);
             this.txtClients.TabIndex = 101;
-            // 
-            // cbIDinvoices
-            // 
-            this.cbIDinvoices.FormattingEnabled = true;
-            this.cbIDinvoices.Location = new System.Drawing.Point(507, 28);
-            this.cbIDinvoices.Name = "cbIDinvoices";
-            this.cbIDinvoices.Size = new System.Drawing.Size(116, 21);
-            this.cbIDinvoices.TabIndex = 103;
-            // 
-            // lblidInvoice
-            // 
-            this.lblidInvoice.AutoSize = true;
-            this.lblidInvoice.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblidInvoice.Location = new System.Drawing.Point(429, 29);
-            this.lblidInvoice.Name = "lblidInvoice";
-            this.lblidInvoice.Size = new System.Drawing.Size(78, 18);
-            this.lblidInvoice.TabIndex = 102;
-            this.lblidInvoice.Text = "IDinvoice";
             // 
             // pictureBox3
             // 
@@ -362,7 +345,7 @@
             // picUpdate
             // 
             this.picUpdate.Image = global::ProjetoAguas.Properties.Resources.Update;
-            this.picUpdate.Location = new System.Drawing.Point(821, 108);
+            this.picUpdate.Location = new System.Drawing.Point(812, 77);
             this.picUpdate.Name = "picUpdate";
             this.picUpdate.Size = new System.Drawing.Size(31, 26);
             this.picUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -372,7 +355,7 @@
             // picDelete
             // 
             this.picDelete.Image = global::ProjetoAguas.Properties.Resources.Delete;
-            this.picDelete.Location = new System.Drawing.Point(714, 181);
+            this.picDelete.Location = new System.Drawing.Point(705, 150);
             this.picDelete.Name = "picDelete";
             this.picDelete.Size = new System.Drawing.Size(31, 26);
             this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -382,7 +365,7 @@
             // picReset
             // 
             this.picReset.Image = global::ProjetoAguas.Properties.Resources.Reset;
-            this.picReset.Location = new System.Drawing.Point(830, 181);
+            this.picReset.Location = new System.Drawing.Point(821, 150);
             this.picReset.Name = "picReset";
             this.picReset.Size = new System.Drawing.Size(31, 26);
             this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -392,7 +375,7 @@
             // picInsert
             // 
             this.picInsert.Image = global::ProjetoAguas.Properties.Resources.Insert;
-            this.picInsert.Location = new System.Drawing.Point(716, 110);
+            this.picInsert.Location = new System.Drawing.Point(707, 79);
             this.picInsert.Name = "picInsert";
             this.picInsert.Size = new System.Drawing.Size(31, 26);
             this.picInsert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -402,7 +385,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ProjetoAguas.Properties.Resources.Euro;
-            this.pictureBox2.Location = new System.Drawing.Point(569, 233);
+            this.pictureBox2.Location = new System.Drawing.Point(531, 247);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -417,7 +400,7 @@
             this.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerate.Location = new System.Drawing.Point(312, 185);
+            this.btnGenerate.Location = new System.Drawing.Point(308, 194);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(90, 31);
             this.btnGenerate.TabIndex = 108;
@@ -425,10 +408,46 @@
             this.btnGenerate.UseVisualStyleBackColor = false;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
+            // txtMonthConsume
+            // 
+            this.txtMonthConsume.BackColor = System.Drawing.SystemColors.Control;
+            this.txtMonthConsume.Enabled = false;
+            this.txtMonthConsume.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMonthConsume.ForeColor = System.Drawing.Color.Black;
+            this.txtMonthConsume.Location = new System.Drawing.Point(783, 251);
+            this.txtMonthConsume.Multiline = true;
+            this.txtMonthConsume.Name = "txtMonthConsume";
+            this.txtMonthConsume.Size = new System.Drawing.Size(71, 23);
+            this.txtMonthConsume.TabIndex = 110;
+            this.txtMonthConsume.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::ProjetoAguas.Properties.Resources.Euro;
+            this.pictureBox4.Location = new System.Drawing.Point(850, 246);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(35, 31);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 111;
+            this.pictureBox4.TabStop = false;
+            // 
+            // lblMonthConsumption
+            // 
+            this.lblMonthConsumption.AutoSize = true;
+            this.lblMonthConsumption.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonthConsumption.Location = new System.Drawing.Point(611, 253);
+            this.lblMonthConsumption.Name = "lblMonthConsumption";
+            this.lblMonthConsumption.Size = new System.Drawing.Size(168, 18);
+            this.lblMonthConsumption.TabIndex = 109;
+            this.lblMonthConsumption.Text = "Monthly Consumption";
+            // 
             // UcConsumptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtMonthConsume);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.lblMonthConsumption);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.txtTotalConsume);
             this.Controls.Add(this.pictureBox2);
@@ -436,8 +455,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.txtEchelons);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cbIDinvoices);
-            this.Controls.Add(this.lblidInvoice);
             this.Controls.Add(this.txtClients);
             this.Controls.Add(this.lblUnitaryValue);
             this.Controls.Add(this.lblContractType);
@@ -471,6 +488,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInsert)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,11 +521,12 @@
         private System.Windows.Forms.TextBox txtUnitaryValue;
         private System.Windows.Forms.Label lblUnitaryValue;
         private System.Windows.Forms.TextBox txtClients;
-        private System.Windows.Forms.ComboBox cbIDinvoices;
-        private System.Windows.Forms.Label lblidInvoice;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.TextBox txtMonthConsume;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lblMonthConsumption;
     }
 }

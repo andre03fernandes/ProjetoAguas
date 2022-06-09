@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelCabeçalho = new System.Windows.Forms.Panel();
             this.lblData = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
@@ -42,6 +43,7 @@
             this.btnContracts = new System.Windows.Forms.Button();
             this.btnStatistics = new System.Windows.Forms.Button();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.timerDate = new System.Windows.Forms.Timer(this.components);
             this.panelCabeçalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
@@ -63,15 +65,13 @@
             // 
             // lblData
             // 
-            this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData.ForeColor = System.Drawing.Color.Black;
-            this.lblData.Location = new System.Drawing.Point(824, 33);
+            this.lblData.Location = new System.Drawing.Point(742, 33);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(44, 18);
+            this.lblData.Size = new System.Drawing.Size(172, 23);
             this.lblData.TabIndex = 10;
-            this.lblData.Text = "Date";
-            this.lblData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picExit
             // 
@@ -234,6 +234,12 @@
             this.panelContent.Size = new System.Drawing.Size(988, 546);
             this.panelContent.TabIndex = 2;
             // 
+            // timerDate
+            // 
+            this.timerDate.Enabled = true;
+            this.timerDate.Interval = 1;
+            this.timerDate.Tick += new System.EventHandler(this.timerDate_Tick_1);
+            // 
             // FormAguas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,5 +277,6 @@
         private System.Windows.Forms.Button btnClients;
         private System.Windows.Forms.Button btnConsumptions;
         private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Timer timerDate;
     }
 }

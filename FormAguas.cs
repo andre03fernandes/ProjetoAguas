@@ -10,7 +10,6 @@
         public FormAguas()
         {
             InitializeComponent();
-            DataAtual();
             About();
         }
 
@@ -81,13 +80,9 @@
 
         #region Data
 
-        // Mostra a data atual no formAguas
-
-        DateTime Data = DateTime.Now;
-
-        private void DataAtual()
+        private void timerDate_Tick_1(object sender, EventArgs e)
         {
-            lblData.Text = Data.ToString("dd/MM/yyyy");
+            lblData.Text = DateTime.Now.ToString("dd-MMM-yyyy HH:mm:ss tt");
         }
 
         #endregion
@@ -200,5 +195,6 @@
         }
 
         #endregion
+
     }
 }
