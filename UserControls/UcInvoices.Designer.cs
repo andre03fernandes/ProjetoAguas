@@ -36,10 +36,6 @@
             this.lblInvoiceDate = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.picUpdate = new System.Windows.Forms.PictureBox();
-            this.picDelete = new System.Windows.Forms.PictureBox();
-            this.picReset = new System.Windows.Forms.PictureBox();
-            this.picInsert = new System.Windows.Forms.PictureBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -48,19 +44,25 @@
             this.txtMonthlyConsumption = new System.Windows.Forms.TextBox();
             this.lblAmountToPay = new System.Windows.Forms.Label();
             this.txtAmountToPay = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPaymentType = new System.Windows.Forms.TextBox();
             this.txtClients = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
+            this.picPDF = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picUpdate = new System.Windows.Forms.PictureBox();
+            this.picDelete = new System.Windows.Forms.PictureBox();
+            this.picReset = new System.Windows.Forms.PictureBox();
+            this.picInsert = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGriewInvoices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPDF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInsert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGriewInvoices
@@ -145,46 +147,6 @@
             this.txtID.Size = new System.Drawing.Size(31, 23);
             this.txtID.TabIndex = 101;
             // 
-            // picUpdate
-            // 
-            this.picUpdate.Image = global::ProjetoAguas.Properties.Resources.Update;
-            this.picUpdate.Location = new System.Drawing.Point(773, 99);
-            this.picUpdate.Name = "picUpdate";
-            this.picUpdate.Size = new System.Drawing.Size(31, 26);
-            this.picUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picUpdate.TabIndex = 100;
-            this.picUpdate.TabStop = false;
-            // 
-            // picDelete
-            // 
-            this.picDelete.Image = global::ProjetoAguas.Properties.Resources.Delete;
-            this.picDelete.Location = new System.Drawing.Point(666, 172);
-            this.picDelete.Name = "picDelete";
-            this.picDelete.Size = new System.Drawing.Size(31, 26);
-            this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picDelete.TabIndex = 99;
-            this.picDelete.TabStop = false;
-            // 
-            // picReset
-            // 
-            this.picReset.Image = global::ProjetoAguas.Properties.Resources.Reset;
-            this.picReset.Location = new System.Drawing.Point(782, 172);
-            this.picReset.Name = "picReset";
-            this.picReset.Size = new System.Drawing.Size(31, 26);
-            this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picReset.TabIndex = 98;
-            this.picReset.TabStop = false;
-            // 
-            // picInsert
-            // 
-            this.picInsert.Image = global::ProjetoAguas.Properties.Resources.Insert;
-            this.picInsert.Location = new System.Drawing.Point(668, 101);
-            this.picInsert.Name = "picInsert";
-            this.picInsert.Size = new System.Drawing.Size(31, 26);
-            this.picInsert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picInsert.TabIndex = 97;
-            this.picInsert.TabStop = false;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.Control;
@@ -193,7 +155,7 @@
             this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(796, 92);
+            this.btnUpdate.Location = new System.Drawing.Point(796, 63);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(84, 43);
             this.btnUpdate.TabIndex = 96;
@@ -209,7 +171,7 @@
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(680, 164);
+            this.btnDelete.Location = new System.Drawing.Point(680, 135);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 43);
             this.btnDelete.TabIndex = 95;
@@ -225,7 +187,7 @@
             this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(796, 164);
+            this.btnReset.Location = new System.Drawing.Point(796, 135);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(84, 43);
             this.btnReset.TabIndex = 94;
@@ -241,7 +203,7 @@
             this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(680, 92);
+            this.btnInsert.Location = new System.Drawing.Point(680, 63);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(87, 43);
             this.btnInsert.TabIndex = 93;
@@ -293,26 +255,6 @@
             this.txtAmountToPay.Size = new System.Drawing.Size(70, 23);
             this.txtAmountToPay.TabIndex = 116;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ProjetoAguas.Properties.Resources.Euro;
-            this.pictureBox2.Location = new System.Drawing.Point(553, 164);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 31);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 120;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProjetoAguas.Properties.Resources.Euro;
-            this.pictureBox1.Location = new System.Drawing.Point(583, 231);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 121;
-            this.pictureBox1.TabStop = false;
-            // 
             // txtPaymentType
             // 
             this.txtPaymentType.BackColor = System.Drawing.SystemColors.Control;
@@ -363,10 +305,82 @@
             this.btnGenerate.UseVisualStyleBackColor = false;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
+            // picPDF
+            // 
+            this.picPDF.Image = global::ProjetoAguas.Properties.Resources.Pdf;
+            this.picPDF.Location = new System.Drawing.Point(736, 208);
+            this.picPDF.Name = "picPDF";
+            this.picPDF.Size = new System.Drawing.Size(52, 47);
+            this.picPDF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPDF.TabIndex = 127;
+            this.picPDF.TabStop = false;
+            this.picPDF.Click += new System.EventHandler(this.picPDF_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProjetoAguas.Properties.Resources.Euro;
+            this.pictureBox1.Location = new System.Drawing.Point(583, 231);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 121;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ProjetoAguas.Properties.Resources.Euro;
+            this.pictureBox2.Location = new System.Drawing.Point(553, 164);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 120;
+            this.pictureBox2.TabStop = false;
+            // 
+            // picUpdate
+            // 
+            this.picUpdate.Image = global::ProjetoAguas.Properties.Resources.Update;
+            this.picUpdate.Location = new System.Drawing.Point(773, 70);
+            this.picUpdate.Name = "picUpdate";
+            this.picUpdate.Size = new System.Drawing.Size(31, 26);
+            this.picUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUpdate.TabIndex = 100;
+            this.picUpdate.TabStop = false;
+            // 
+            // picDelete
+            // 
+            this.picDelete.Image = global::ProjetoAguas.Properties.Resources.Delete;
+            this.picDelete.Location = new System.Drawing.Point(666, 143);
+            this.picDelete.Name = "picDelete";
+            this.picDelete.Size = new System.Drawing.Size(31, 26);
+            this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDelete.TabIndex = 99;
+            this.picDelete.TabStop = false;
+            // 
+            // picReset
+            // 
+            this.picReset.Image = global::ProjetoAguas.Properties.Resources.Reset;
+            this.picReset.Location = new System.Drawing.Point(782, 143);
+            this.picReset.Name = "picReset";
+            this.picReset.Size = new System.Drawing.Size(31, 26);
+            this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picReset.TabIndex = 98;
+            this.picReset.TabStop = false;
+            // 
+            // picInsert
+            // 
+            this.picInsert.Image = global::ProjetoAguas.Properties.Resources.Insert;
+            this.picInsert.Location = new System.Drawing.Point(668, 72);
+            this.picInsert.Name = "picInsert";
+            this.picInsert.Size = new System.Drawing.Size(31, 26);
+            this.picInsert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInsert.TabIndex = 97;
+            this.picInsert.TabStop = false;
+            // 
             // UcInvoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.picPDF);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.txtClients);
             this.Controls.Add(this.label1);
@@ -397,12 +411,13 @@
             this.Size = new System.Drawing.Size(992, 539);
             this.Load += new System.EventHandler(this.UcInvoices_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGriewInvoices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPDF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picReset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInsert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,5 +451,6 @@
         private System.Windows.Forms.TextBox txtClients;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.PictureBox picPDF;
     }
 }

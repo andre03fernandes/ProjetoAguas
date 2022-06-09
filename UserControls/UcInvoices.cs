@@ -248,5 +248,17 @@
         }
 
         #endregion
+
+        private void picPDF_Click(object sender, EventArgs e)
+        {
+            SendEmail pdf = new SendEmail();
+            pdf.Name = txtClients.Text;
+            pdf.PaymentType = txtPaymentType.Text;
+            pdf.InvoiceDate = dtpInvoiceDate.Text;
+            pdf.MonthlyConsume = txtMonthlyConsumption.Text;
+            pdf.Amount = txtAmountToPay.Text;
+            pdf.ShowDialog();
+
+        }
     }
 }

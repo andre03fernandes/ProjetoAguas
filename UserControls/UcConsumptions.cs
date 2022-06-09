@@ -327,9 +327,9 @@
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                decimal intervalo = Convert.ToDecimal(txtEchelons.Text);
+                int intervalo = int.Parse(txtEchelons.Text);
 
-                if (txtEchelons.Text.Length == 0)
+                if (txtEchelons.Text == "")
                 {
                     MessageBox.Show("Campo Obrigatório! Introduza um escalão!",
                         "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
