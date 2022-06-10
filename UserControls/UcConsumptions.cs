@@ -79,13 +79,12 @@
 
                 DataGriewConsumptions.Rows[linha].Cells[0].Value = consumo.IdConsumo;
                 DataGriewConsumptions.Rows[linha].Cells[1].Value = consumo.IdContrato;
-                DataGriewConsumptions.Rows[linha].Cells[2].Value = consumo.IdFatura;
-                DataGriewConsumptions.Rows[linha].Cells[3].Value = consumo.NomeCliente;
-                DataGriewConsumptions.Rows[linha].Cells[4].Value = consumo.TipoContrato;
-                DataGriewConsumptions.Rows[linha].Cells[5].Value = consumo.Escaloes;
-                DataGriewConsumptions.Rows[linha].Cells[6].Value = consumo.ValorUnitario;
-                DataGriewConsumptions.Rows[linha].Cells[7].Value = consumo.DataConsumo;
-                DataGriewConsumptions.Rows[linha].Cells[8].Value = consumo.ConsumoTotal;
+                DataGriewConsumptions.Rows[linha].Cells[2].Value = consumo.NomeCliente;
+                DataGriewConsumptions.Rows[linha].Cells[3].Value = consumo.TipoContrato;
+                DataGriewConsumptions.Rows[linha].Cells[4].Value = consumo.Escaloes;
+                DataGriewConsumptions.Rows[linha].Cells[5].Value = consumo.ValorUnitario;
+                DataGriewConsumptions.Rows[linha].Cells[6].Value = consumo.DataConsumo;
+                DataGriewConsumptions.Rows[linha].Cells[7].Value = consumo.ConsumoTotal;
 
                 linha++;
             }
@@ -97,7 +96,6 @@
         {
             DataGriewConsumptions.Columns.Add("colID", "IdConsumption");
             DataGriewConsumptions.Columns.Add("colIDcontract", "IdContract");
-            DataGriewConsumptions.Columns.Add("colMonthConsume", "Monthly Consumption");
             DataGriewConsumptions.Columns.Add("colClient", "Client");
             DataGriewConsumptions.Columns.Add("colContractType", "Contract Type");
             DataGriewConsumptions.Columns.Add("colEscaloes", "Echelons");
@@ -120,7 +118,6 @@
 
                 txtID.Text = row.Cells["colID"].Value.ToString();
                 cbIDcontract.Text = row.Cells["colIDcontract"].Value.ToString();
-                txtMonthConsume.Text = row.Cells["colMonthConsume"].Value.ToString();
                 txtClients.Text = row.Cells["colClient"].Value.ToString();
                 txtContractType.Text = row.Cells["colContractType"].Value.ToString();
                 txtEchelons.Text = row.Cells["colEscaloes"].Value.ToString();
@@ -160,16 +157,7 @@
                 {
                     txtClients.Text = contratos.Clientes.Nome;
                     txtContractType.Text = contratos.TipoContrato;
-                }
-
-                var month = from Faturas
-                            in dc.Faturas
-                            where Faturas.IdFatura == int.Parse(cbIDcontract.Text)
-                            select Faturas;
-
-                foreach(Faturas faturas in month)
-                {
-                    txtMonthConsume.Text = faturas.ConsumoMensal.ToString();
+                    
                 }
             }
             catch (Exception ex) { /* MessageBox.Show(ex.Message); */ }
@@ -194,7 +182,6 @@
             Consumos c = new Consumos
             {
                 IdContrato = Id.IdContrato,
-                //IdFatura = IdInvoice.IdFatura,
                 NomeCliente = Client.ToString(),
                 TipoContrato = ContractType,
                 Escaloes = (decimal.Parse(Escaloes)),
@@ -209,12 +196,6 @@
 
             AtualizaDataGriewConsumptions();
             LimpaCampos();
-
-            //if(txtUnitaryValue.Text == null)
-            //{
-            //    MessageBox.Show("Do you want to generate a total consume from an estimate?",
-            //                    "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //}
         }
 
         // Atualiza os dados selecionados da datagridview
@@ -223,7 +204,6 @@
         {
             int Id = int.Parse(txtID.Text);
             Contratos IdContract = (Contratos)cbIDcontract.SelectedItem;
-            //Faturas Idinvoice = (Faturas)cbIDinvoices.SelectedItem;
             string Client = txtClients.Text;
             string ContractType = txtContractType.Text;
             string Escaloes = txtEchelons.Text;
@@ -236,7 +216,6 @@
                           select Consumos).First();
 
             c.IdContrato = IdContract.IdContrato;
-            //c.IdFatura = Idinvoice.IdFatura;
             c.NomeCliente = Client;
             c.TipoContrato = ContractType;
             c.Escaloes = (decimal.Parse(Escaloes));
@@ -291,13 +270,11 @@
         {
             txtID.ResetText();
             cbIDcontract.ResetText();
-            //cbIDinvoices.ResetText();
             txtClients.ResetText();
             txtContractType.ResetText();
             txtEchelons.ResetText();
             txtUnitaryValue.ResetText();
             txtTotalConsume.ResetText();
-            txtMonthConsume.ResetText();
         }
 
         #endregion

@@ -16,7 +16,7 @@
   <Table Name="Contrato.Contratos" Member="Contratos">
     <Type Name="Contratos">
       <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IdCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DataContrato" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="TipoContrato" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="TipoPagamento" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
@@ -30,8 +30,8 @@
   <Table Name="Leitura.Consumos" Member="Consumos">
     <Type Name="Consumos">
       <Column Name="IdConsumo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IdFatura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdContrato" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdFatura" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NomeCliente" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="TipoContrato" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Escaloes" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
@@ -46,7 +46,7 @@
   <Table Name="Contrato.Faturas" Member="Faturas">
     <Type Name="Faturas">
       <Column Name="IdFatura" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IdContrato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdContrato" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TipoPagamento" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="DataFatura" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Cliente" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />

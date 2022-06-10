@@ -373,7 +373,7 @@ namespace ProjetoAguas
 		
 		private int _IdContrato;
 		
-		private int _IdCliente;
+		private System.Nullable<int> _IdCliente;
 		
 		private string _DataContrato;
 		
@@ -397,7 +397,7 @@ namespace ProjetoAguas
     partial void OnCreated();
     partial void OnIdContratoChanging(int value);
     partial void OnIdContratoChanged();
-    partial void OnIdClienteChanging(int value);
+    partial void OnIdClienteChanging(System.Nullable<int> value);
     partial void OnIdClienteChanged();
     partial void OnDataContratoChanging(string value);
     partial void OnDataContratoChanged();
@@ -440,8 +440,8 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdCliente", DbType="Int NOT NULL")]
-		public int IdCliente
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdCliente", DbType="Int")]
+		public System.Nullable<int> IdCliente
 		{
 			get
 			{
@@ -624,7 +624,7 @@ namespace ProjetoAguas
 					}
 					else
 					{
-						this._IdCliente = default(int);
+						this._IdCliente = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Clientes");
 				}
@@ -672,9 +672,9 @@ namespace ProjetoAguas
 		
 		private int _IdConsumo;
 		
-		private int _IdContrato;
+		private System.Nullable<int> _IdContrato;
 		
-		private int _IdFatura;
+		private System.Nullable<int> _IdFatura;
 		
 		private string _NomeCliente;
 		
@@ -700,9 +700,9 @@ namespace ProjetoAguas
     partial void OnCreated();
     partial void OnIdConsumoChanging(int value);
     partial void OnIdConsumoChanged();
-    partial void OnIdContratoChanging(int value);
+    partial void OnIdContratoChanging(System.Nullable<int> value);
     partial void OnIdContratoChanged();
-    partial void OnIdFaturaChanging(int value);
+    partial void OnIdFaturaChanging(System.Nullable<int> value);
     partial void OnIdFaturaChanged();
     partial void OnNomeClienteChanging(string value);
     partial void OnNomeClienteChanged();
@@ -747,8 +747,8 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdContrato", DbType="Int NOT NULL")]
-		public int IdContrato
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdContrato", DbType="Int")]
+		public System.Nullable<int> IdContrato
 		{
 			get
 			{
@@ -771,8 +771,8 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdFatura", DbType="Int NOT NULL")]
-		public int IdFatura
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdFatura", DbType="Int")]
+		public System.Nullable<int> IdFatura
 		{
 			get
 			{
@@ -962,7 +962,7 @@ namespace ProjetoAguas
 					}
 					else
 					{
-						this._IdContrato = default(int);
+						this._IdContrato = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Contratos");
 				}
@@ -996,7 +996,7 @@ namespace ProjetoAguas
 					}
 					else
 					{
-						this._IdFatura = default(int);
+						this._IdFatura = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Faturas");
 				}
@@ -1032,7 +1032,7 @@ namespace ProjetoAguas
 		
 		private int _IdFatura;
 		
-		private int _IdContrato;
+		private System.Nullable<int> _IdContrato;
 		
 		private string _TipoPagamento;
 		
@@ -1054,7 +1054,7 @@ namespace ProjetoAguas
     partial void OnCreated();
     partial void OnIdFaturaChanging(int value);
     partial void OnIdFaturaChanged();
-    partial void OnIdContratoChanging(int value);
+    partial void OnIdContratoChanging(System.Nullable<int> value);
     partial void OnIdContratoChanged();
     partial void OnTipoPagamentoChanging(string value);
     partial void OnTipoPagamentoChanged();
@@ -1096,8 +1096,8 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdContrato", DbType="Int NOT NULL")]
-		public int IdContrato
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdContrato", DbType="Int")]
+		public System.Nullable<int> IdContrato
 		{
 			get
 			{

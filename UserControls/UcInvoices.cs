@@ -127,12 +127,15 @@
 
                 var value = from Consumos
                             in dc.Consumos
-                            where Consumos.IdFatura == int.Parse(cbIDcontracts.Text)
+                            where Consumos.IdContrato == int.Parse(cbIDcontracts.Text)
                             select Consumos;
 
                 foreach(Consumos consumos in value)
                 {
-                    txtAmountToPay.Text = consumos.ConsumoTotal;
+                    if (consumos.ConsumoTotal.Count() > 0)
+                        txtAmountToPay.Text = consumos.ConsumoTotal;
+                    else
+                        txtAmountToPay.Text = "0";
                 }
             }
             catch (Exception ex) { /* MessageBox.Show(ex.Message); */ }
@@ -232,6 +235,18 @@
             MonthConsume();
         }
 
+        private void picPDF_Click(object sender, EventArgs e)
+        {
+            SendEmail pdf = new SendEmail();
+            pdf.Name = txtClients.Text;
+            pdf.PaymentType = txtPaymentType.Text;
+            pdf.InvoiceDate = dtpInvoiceDate.Text;
+            pdf.MonthlyConsume = txtMonthlyConsumption.Text;
+            pdf.Amount = txtAmountToPay.Text;
+            pdf.ShowDialog();
+
+        }
+
         #endregion
 
         #region LimpaCampos
@@ -249,16 +264,5 @@
 
         #endregion
 
-        private void picPDF_Click(object sender, EventArgs e)
-        {
-            SendEmail pdf = new SendEmail();
-            pdf.Name = txtClients.Text;
-            pdf.PaymentType = txtPaymentType.Text;
-            pdf.InvoiceDate = dtpInvoiceDate.Text;
-            pdf.MonthlyConsume = txtMonthlyConsumption.Text;
-            pdf.Amount = txtAmountToPay.Text;
-            pdf.ShowDialog();
-
-        }
     }
 }

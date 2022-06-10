@@ -115,12 +115,12 @@
     <Compile Include="UserControls\UcStatistics.Designer.cs">
       <DependentUpon>UcStatistics.cs</DependentUpon>
     </Compile>
-    <None Include="DcAguas.dbml.layout">
-      <DependentUpon>DcAguas.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="AttachPDF.resx">
       <DependentUpon>AttachPDF.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DcAguas.dbml.layout">
+      <DependentUpon>DcAguas.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="SendEmail.resx">
       <DependentUpon>SendEmail.cs</DependentUpon>
     </EmbeddedResource>
