@@ -8,7 +8,7 @@
         public UcStatistics()
         {
             InitializeComponent();
-            /*Earnings();*/
+            Earnings();
             NumberContracts();
             NumberClients();
             NumberInvoices();
@@ -22,8 +22,14 @@
 
         private void Earnings()
         {
-            //var earn = from Consumos in dc.Consumos select Consumos;
-            //lblEarnings.Text = earn.Sum(e => e.ConsumoTotal);
+            decimal soma = 0;
+            var earn = from Consumos in dc.Consumos select Consumos;
+            
+            foreach(Consumos consumos in earn)
+            {
+                soma += decimal.Parse(consumos.ConsumoTotal);
+                lblEarnings.Text = soma.ToString() + "€";
+            }
         }
 
         // Número de contratos da empresa

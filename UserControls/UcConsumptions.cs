@@ -256,7 +256,19 @@
 
         private void btnEstimate_Click(object sender, EventArgs e)
         {
+            decimal valorTotal = 0;
+            int cont = 0;
 
+            var estimativa = from Consumos in dc.Consumos select Consumos;
+
+            foreach(Consumos consumos in estimativa)
+            {
+                cont++;
+                valorTotal += decimal.Parse(consumos.ConsumoTotal);
+            }
+            decimal est = valorTotal / cont;
+
+            txtTotalConsume.Text = est.ToString();
         }
 
         #endregion
