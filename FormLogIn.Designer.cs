@@ -30,30 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogIn));
             this.picGotas = new System.Windows.Forms.PictureBox();
-            this.picH20 = new System.Windows.Forms.PictureBox();
             this.picExit = new System.Windows.Forms.PictureBox();
-            this.picUser = new System.Windows.Forms.PictureBox();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.picPeixe2 = new System.Windows.Forms.PictureBox();
             this.picPeixe1 = new System.Windows.Forms.PictureBox();
             this.picOndas = new System.Windows.Forms.PictureBox();
             this.picUsername = new System.Windows.Forms.PictureBox();
             this.picPassword = new System.Windows.Forms.PictureBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtLine2 = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtLine1 = new System.Windows.Forms.TextBox();
             this.picLogIn = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtLine2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picGotas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picH20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPeixe2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPeixe1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOndas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // picGotas
@@ -66,16 +64,6 @@
             this.picGotas.TabIndex = 0;
             this.picGotas.TabStop = false;
             // 
-            // picH20
-            // 
-            this.picH20.Image = global::ProjetoAguas.Properties.Resources.H2O;
-            this.picH20.Location = new System.Drawing.Point(62, 53);
-            this.picH20.Name = "picH20";
-            this.picH20.Size = new System.Drawing.Size(145, 92);
-            this.picH20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picH20.TabIndex = 1;
-            this.picH20.TabStop = false;
-            // 
             // picExit
             // 
             this.picExit.Image = global::ProjetoAguas.Properties.Resources.ExitLogIn;
@@ -87,22 +75,12 @@
             this.picExit.TabStop = false;
             this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
-            // picUser
-            // 
-            this.picUser.Image = global::ProjetoAguas.Properties.Resources.UserProfile;
-            this.picUser.Location = new System.Drawing.Point(366, 21);
-            this.picUser.Name = "picUser";
-            this.picUser.Size = new System.Drawing.Size(150, 100);
-            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picUser.TabIndex = 3;
-            this.picUser.TabStop = false;
-            // 
             // lblWelcome
             // 
-            this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(347, 141);
+            this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(19, 80);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(186, 45);
+            this.lblWelcome.Size = new System.Drawing.Size(140, 34);
             this.lblWelcome.TabIndex = 4;
             this.lblWelcome.Text = "Welcome";
             // 
@@ -156,31 +134,6 @@
             this.picPassword.TabIndex = 9;
             this.picPassword.TabStop = false;
             // 
-            // txtUsername
-            // 
-            this.txtUsername.BackColor = System.Drawing.SystemColors.Control;
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(349, 215);
-            this.txtUsername.Multiline = true;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(173, 19);
-            this.txtUsername.TabIndex = 10;
-            this.txtUsername.Text = "Admin";
-            // 
-            // txtLine2
-            // 
-            this.txtLine2.BackColor = System.Drawing.SystemColors.Control;
-            this.txtLine2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLine2.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLine2.Location = new System.Drawing.Point(300, 211);
-            this.txtLine2.Multiline = true;
-            this.txtLine2.Name = "txtLine2";
-            this.txtLine2.ReadOnly = true;
-            this.txtLine2.Size = new System.Drawing.Size(280, 57);
-            this.txtLine2.TabIndex = 11;
-            this.txtLine2.Text = "____________________";
-            // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.Control;
@@ -218,12 +171,48 @@
             this.picLogIn.TabStop = false;
             this.picLogIn.Click += new System.EventHandler(this.picLogIn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(343, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(188, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(349, 215);
+            this.txtUsername.Multiline = true;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(173, 19);
+            this.txtUsername.TabIndex = 10;
+            this.txtUsername.Text = "Admin";
+            // 
+            // txtLine2
+            // 
+            this.txtLine2.BackColor = System.Drawing.SystemColors.Control;
+            this.txtLine2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLine2.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLine2.Location = new System.Drawing.Point(300, 211);
+            this.txtLine2.Multiline = true;
+            this.txtLine2.Name = "txtLine2";
+            this.txtLine2.ReadOnly = true;
+            this.txtLine2.Size = new System.Drawing.Size(280, 57);
+            this.txtLine2.TabIndex = 11;
+            this.txtLine2.Text = "____________________";
+            // 
             // FormLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(767, 533);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picLogIn);
             this.Controls.Add(this.picPassword);
             this.Controls.Add(this.txtPassword);
@@ -235,10 +224,8 @@
             this.Controls.Add(this.picOndas);
             this.Controls.Add(this.picPeixe2);
             this.Controls.Add(this.lblWelcome);
-            this.Controls.Add(this.picUser);
             this.Controls.Add(this.picExit);
             this.Controls.Add(this.picGotas);
-            this.Controls.Add(this.picH20);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -247,15 +234,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogIn";
             ((System.ComponentModel.ISupportInitialize)(this.picGotas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picH20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPeixe2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPeixe1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOndas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUsername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,20 +250,19 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picGotas;
-        private System.Windows.Forms.PictureBox picH20;
         private System.Windows.Forms.PictureBox picExit;
-        private System.Windows.Forms.PictureBox picUser;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.PictureBox picPeixe2;
         private System.Windows.Forms.PictureBox picPeixe1;
         private System.Windows.Forms.PictureBox picOndas;
         private System.Windows.Forms.PictureBox picUsername;
         private System.Windows.Forms.PictureBox picPassword;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtLine2;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtLine1;
         private System.Windows.Forms.PictureBox picLogIn;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtLine2;
     }
 }
 

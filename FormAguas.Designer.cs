@@ -67,10 +67,11 @@
             // 
             this.lblData.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData.ForeColor = System.Drawing.Color.Black;
-            this.lblData.Location = new System.Drawing.Point(742, 33);
+            this.lblData.Location = new System.Drawing.Point(742, 32);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(172, 23);
             this.lblData.TabIndex = 10;
+            this.lblData.Text = ".";
             this.lblData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picExit
@@ -228,6 +229,7 @@
             // 
             // panelContent
             // 
+            this.panelContent.BackColor = System.Drawing.SystemColors.Control;
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 129);
             this.panelContent.Name = "panelContent";

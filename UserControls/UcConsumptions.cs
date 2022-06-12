@@ -16,46 +16,39 @@
 
         public void ModuloConsumos()
         {
-            decimal onesc = 0.30M;
-            decimal secondsc = 0.80M;
-            decimal tercsc = 1.20M;
-            decimal quarto = 1.60M;
-            decimal consumo = decimal.Parse(txtEchelons.Text);
-            decimal total = 0;
+            decimal escalao = decimal.Parse(txtEchelons.Text);
+            decimal primeiroesc = 0.30M;
+            decimal segundoesc = 0.80M;
+            decimal terceiroesc = 1.20M;
+            decimal quartoesc = 1.60M;
+            decimal consumototal = 0;
 
-            if(consumo >= 5)
+            if (escalao >= 5)
             {
-                consumo -= 5;
-                total = 5 * onesc;
+                escalao -= 5;
+                consumototal = 5 * primeiroesc;
 
-                if(consumo >= 10)
+                if (escalao >= 10)
                 {
-                    consumo -= 10;
-                    total += 10 * secondsc;
+                    escalao -= 10;
+                    consumototal += 10 * segundoesc;
 
-                    if (consumo >= 10)
+                    if (escalao >= 10)
                     {
-                        consumo -= 10;
-                        total += 10 * tercsc;
-
-                        total += consumo * quarto;
+                        escalao -= 10;
+                        consumototal += 10 * terceiroesc;
+                        consumototal += escalao * quartoesc;
                     }
                     else
-                    {
-                        total += consumo * tercsc;
-                    }
+                        consumototal += escalao * terceiroesc;
                 }
                 else
-                {
-                    total += consumo * secondsc;
-                }
+                    consumototal += escalao * segundoesc;
             }
             else
-            {
-                total = (consumo * onesc);
-            }
+                consumototal = (escalao * primeiroesc);
 
-            txtTotalConsume.Text = total.ToString();
+            txtTotalConsume.Text = consumototal.ToString();
         }
 
         #endregion
@@ -135,9 +128,9 @@
 
         private void ComboBoxs()
         {
-            var IDcontract = from Contratos in dc.Contratos select Contratos;
+            var _IDcontract = from Contratos in dc.Contratos select Contratos;
 
-            cbIDcontract.DataSource = IDcontract;
+            cbIDcontract.DataSource = _IDcontract;
             cbIDcontract.DisplayMember = "IdContrato";
         }
 
@@ -148,16 +141,15 @@
         {
             try
             {
-                var TipoContrato = from Contratos
+                var _pesquisaContratos = from Contratos
                                     in dc.Contratos
-                                   where Contratos.IdContrato == int.Parse(cbIDcontract.Text)
-                                   select Contratos;
+                                         where Contratos.IdContrato == int.Parse(cbIDcontract.Text)
+                                         select Contratos;
 
-                foreach (Contratos contratos in TipoContrato)
+                foreach (Contratos contratos in _pesquisaContratos)
                 {
                     txtClients.Text = contratos.Clientes.Nome;
                     txtContractType.Text = contratos.TipoContrato;
-                    
                 }
             }
             catch (Exception ex) { /* MessageBox.Show(ex.Message); */ }
@@ -176,8 +168,8 @@
             string ContractType = txtContractType.Text;
             string Escaloes = txtEchelons.Text;
             string Vunitario = txtUnitaryValue.Text;
-            string DataConsumo = dtpConsumeDate.Text;
-            string ConsumoTotal = txtTotalConsume.Text;
+            string Dconsumo = dtpConsumeDate.Text;
+            string cTotal = txtTotalConsume.Text;
 
             Consumos c = new Consumos
             {
@@ -186,8 +178,8 @@
                 TipoContrato = ContractType,
                 Escaloes = (decimal.Parse(Escaloes)),
                 ValorUnitario = (decimal.Parse(Vunitario)),
-                DataConsumo = DataConsumo,
-                ConsumoTotal = ConsumoTotal
+                DataConsumo = Dconsumo,
+                ConsumoTotal = cTotal
             };
 
             dc.Consumos.InsertOnSubmit(c);
@@ -255,9 +247,16 @@
 
         // Ao ser clicado gera o consumo total deste contrato
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+        private void btnGenerate_Click_1(object sender, EventArgs e)
         {
             ModuloConsumos();
+        }
+
+        // Consumo total por estimativa
+
+        private void btnEstimate_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion
@@ -281,7 +280,7 @@
 
         #region Validações
 
-        // Só se poderá introduzir dígitos ou pontos (por ser decimal) na txt dos escalões
+        // Validações necessárias para o preenchimento dos campos 
 
         private void txtEchelons_TextChanged(object sender, EventArgs e)
         {
@@ -297,48 +296,50 @@
             }
         }
 
-        // Apresenta uma mensagem de erro se o campo não for preenchido e dependendo do valor 
-        // introduzido diz que a que escalão aquele valor pretence
-         
         private void txtEchelons_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            if(e.KeyChar == (char)Keys.Enter)
             {
-                int intervalo = int.Parse(txtEchelons.Text);
-
-                if (txtEchelons.Text == "")
+                if(txtEchelons.Text == "")
                 {
-                    MessageBox.Show("Campo Obrigatório! Introduza um escalão!",
-                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Required field! Fill with a echelon.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (intervalo >= 0 && intervalo <= 5)
+                else if (txtEchelons.Text != "")
                 {
-                    lblEchelons.Text = "1st Echelon";
-                    txtUnitaryValue.Text = "0.30";
-                    txtUnitaryValue.Focus();
+                    Escaloes();
                 }
-                else if (intervalo >= 5 && intervalo <= 15)
-                {
-                    lblEchelons.Text = "2nd Echelon";
-                    txtUnitaryValue.Text = "0.80";
-                    txtUnitaryValue.Focus();
-                }
-                else if (intervalo > 15 && intervalo <= 25)
-                {
-                    lblEchelons.Text = "3rd Echelon";
-                    txtUnitaryValue.Text = "1.20";
-                    txtUnitaryValue.Focus();
-                }
-                else
-                {
-                    lblEchelons.Text = "4th Echelon";
-                    txtUnitaryValue.Text = "1.60";
-                    txtUnitaryValue.Focus();
-                }
-                e.Handled = true; // Assinala que o evento já foi executado e não emite som
+                e.Handled = true;
             }
         }
 
-        #endregion
+        // Método para preencher a textbox do valor unitário dependendo do escalão introduzido
+
+        private void Escaloes()
+        {
+            decimal escalao = Convert.ToDecimal(txtEchelons.Text);
+
+            if(escalao <= 5 && escalao > 0)
+            {
+                lblEchelons.Text = "1st Echelon";
+                txtUnitaryValue.Text = "0.30";
+            }
+            else if (escalao > 5 && escalao <= 15)
+            {
+                lblEchelons.Text = "2nd Echelon";
+                txtUnitaryValue.Text = "0.80";
+            }
+            else if(escalao > 15 && escalao <= 25)
+            {
+                lblEchelons.Text = "3rd Echelon";
+                txtUnitaryValue.Text = "1.20";
+            }
+            else
+            {
+                lblEchelons.Text = "4th Echelon";
+                txtUnitaryValue.Text = "1.60";
+            }
+        }
     }
+    #endregion
 }

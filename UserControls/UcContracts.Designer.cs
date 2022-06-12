@@ -66,7 +66,7 @@
             this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(777, 76);
+            this.btnUpdate.Location = new System.Drawing.Point(383, 209);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(84, 43);
             this.btnUpdate.TabIndex = 58;
@@ -82,7 +82,7 @@
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(661, 148);
+            this.btnDelete.Location = new System.Drawing.Point(557, 210);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 43);
             this.btnDelete.TabIndex = 57;
@@ -98,7 +98,7 @@
             this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(777, 148);
+            this.btnReset.Location = new System.Drawing.Point(717, 210);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(84, 43);
             this.btnReset.TabIndex = 56;
@@ -114,7 +114,7 @@
             this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(661, 76);
+            this.btnInsert.Location = new System.Drawing.Point(225, 209);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(87, 43);
             this.btnInsert.TabIndex = 55;
@@ -126,7 +126,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(281, 46);
+            this.lblName.Location = new System.Drawing.Point(311, 34);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(53, 18);
             this.lblName.TabIndex = 54;
@@ -136,7 +136,7 @@
             // 
             this.lblContractType.AutoSize = true;
             this.lblContractType.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContractType.Location = new System.Drawing.Point(109, 101);
+            this.lblContractType.Location = new System.Drawing.Point(545, 34);
             this.lblContractType.Name = "lblContractType";
             this.lblContractType.Size = new System.Drawing.Size(111, 18);
             this.lblContractType.TabIndex = 53;
@@ -146,7 +146,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(339, 142);
+            this.lblAddress.Location = new System.Drawing.Point(516, 91);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(66, 18);
             this.lblAddress.TabIndex = 52;
@@ -156,7 +156,7 @@
             // 
             this.lblPaymentType.AutoSize = true;
             this.lblPaymentType.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentType.Location = new System.Drawing.Point(79, 175);
+            this.lblPaymentType.Location = new System.Drawing.Point(222, 91);
             this.lblPaymentType.Name = "lblPaymentType";
             this.lblPaymentType.Size = new System.Drawing.Size(111, 18);
             this.lblPaymentType.TabIndex = 51;
@@ -166,7 +166,7 @@
             // 
             this.lblPostalCode.AutoSize = true;
             this.lblPostalCode.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostalCode.Location = new System.Drawing.Point(395, 212);
+            this.lblPostalCode.Location = new System.Drawing.Point(537, 162);
             this.lblPostalCode.Name = "lblPostalCode";
             this.lblPostalCode.Size = new System.Drawing.Size(96, 18);
             this.lblPostalCode.TabIndex = 50;
@@ -176,7 +176,7 @@
             // 
             this.lblContractDate.AutoSize = true;
             this.lblContractDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContractDate.Location = new System.Drawing.Point(139, 222);
+            this.lblContractDate.Location = new System.Drawing.Point(273, 162);
             this.lblContractDate.Name = "lblContractDate";
             this.lblContractDate.Size = new System.Drawing.Size(111, 18);
             this.lblContractDate.TabIndex = 49;
@@ -186,7 +186,7 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(135, 46);
+            this.lblID.Location = new System.Drawing.Point(189, 34);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(23, 18);
             this.lblID.TabIndex = 48;
@@ -196,39 +196,40 @@
             // 
             this.DataGriewContracts.AllowUserToDeleteRows = false;
             this.DataGriewContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGriewContracts.Location = new System.Drawing.Point(90, 275);
+            this.DataGriewContracts.Location = new System.Drawing.Point(98, 276);
             this.DataGriewContracts.MultiSelect = false;
             this.DataGriewContracts.Name = "DataGriewContracts";
             this.DataGriewContracts.ReadOnly = true;
             this.DataGriewContracts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGriewContracts.Size = new System.Drawing.Size(813, 215);
+            this.DataGriewContracts.Size = new System.Drawing.Size(813, 225);
             this.DataGriewContracts.TabIndex = 47;
             this.DataGriewContracts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGriewContracts_CellClick);
             // 
             // mtxtbPostalCode
             // 
             this.mtxtbPostalCode.BackColor = System.Drawing.SystemColors.Control;
-            this.mtxtbPostalCode.Enabled = false;
             this.mtxtbPostalCode.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtbPostalCode.ForeColor = System.Drawing.Color.Black;
-            this.mtxtbPostalCode.Location = new System.Drawing.Point(491, 211);
+            this.mtxtbPostalCode.Location = new System.Drawing.Point(633, 161);
             this.mtxtbPostalCode.Mask = "9999-999";
             this.mtxtbPostalCode.Name = "mtxtbPostalCode";
             this.mtxtbPostalCode.Size = new System.Drawing.Size(68, 22);
             this.mtxtbPostalCode.TabIndex = 45;
             this.mtxtbPostalCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mtxtbPostalCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxtbPostalCode_KeyPress);
             // 
             // txtAddress
             // 
             this.txtAddress.BackColor = System.Drawing.SystemColors.Control;
-            this.txtAddress.Enabled = false;
             this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtAddress.Location = new System.Drawing.Point(406, 133);
+            this.txtAddress.Location = new System.Drawing.Point(583, 92);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(192, 38);
             this.txtAddress.TabIndex = 44;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
+            this.txtAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddress_KeyPress);
             // 
             // txtID
             // 
@@ -236,7 +237,7 @@
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.Black;
-            this.txtID.Location = new System.Drawing.Point(160, 44);
+            this.txtID.Location = new System.Drawing.Point(215, 32);
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(31, 23);
@@ -245,7 +246,7 @@
             // picUpdate
             // 
             this.picUpdate.Image = global::ProjetoAguas.Properties.Resources.Update;
-            this.picUpdate.Location = new System.Drawing.Point(754, 83);
+            this.picUpdate.Location = new System.Drawing.Point(360, 216);
             this.picUpdate.Name = "picUpdate";
             this.picUpdate.Size = new System.Drawing.Size(31, 26);
             this.picUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -255,7 +256,7 @@
             // picDelete
             // 
             this.picDelete.Image = global::ProjetoAguas.Properties.Resources.Delete;
-            this.picDelete.Location = new System.Drawing.Point(647, 156);
+            this.picDelete.Location = new System.Drawing.Point(543, 218);
             this.picDelete.Name = "picDelete";
             this.picDelete.Size = new System.Drawing.Size(31, 26);
             this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -265,7 +266,7 @@
             // picReset
             // 
             this.picReset.Image = global::ProjetoAguas.Properties.Resources.Reset;
-            this.picReset.Location = new System.Drawing.Point(763, 156);
+            this.picReset.Location = new System.Drawing.Point(703, 218);
             this.picReset.Name = "picReset";
             this.picReset.Size = new System.Drawing.Size(31, 26);
             this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -275,7 +276,7 @@
             // picInsert
             // 
             this.picInsert.Image = global::ProjetoAguas.Properties.Resources.Insert;
-            this.picInsert.Location = new System.Drawing.Point(649, 85);
+            this.picInsert.Location = new System.Drawing.Point(213, 218);
             this.picInsert.Name = "picInsert";
             this.picInsert.Size = new System.Drawing.Size(31, 26);
             this.picInsert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -285,25 +286,27 @@
             // cbClients
             // 
             this.cbClients.FormattingEnabled = true;
-            this.cbClients.Location = new System.Drawing.Point(331, 45);
+            this.cbClients.Location = new System.Drawing.Point(366, 33);
             this.cbClients.Name = "cbClients";
             this.cbClients.Size = new System.Drawing.Size(145, 21);
             this.cbClients.TabIndex = 70;
             this.cbClients.SelectedIndexChanged += new System.EventHandler(this.cbClients_SelectedIndexChanged);
+            this.cbClients.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbClients_KeyPress);
             // 
             // cbContractType
             // 
             this.cbContractType.FormattingEnabled = true;
-            this.cbContractType.Location = new System.Drawing.Point(216, 100);
+            this.cbContractType.Location = new System.Drawing.Point(658, 33);
             this.cbContractType.Name = "cbContractType";
             this.cbContractType.Size = new System.Drawing.Size(145, 21);
             this.cbContractType.TabIndex = 71;
+            this.cbContractType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbContractType_KeyPress);
             // 
             // dtpContractDate
             // 
             this.dtpContractDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dtpContractDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpContractDate.Location = new System.Drawing.Point(246, 222);
+            this.dtpContractDate.Location = new System.Drawing.Point(390, 161);
             this.dtpContractDate.Name = "dtpContractDate";
             this.dtpContractDate.Size = new System.Drawing.Size(91, 20);
             this.dtpContractDate.TabIndex = 76;
@@ -312,10 +315,11 @@
             // cbPaymentType
             // 
             this.cbPaymentType.FormattingEnabled = true;
-            this.cbPaymentType.Location = new System.Drawing.Point(186, 175);
+            this.cbPaymentType.Location = new System.Drawing.Point(337, 90);
             this.cbPaymentType.Name = "cbPaymentType";
             this.cbPaymentType.Size = new System.Drawing.Size(145, 21);
             this.cbPaymentType.TabIndex = 77;
+            this.cbPaymentType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbPaymentType_KeyPress);
             // 
             // UcContracts
             // 
@@ -345,7 +349,7 @@
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtID);
             this.Name = "UcContracts";
-            this.Size = new System.Drawing.Size(992, 539);
+            this.Size = new System.Drawing.Size(996, 531);
             this.Load += new System.EventHandler(this.UcContracts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGriewContracts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUpdate)).EndInit();

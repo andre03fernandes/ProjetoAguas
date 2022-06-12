@@ -230,7 +230,102 @@
             dtpContractDate.ResetText();
         }
 
+
+
         #endregion
 
+        #region Validações
+
+        private void cbClients_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                if (cbClients.Text.Length == 0)
+                {
+                    MessageBox.Show("Required field! Choose an option from the comboBox.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                    cbContractType.Focus();
+            }
+        }
+
+        private void cbContractType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (cbContractType.Text.Length == 0)
+                {
+                    MessageBox.Show("Required field! Choose an option from the comboBox.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                    cbPaymentType.Focus();
+            }
+        }
+
+        private void cbPaymentType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (cbContractType.Text.Length == 0)
+                {
+                    MessageBox.Show("Required field! Choose an option from the comboBox.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                    cbPaymentType.Focus();
+            }
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+            foreach (char Morada in txtAddress.Text)
+            {
+                if (!(char.IsLetter(Morada) || char.IsDigit(Morada) || Morada == ' '))
+                {
+                    MessageBox.Show("Heads up! Only enter letters, digits and spaces.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtAddress.Clear();
+                    break;
+                }
+            }
+        }
+
+        private void txtAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (txtAddress.Text.Length == 0)
+                {
+                    MessageBox.Show("Required field! Fill in your address.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtAddress.Text.Length > 100)
+                {
+                    MessageBox.Show("The number of characters cannot exceed 100!",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtAddress.Clear();
+                }
+                else
+                    dtpContractDate.Focus();
+                e.Handled = true; // Assinala que o evento já foi executado e não emite som
+            }
+        }
+
+        private void mtxtbPostalCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (mtxtbPostalCode.Text.Length != 8)
+                {
+                    MessageBox.Show("Heads up! Enter the 8 numbers of your Postal code.",
+                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    mtxtbPostalCode.Clear();
+                }
+            }
+        }
+
+        #endregion
     }
 }

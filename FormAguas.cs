@@ -10,7 +10,7 @@
         public FormAguas()
         {
             InitializeComponent();
-            About();
+            About(); // UserControl que irá aparecer primeiro
         }
 
         #region Métodos
@@ -80,6 +80,8 @@
 
         #region Data
 
+        // Apresenta a data e a hora, onde as horas vão passando normalmente com um relógio
+
         private void timerDate_Tick_1(object sender, EventArgs e)
         {
             lblData.Text = DateTime.Now.ToString("dd-MMM-yyyy HH:mm:ss tt");
@@ -89,12 +91,12 @@
 
         #region Sair
 
+        // Ao clicar no botão SignOut, o programa dá-te a opção de retornar ao formLogIn
+
         private void btnSignOut_Click(object sender, EventArgs e)
         {
-            // Ao clicar no botão SignOut, o programa dá-te a opção de retornar ao formLogIn
-
             btnSignOut.FlatAppearance.BorderColor = Color.Red;
-            DialogResult dr = MessageBox.Show("Deseja regressar ao LogIn?", "LogIn",
+            DialogResult dr = MessageBox.Show("Do you want to return to LogIn?", "LogIn",
                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
@@ -108,12 +110,12 @@
             }
         }
 
+        // Ao clicar na imagem " em forma de x" ou seja a imagem de sair, terás a opção de
+        // sair do programa, senão permaneces no formAguas
+
         private void picExit_Click(object sender, EventArgs e)
         {
-            // Ao clicar na imagem " em forma de x" ou seja a imagem de sair, terás a opção de
-            // sair do programa, senão permaneces no formAguas
-
-            DialogResult dr = MessageBox.Show("Deseja sair?", "Sair",
+            DialogResult dr = MessageBox.Show("Do you want to leave?", "Leave",
                               MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
                 Application.Exit();
@@ -195,6 +197,5 @@
         }
 
         #endregion
-
     }
 }

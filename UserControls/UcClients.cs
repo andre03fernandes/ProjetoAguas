@@ -65,11 +65,11 @@
                 txtID.Text = row.Cells["colID"].Value.ToString();
                 txtName.Text = row.Cells["colName"].Value.ToString();
                 mtxtbTelephone.Text = row.Cells["colTelephone"].Value.ToString();
-                txtNIF.Text = row.Cells["colNIF"].Value.ToString();
+                mtxtbNIF.Text = row.Cells["colNIF"].Value.ToString();
                 txtEmail.Text = row.Cells["colEmail"].Value.ToString();
                 txtAddress.Text = row.Cells["colAddress"].Value.ToString();
                 mtxtbPostalCode.Text = row.Cells["colPostalCode"].Value.ToString();
-                txtNIF.Enabled = false;
+                mtxtbNIF.Enabled = false;
             }
         }
 
@@ -84,8 +84,8 @@
             txtID.ResetText();
             txtName.ResetText();
             mtxtbTelephone.ResetText();
-            txtNIF.ResetText();
-            txtNIF.Enabled = true;
+            mtxtbNIF.ResetText();
+            mtxtbNIF.Enabled = true;
             txtEmail.ResetText();
             txtAddress.ResetText();
             mtxtbPostalCode.ResetText();
@@ -102,7 +102,7 @@
         {
             string NomeCliente = txtName.Text;
             string Ntelefone = mtxtbTelephone.Text;
-            string NIF = txtNIF.Text;
+            string NIF = mtxtbNIF.Text;
             string Email = txtEmail.Text;
             string Morada = txtAddress.Text;
             string Cpostal = mtxtbPostalCode.Text;
@@ -132,7 +132,7 @@
             int Id = int.Parse(txtID.Text);
             string NomeCliente = txtName.Text;
             string Ntelefone = mtxtbTelephone.Text;
-            string NIF = txtNIF.Text;
+            string NIF = mtxtbNIF.Text;
             string Email = txtEmail.Text;
             string Morada = txtAddress.Text;
             string Cpostal = mtxtbPostalCode.Text;
@@ -179,6 +179,157 @@
             LimpaCampos();
         }
 
-    #endregion
+
+        #endregion
+
+        #region Validações
+
+        // Validações de todos os campos da parte dos clientes
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            foreach(char Nome in txtName.Text)
+            {
+                if(!(char.IsLetter(Nome) || Nome == ' '))
+                {
+                    MessageBox.Show("Heads up! Enter letters and spaces only.", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtName.Clear();
+                    break;
+                }
+            }
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                if(txtName.Text.Length == 0)
+                {
+                    MessageBox.Show("Required field! Fill in your name.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtName.Text.Length > 50)
+                {
+                    MessageBox.Show("The number of characters cannot excedd 50.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtName.Clear();
+                }
+                else
+                {
+                    txtEmail.Focus();
+                }
+                e.Handled = true; // Assinala que o evento já foi executado e não emite som
+            }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            foreach(char Email in txtEmail.Text)
+            {
+                if(!(char.IsLetter(Email) || char.IsDigit(Email) || Email == '.' || Email == '@'))
+                {
+                    MessageBox.Show("Heads up! Enter only letters and digits.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtEmail.Clear();
+                    break;
+                }  
+            }
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                if (txtEmail.Text.Length == 0)
+                {
+                    MessageBox.Show("Required field! Fill in your email.",
+                          "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                    mtxtbTelephone.Focus();
+                e.Handled = true; // Assinala que o evento já foi executado e não emite som
+            }
+        }
+
+        private void mtxtbTelephone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                if(mtxtbTelephone.Text.Length != 11)
+                {
+                    MessageBox.Show("Required field! Fill in your phone number.",
+                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    mtxtbTelephone.Clear();
+                }
+                else
+                    txtAddress.Focus();
+            }
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+            foreach(char Morada in txtAddress.Text)
+            {
+                if(!(char.IsLetter(Morada) || char.IsDigit(Morada) || Morada == ' '))
+                {
+                    MessageBox.Show("Heads up! Only enter letters, digits and spaces.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtAddress.Clear();
+                    break;
+                }
+            }
+        }
+
+        private void txtAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                if (txtAddress.Text.Length == 0)
+                {
+                    MessageBox.Show("Required field! Fill in your address.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtAddress.Text.Length > 100)
+                {
+                    MessageBox.Show("The number of characters cannot exceed 100!",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtAddress.Clear();
+                }
+                else
+                    mtxtbNIF.Focus();
+                e.Handled = true; // Assinala que o evento já foi executado e não emite som
+            }
+        }
+
+        private void mtxtbNIF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (mtxtbNIF.Text.Length != 9)
+                {
+                    MessageBox.Show("Heads up! Enter the 9 numbers of your Tax identification number.",
+                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    mtxtbNIF.Clear();
+                }
+                else
+                    mtxtbPostalCode.Focus();
+            }
+        }
+
+        private void mtxtbPostalCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (mtxtbPostalCode.Text.Length != 8)
+                {
+                    MessageBox.Show("Heads up! Enter the 8 numbers of your Postal code.",
+                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    mtxtbPostalCode.Clear();
+                }
+            }
+        }
+
+        #endregion
     }
 }

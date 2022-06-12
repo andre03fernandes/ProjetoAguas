@@ -8,12 +8,11 @@
 
         #region Buttons
 
+        // Validação dos campos de logIn, se o username não for Admin e a password não
+        // for Cinel123, aparece uma mensagem de erro.
+
         private void picLogIn_Click(object sender, System.EventArgs e)
         {
-
-            // Validação dos campos de logIn, se o username não for Admin e a password não
-            // for Cinel123, aparece uma mensagem de erro.
-
             if (txtUsername.Text == "Admin" && txtPassword.Text == "Cinel123")
             {
                 this.Hide();
@@ -24,11 +23,11 @@
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        // Ao clicar em Exit, o programa pergunta-te se queres sair, se sim,
+        // o programa fecha, senão retorna ao form LogIn.
+
         private void picExit_Click(object sender, System.EventArgs e)
         {
-            // Ao clicar em Exit, o programa pergunta-te se queres sair, se sim,
-            // o programa fecha, senão retorna ao form LogIn.
-
             DialogResult dr = MessageBox.Show("Do you want to leave?", "Leave",
                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)

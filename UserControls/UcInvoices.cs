@@ -14,17 +14,17 @@
 
         public void MonthConsume()
         {
-           decimal mes = 0;
+            decimal mes = 0;
 
-           var consumoMes = (from Faturas
-                             in dc.Faturas
-                              where Faturas.IdContrato == int.Parse(cbIDcontracts.Text)
-                              select Faturas);
+            var consumoMes = (from Consumos
+                              in dc.Consumos
+                              where Consumos.IdContrato == int.Parse(cbIDcontracts.Text)
+                              select Consumos);
 
             if (consumoMes.Count() > 0)
             {
-                foreach (Faturas faturas in consumoMes)
-                    mes += faturas.ConsumoMensal;
+                foreach (Consumos mensal in consumoMes)
+                    mes += decimal.Parse(mensal.ConsumoTotal);
                 txtMonthlyConsumption.Text = (mes / consumoMes.Count()).ToString();
             }
             else
@@ -46,7 +46,7 @@
 
             var listaFaturas = from fatura in dc.Faturas select fatura;
 
-            foreach(Faturas faturas in listaFaturas)
+            foreach (Faturas faturas in listaFaturas)
             {
                 DataGridViewRow registo = new DataGridViewRow();
                 DataGriewInvoices.Rows.Add(registo);
@@ -84,7 +84,7 @@
 
         private void DataGriewInvoices_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.DataGriewInvoices.Rows[e.RowIndex];
 
@@ -116,8 +116,8 @@
             {
                 var cont = from Contratos
                                     in dc.Contratos
-                                   where Contratos.IdContrato == int.Parse(cbIDcontracts.Text)
-                                   select Contratos;
+                           where Contratos.IdContrato == int.Parse(cbIDcontracts.Text)
+                           select Contratos;
 
                 foreach (Contratos contratos in cont)
                 {
@@ -125,15 +125,20 @@
                     txtPaymentType.Text = contratos.TipoPagamento;
                 }
 
-                var value = from Consumos
-                            in dc.Consumos
-                            where Consumos.IdContrato == int.Parse(cbIDcontracts.Text)
-                            select Consumos;
+                decimal soma = 0;
 
-                foreach(Consumos consumos in value)
+                var value = (from Consumos
+                            in dc.Consumos
+                             where Consumos.IdContrato == int.Parse(cbIDcontracts.Text)
+                             select Consumos);
+
+                foreach (Consumos consumos in value)
                 {
                     if (consumos.ConsumoTotal.Count() > 0)
-                        txtAmountToPay.Text = consumos.ConsumoTotal;
+                    {
+                        soma += decimal.Parse(consumos.ConsumoTotal);
+                        txtAmountToPay.Text = (soma.ToString());
+                    }
                     else
                         txtAmountToPay.Text = "0";
                 }
@@ -208,10 +213,10 @@
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Faturas f = (from Faturas 
+            Faturas f = (from Faturas
                         in dc.Faturas
-                        where Faturas.IdFatura == int.Parse(txtID.Text)
-                        select Faturas).First();
+                         where Faturas.IdFatura == int.Parse(txtID.Text)
+                         select Faturas).First();
 
             dc.Faturas.DeleteOnSubmit(f);
 
@@ -230,10 +235,12 @@
 
         // Ao ser clicado gera o consumo mensal de um cliente
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+        private void btnCalcula_Click(object sender, EventArgs e)
         {
             MonthConsume();
         }
+
+        // Abre o form de login e passa as informações necessárias para a fatura
 
         private void picPDF_Click(object sender, EventArgs e)
         {
@@ -263,6 +270,5 @@
         }
 
         #endregion
-
     }
 }
