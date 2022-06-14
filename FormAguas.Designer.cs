@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAguas));
             this.panelCabeçalho = new System.Windows.Forms.Panel();
             this.lblData = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
@@ -251,6 +252,7 @@
             this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.panelCabeçalho);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAguas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAguas";
