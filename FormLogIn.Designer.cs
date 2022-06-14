@@ -145,7 +145,6 @@
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(173, 19);
             this.txtPassword.TabIndex = 12;
-            this.txtPassword.Text = "Cinel123";
             // 
             // txtLine1
             // 
@@ -191,7 +190,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(173, 19);
             this.txtUsername.TabIndex = 10;
-            this.txtUsername.Text = "Admin";
             // 
             // txtLine2
             // 
