@@ -276,6 +276,7 @@
             txtEchelons.ResetText();
             txtUnitaryValue.ResetText();
             txtTotalConsume.ResetText();
+            lblEchelons.Text = "Echelons";
         }
 
         #endregion
