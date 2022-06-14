@@ -19,8 +19,13 @@
                 new FormAguas().Show();
             }
             else
+            {
                 MessageBox.Show("Username or Password are incorrects!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsername.Clear();
+                txtPassword.Clear();
+                txtUsername.Focus();
+            }
         }
 
         // Ao clicar em Exit, o programa pergunta-te se queres sair, se sim,
