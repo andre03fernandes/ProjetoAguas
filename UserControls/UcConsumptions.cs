@@ -6,13 +6,11 @@
 
     public partial class UcConsumptions : UserControl
     {
-        public UcConsumptions() { InitializeComponent(); }
-
-        DcAguasDataContext dc = new DcAguasDataContext();
+        public UcConsumptions() { InitializeComponent(); } DcAguasDataContext dc = new DcAguasDataContext();
 
         #region Consumos
 
-        // Método que calcula o consumo total, dependendo do escalão e do valor unitário que se introduz
+        // Método que calcula o consumo total, dependendo do escalão que se introduz (valor unitário é fixo para cada escalão)
 
         public void ModuloConsumos()
         {
@@ -39,14 +37,11 @@
                         consumototal += 10 * terceiroesc;
                         consumototal += escalao * quartoesc;
                     }
-                    else
-                        consumototal += escalao * terceiroesc;
+                    else consumototal += escalao * terceiroesc;
                 }
-                else
-                    consumototal += escalao * segundoesc;
+                else consumototal += escalao * segundoesc;
             }
-            else
-                consumototal = (escalao * primeiroesc);
+            else consumototal = (escalao * primeiroesc);
 
             txtTotalConsume.Text = consumototal.ToString();
         }
@@ -124,7 +119,7 @@
 
         #region ComboBoxs
 
-        // Preenche as combobox's do IdContract e IdInvoice com os seus respetivos Id's
+        // Preenche a combobox do IdContract com os seus Id's existentes
 
         private void ComboBoxs()
         {
@@ -141,10 +136,7 @@
         {
             try
             {
-                var _pesquisaContratos = from Contratos
-                                    in dc.Contratos
-                                         where Contratos.IdContrato == int.Parse(cbIDcontract.Text)
-                                         select Contratos;
+                var _pesquisaContratos = from Contratos in dc.Contratos where Contratos.IdContrato == int.Parse(cbIDcontract.Text) select Contratos;
 
                 foreach (Contratos contratos in _pesquisaContratos)
                 {
@@ -203,9 +195,7 @@
             string DataConsumo = dtpConsumeDate.Text;
             string ConsumoTotal = txtTotalConsume.Text;
 
-            Consumos c = (from Consumos in dc.Consumos
-                          where Consumos.IdConsumo == Id
-                          select Consumos).First();
+            Consumos c = (from Consumos in dc.Consumos where Consumos.IdConsumo == Id select Consumos).First();
 
             c.IdContrato = IdContract.IdContrato;
             c.NomeCliente = Client;
@@ -225,10 +215,7 @@
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Consumos c = (from Consumos
-                          in dc.Consumos
-                          where Consumos.IdConsumo == int.Parse(txtID.Text)
-                          select Consumos).First();
+            Consumos c = (from Consumos in dc.Consumos where Consumos.IdConsumo == int.Parse(txtID.Text) select Consumos).First();
 
             dc.Consumos.DeleteOnSubmit(c);
 
@@ -261,14 +248,17 @@
 
             var estimativa = from Consumos in dc.Consumos select Consumos;
 
-            foreach(Consumos consumos in estimativa)
+            foreach (Consumos consumos in estimativa)
             {
                 cont++;
                 valorTotal += decimal.Parse(consumos.ConsumoTotal);
             }
-            decimal est = valorTotal / cont;
 
-            txtTotalConsume.Text = est.ToString();
+            decimal est = valorTotal / cont;
+            txtTotalConsume.Text = est.ToString("#,0.00"); // "#,0.00" - arredondamento das casas decimais
+            txtUnitaryValue.Text = "0";
+            txtEchelons.Text = "0";
+
         }
 
         #endregion
@@ -300,7 +290,7 @@
             {
                 if (!(char.IsDigit(Escalao) || Escalao == '.'))
                 {
-                    MessageBox.Show("Atenção! Insera apenas dígitos!", "Aviso",
+                    MessageBox.Show("Heads up! Enter digits only!", "Warning",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtEchelons.Clear();
                     break;
@@ -310,9 +300,9 @@
 
         private void txtEchelons_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                if(txtEchelons.Text == "")
+                if (txtEchelons.Text == "")
                 {
                     MessageBox.Show("Required field! Fill with a echelon.",
                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -325,13 +315,13 @@
             }
         }
 
-        // Método para preencher a textbox do valor unitário dependendo do escalão introduzido
+        // Método para preencher a textbox do valor unitário dependendo do escalão introduzido (se não for por estimativa)
 
         private void Escaloes()
         {
             decimal escalao = Convert.ToDecimal(txtEchelons.Text);
 
-            if(escalao <= 5 && escalao > 0)
+            if (escalao <= 5 && escalao > 0)
             {
                 lblEchelons.Text = "1st Echelon";
                 txtUnitaryValue.Text = "0.30";
@@ -341,7 +331,7 @@
                 lblEchelons.Text = "2nd Echelon";
                 txtUnitaryValue.Text = "0.80";
             }
-            else if(escalao > 15 && escalao <= 25)
+            else if (escalao > 15 && escalao <= 25)
             {
                 lblEchelons.Text = "3rd Echelon";
                 txtUnitaryValue.Text = "1.20";

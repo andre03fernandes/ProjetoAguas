@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcAbout));
             this.panelContent = new System.Windows.Forms.Panel();
             this.picOndas = new System.Windows.Forms.PictureBox();
             this.lblMes = new System.Windows.Forms.Label();
@@ -68,7 +69,7 @@
             // picOndas
             // 
             this.picOndas.Image = global::ProjetoAguas.Properties.Resources._5;
-            this.picOndas.Location = new System.Drawing.Point(446, 404);
+            this.picOndas.Location = new System.Drawing.Point(449, 404);
             this.picOndas.Name = "picOndas";
             this.picOndas.Size = new System.Drawing.Size(70, 55);
             this.picOndas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -79,7 +80,7 @@
             // 
             this.lblMes.AutoSize = true;
             this.lblMes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMes.Location = new System.Drawing.Point(433, 359);
+            this.lblMes.Location = new System.Drawing.Point(436, 359);
             this.lblMes.Name = "lblMes";
             this.lblMes.Size = new System.Drawing.Size(97, 19);
             this.lblMes.TabIndex = 19;
@@ -89,7 +90,7 @@
             // 
             this.lblVersion.AutoSize = true;
             this.lblVersion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVersion.Location = new System.Drawing.Point(439, 313);
+            this.lblVersion.Location = new System.Drawing.Point(442, 313);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(88, 19);
             this.lblVersion.TabIndex = 17;
@@ -97,8 +98,8 @@
             // 
             // picCopo
             // 
-            this.picCopo.Image = global::ProjetoAguas.Properties.Resources._1;
-            this.picCopo.Location = new System.Drawing.Point(356, 265);
+            this.picCopo.Image = ((System.Drawing.Image)(resources.GetObject("picCopo.Image")));
+            this.picCopo.Location = new System.Drawing.Point(359, 265);
             this.picCopo.Name = "picCopo";
             this.picCopo.Size = new System.Drawing.Size(37, 35);
             this.picCopo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -109,7 +110,7 @@
             // 
             this.lblFormando.AutoSize = true;
             this.lblFormando.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormando.Location = new System.Drawing.Point(392, 273);
+            this.lblFormando.Location = new System.Drawing.Point(395, 273);
             this.lblFormando.Name = "lblFormando";
             this.lblFormando.Size = new System.Drawing.Size(202, 19);
             this.lblFormando.TabIndex = 15;
@@ -119,7 +120,7 @@
             // 
             this.lblFormador.AutoSize = true;
             this.lblFormador.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormador.Location = new System.Drawing.Point(390, 226);
+            this.lblFormador.Location = new System.Drawing.Point(393, 226);
             this.lblFormador.Name = "lblFormador";
             this.lblFormador.Size = new System.Drawing.Size(202, 19);
             this.lblFormador.TabIndex = 14;
@@ -129,7 +130,7 @@
             // 
             this.lblUFCD.AutoSize = true;
             this.lblUFCD.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUFCD.Location = new System.Drawing.Point(244, 177);
+            this.lblUFCD.Location = new System.Drawing.Point(247, 177);
             this.lblUFCD.Name = "lblUFCD";
             this.lblUFCD.Size = new System.Drawing.Size(534, 19);
             this.lblUFCD.TabIndex = 13;
@@ -138,7 +139,7 @@
             // picGotas
             // 
             this.picGotas.Image = global::ProjetoAguas.Properties.Resources._2;
-            this.picGotas.Location = new System.Drawing.Point(184, 165);
+            this.picGotas.Location = new System.Drawing.Point(187, 165);
             this.picGotas.Name = "picGotas";
             this.picGotas.Size = new System.Drawing.Size(54, 42);
             this.picGotas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -148,7 +149,7 @@
             // picInfo
             // 
             this.picInfo.Image = global::ProjetoAguas.Properties.Resources.Info;
-            this.picInfo.Location = new System.Drawing.Point(441, 98);
+            this.picInfo.Location = new System.Drawing.Point(444, 98);
             this.picInfo.Name = "picInfo";
             this.picInfo.Size = new System.Drawing.Size(70, 55);
             this.picInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -158,7 +159,7 @@
             // picPeixe
             // 
             this.picPeixe.Image = global::ProjetoAguas.Properties.Resources._3;
-            this.picPeixe.Location = new System.Drawing.Point(514, 293);
+            this.picPeixe.Location = new System.Drawing.Point(517, 293);
             this.picPeixe.Name = "picPeixe";
             this.picPeixe.Size = new System.Drawing.Size(55, 35);
             this.picPeixe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

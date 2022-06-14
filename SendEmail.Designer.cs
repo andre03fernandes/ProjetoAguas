@@ -31,14 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendEmail));
             this.panelPrint = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblThankyou = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.lblMonthConsume = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.lblInvoiceDate = new System.Windows.Forms.Label();
             this.lblPaymentType = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl5 = new System.Windows.Forms.Label();
             this.lbl4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,8 +56,8 @@
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.panelPrint.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMail)).BeginInit();
@@ -65,14 +66,15 @@
             // 
             // panelPrint
             // 
+            this.panelPrint.Controls.Add(this.pictureBox2);
+            this.panelPrint.Controls.Add(this.pictureBox1);
+            this.panelPrint.Controls.Add(this.lblThankyou);
             this.panelPrint.Controls.Add(this.lblAmount);
             this.panelPrint.Controls.Add(this.lblMonthConsume);
+            this.panelPrint.Controls.Add(this.lblDate);
             this.panelPrint.Controls.Add(this.lblInvoiceDate);
             this.panelPrint.Controls.Add(this.lblPaymentType);
             this.panelPrint.Controls.Add(this.lblName);
-            this.panelPrint.Controls.Add(this.lblDate);
-            this.panelPrint.Controls.Add(this.pictureBox3);
-            this.panelPrint.Controls.Add(this.pictureBox2);
             this.panelPrint.Controls.Add(this.lbl5);
             this.panelPrint.Controls.Add(this.lbl4);
             this.panelPrint.Controls.Add(this.label5);
@@ -83,16 +85,46 @@
             this.panelPrint.Controls.Add(this.lbl1);
             this.panelPrint.Controls.Add(this.picUser);
             this.panelPrint.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelPrint.Location = new System.Drawing.Point(0, 61);
+            this.panelPrint.Location = new System.Drawing.Point(0, 63);
             this.panelPrint.Name = "panelPrint";
-            this.panelPrint.Size = new System.Drawing.Size(571, 595);
+            this.panelPrint.Size = new System.Drawing.Size(454, 550);
             this.panelPrint.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ProjetoAguas.Properties.Resources.Water;
+            this.pictureBox2.Location = new System.Drawing.Point(394, 298);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(44, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 130;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProjetoAguas.Properties.Resources.Drop;
+            this.pictureBox1.Location = new System.Drawing.Point(414, 509);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(22, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 125;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblThankyou
+            // 
+            this.lblThankyou.AutoSize = true;
+            this.lblThankyou.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThankyou.Location = new System.Drawing.Point(254, 516);
+            this.lblThankyou.Name = "lblThankyou";
+            this.lblThankyou.Size = new System.Drawing.Size(158, 16);
+            this.lblThankyou.TabIndex = 125;
+            this.lblThankyou.Text = "Thanks for choosing us!";
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(214, 514);
+            this.lblAmount.Location = new System.Drawing.Point(164, 464);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(26, 18);
             this.lblAmount.TabIndex = 129;
@@ -103,11 +135,21 @@
             this.lblMonthConsume.AutoSize = true;
             this.lblMonthConsume.BackColor = System.Drawing.Color.White;
             this.lblMonthConsume.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonthConsume.Location = new System.Drawing.Point(214, 438);
+            this.lblMonthConsume.Location = new System.Drawing.Point(214, 410);
             this.lblMonthConsume.Name = "lblMonthConsume";
             this.lblMonthConsume.Size = new System.Drawing.Size(26, 18);
             this.lblMonthConsume.TabIndex = 128;
             this.lblMonthConsume.Text = "---";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(395, 153);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(43, 18);
+            this.lblDate.TabIndex = 124;
+            this.lblDate.Text = "Date";
             // 
             // lblInvoiceDate
             // 
@@ -139,41 +181,11 @@
             this.lblName.TabIndex = 125;
             this.lblName.Text = "---";
             // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(508, 156);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(43, 18);
-            this.lblDate.TabIndex = 124;
-            this.lblDate.Text = "Date";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::ProjetoAguas.Properties.Resources.Euro;
-            this.pictureBox3.Location = new System.Drawing.Point(272, 432);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(35, 31);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 123;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ProjetoAguas.Properties.Resources.Euro;
-            this.pictureBox2.Location = new System.Drawing.Point(246, 509);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 31);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 122;
-            this.pictureBox2.TabStop = false;
-            // 
             // lbl5
             // 
             this.lbl5.AutoSize = true;
             this.lbl5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.Location = new System.Drawing.Point(80, 514);
+            this.lbl5.Location = new System.Drawing.Point(30, 464);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(128, 18);
             this.lbl5.TabIndex = 16;
@@ -184,7 +196,7 @@
             this.lbl4.AutoSize = true;
             this.lbl4.BackColor = System.Drawing.Color.White;
             this.lbl4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.Location = new System.Drawing.Point(30, 438);
+            this.lbl4.Location = new System.Drawing.Point(30, 410);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(182, 18);
             this.lbl4.TabIndex = 14;
@@ -194,21 +206,21 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(-13, 122);
+            this.label5.Location = new System.Drawing.Point(-3, 122);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(584, 18);
+            this.label5.Size = new System.Drawing.Size(464, 18);
             this.label5.TabIndex = 13;
-            this.label5.Text = "________________________________________________________________________";
+            this.label5.Text = "_________________________________________________________";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(-2, 374);
+            this.label4.Location = new System.Drawing.Point(-2, 358);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(584, 18);
+            this.label4.Size = new System.Drawing.Size(464, 18);
             this.label4.TabIndex = 12;
-            this.label4.Text = "________________________________________________________________________";
+            this.label4.Text = "_________________________________________________________";
             // 
             // lbl3
             // 
@@ -234,7 +246,7 @@
             // 
             this.lblInvoice.AutoSize = true;
             this.lblInvoice.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvoice.Location = new System.Drawing.Point(198, 81);
+            this.lblInvoice.Location = new System.Drawing.Point(153, 82);
             this.lblInvoice.Name = "lblInvoice";
             this.lblInvoice.Size = new System.Drawing.Size(150, 38);
             this.lblInvoice.TabIndex = 7;
@@ -253,7 +265,7 @@
             // picUser
             // 
             this.picUser.Image = global::ProjetoAguas.Properties.Resources.User;
-            this.picUser.Location = new System.Drawing.Point(239, 8);
+            this.picUser.Location = new System.Drawing.Point(200, 12);
             this.picUser.Name = "picUser";
             this.picUser.Size = new System.Drawing.Size(61, 56);
             this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -263,7 +275,7 @@
             // picPrint
             // 
             this.picPrint.Image = global::ProjetoAguas.Properties.Resources.Print;
-            this.picPrint.Location = new System.Drawing.Point(384, 12);
+            this.picPrint.Location = new System.Drawing.Point(264, 12);
             this.picPrint.Name = "picPrint";
             this.picPrint.Size = new System.Drawing.Size(54, 39);
             this.picPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -275,7 +287,7 @@
             // picMail
             // 
             this.picMail.Image = global::ProjetoAguas.Properties.Resources.Email;
-            this.picMail.Location = new System.Drawing.Point(444, 12);
+            this.picMail.Location = new System.Drawing.Point(324, 12);
             this.picMail.Name = "picMail";
             this.picMail.Size = new System.Drawing.Size(54, 39);
             this.picMail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -286,7 +298,7 @@
             // picBack
             // 
             this.picBack.Image = global::ProjetoAguas.Properties.Resources.Comeback;
-            this.picBack.Location = new System.Drawing.Point(504, 12);
+            this.picBack.Location = new System.Drawing.Point(384, 12);
             this.picBack.Name = "picBack";
             this.picBack.Size = new System.Drawing.Size(54, 39);
             this.picBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -309,7 +321,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(571, 656);
+            this.ClientSize = new System.Drawing.Size(454, 613);
             this.Controls.Add(this.picBack);
             this.Controls.Add(this.picMail);
             this.Controls.Add(this.picPrint);
@@ -321,8 +333,8 @@
             this.Load += new System.EventHandler(this.SendEmail_Load);
             this.panelPrint.ResumeLayout(false);
             this.panelPrint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMail)).EndInit();
@@ -338,7 +350,6 @@
         private System.Windows.Forms.PictureBox picMail;
         private System.Windows.Forms.PictureBox picBack;
         private System.Windows.Forms.ToolTip toolTipPrint;
-        private System.Windows.Forms.Label lblInvoice;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.PictureBox picUser;
         private System.Windows.Forms.Label lbl3;
@@ -347,8 +358,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.Label lbl4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
         private System.Windows.Forms.Label lblDate;
@@ -357,5 +366,9 @@
         private System.Windows.Forms.Label lblInvoiceDate;
         private System.Windows.Forms.Label lblPaymentType;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblThankyou;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblInvoice;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

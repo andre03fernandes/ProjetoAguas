@@ -77,11 +77,11 @@
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(260, 50);
+            this.lbl1.Location = new System.Drawing.Point(208, 52);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(87, 23);
+            this.lbl1.Size = new System.Drawing.Size(187, 23);
             this.lbl1.TabIndex = 0;
-            this.lbl1.Text = "Earnings";
+            this.lbl1.Text = "Company earnings";
             // 
             // lbl4
             // 
@@ -116,8 +116,8 @@
             // 
             // lblEarnings
             // 
-            this.lblEarnings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEarnings.Location = new System.Drawing.Point(218, 122);
+            this.lblEarnings.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEarnings.Location = new System.Drawing.Point(218, 126);
             this.lblEarnings.Name = "lblEarnings";
             this.lblEarnings.Size = new System.Drawing.Size(123, 80);
             this.lblEarnings.TabIndex = 13;
@@ -153,7 +153,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::ProjetoAguas.Properties.Resources._12;
-            this.pictureBox5.Location = new System.Drawing.Point(55, 233);
+            this.pictureBox5.Location = new System.Drawing.Point(86, 221);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(58, 57);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -163,7 +163,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ProjetoAguas.Properties.Resources._13;
-            this.pictureBox4.Location = new System.Drawing.Point(866, 309);
+            this.pictureBox4.Location = new System.Drawing.Point(901, 403);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(51, 46);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -173,7 +173,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::ProjetoAguas.Properties.Resources._14;
-            this.pictureBox3.Location = new System.Drawing.Point(368, 479);
+            this.pictureBox3.Location = new System.Drawing.Point(350, 488);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(51, 46);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,7 +183,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjetoAguas.Properties.Resources._11;
-            this.pictureBox1.Location = new System.Drawing.Point(368, 83);
+            this.pictureBox1.Location = new System.Drawing.Point(371, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -203,7 +203,7 @@
             // picwater1
             // 
             this.picwater1.Image = global::ProjetoAguas.Properties.Resources._8;
-            this.picwater1.Location = new System.Drawing.Point(906, 95);
+            this.picwater1.Location = new System.Drawing.Point(830, 125);
             this.picwater1.Name = "picwater1";
             this.picwater1.Size = new System.Drawing.Size(66, 59);
             this.picwater1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -223,7 +223,7 @@
             // picPeixe1
             // 
             this.picPeixe1.Image = global::ProjetoAguas.Properties.Resources._6;
-            this.picPeixe1.Location = new System.Drawing.Point(23, 25);
+            this.picPeixe1.Location = new System.Drawing.Point(37, 28);
             this.picPeixe1.Name = "picPeixe1";
             this.picPeixe1.Size = new System.Drawing.Size(74, 63);
             this.picPeixe1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -233,7 +233,7 @@
             // picPeixe2
             // 
             this.picPeixe2.Image = ((System.Drawing.Image)(resources.GetObject("picPeixe2.Image")));
-            this.picPeixe2.Location = new System.Drawing.Point(447, 244);
+            this.picPeixe2.Location = new System.Drawing.Point(446, 250);
             this.picPeixe2.Name = "picPeixe2";
             this.picPeixe2.Size = new System.Drawing.Size(75, 61);
             this.picPeixe2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -303,7 +303,7 @@
             // picEarn
             // 
             this.picEarn.Image = global::ProjetoAguas.Properties.Resources.Dollar;
-            this.picEarn.Location = new System.Drawing.Point(219, 47);
+            this.picEarn.Location = new System.Drawing.Point(167, 49);
             this.picEarn.Name = "picEarn";
             this.picEarn.Size = new System.Drawing.Size(38, 29);
             this.picEarn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

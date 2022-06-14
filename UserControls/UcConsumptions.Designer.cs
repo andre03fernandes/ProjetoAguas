@@ -80,7 +80,7 @@
             this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(382, 223);
+            this.btnUpdate.Location = new System.Drawing.Point(382, 229);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(84, 43);
             this.btnUpdate.TabIndex = 43;
@@ -96,7 +96,7 @@
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(556, 223);
+            this.btnDelete.Location = new System.Drawing.Point(556, 229);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 43);
             this.btnDelete.TabIndex = 42;
@@ -112,7 +112,7 @@
             this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(738, 223);
+            this.btnReset.Location = new System.Drawing.Point(738, 229);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(84, 43);
             this.btnReset.TabIndex = 41;
@@ -128,7 +128,7 @@
             this.btnInsert.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(214, 222);
+            this.btnInsert.Location = new System.Drawing.Point(214, 228);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(87, 43);
             this.btnInsert.TabIndex = 40;
@@ -140,7 +140,7 @@
             // 
             this.dtpConsumeDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dtpConsumeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpConsumeDate.Location = new System.Drawing.Point(361, 172);
+            this.dtpConsumeDate.Location = new System.Drawing.Point(773, 106);
             this.dtpConsumeDate.Name = "dtpConsumeDate";
             this.dtpConsumeDate.Size = new System.Drawing.Size(91, 20);
             this.dtpConsumeDate.TabIndex = 90;
@@ -149,7 +149,7 @@
             // cbIDcontract
             // 
             this.cbIDcontract.FormattingEnabled = true;
-            this.cbIDcontract.Location = new System.Drawing.Point(279, 42);
+            this.cbIDcontract.Location = new System.Drawing.Point(279, 32);
             this.cbIDcontract.Name = "cbIDcontract";
             this.cbIDcontract.Size = new System.Drawing.Size(116, 21);
             this.cbIDcontract.TabIndex = 88;
@@ -159,7 +159,7 @@
             // 
             this.lblidContract.AutoSize = true;
             this.lblidContract.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblidContract.Location = new System.Drawing.Point(196, 43);
+            this.lblidContract.Location = new System.Drawing.Point(196, 33);
             this.lblidContract.Name = "lblidContract";
             this.lblidContract.Size = new System.Drawing.Size(85, 18);
             this.lblidContract.TabIndex = 87;
@@ -168,7 +168,7 @@
             // lblEchelons
             // 
             this.lblEchelons.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEchelons.Location = new System.Drawing.Point(101, 99);
+            this.lblEchelons.Location = new System.Drawing.Point(122, 105);
             this.lblEchelons.Name = "lblEchelons";
             this.lblEchelons.Size = new System.Drawing.Size(113, 23);
             this.lblEchelons.TabIndex = 84;
@@ -179,7 +179,7 @@
             // 
             this.lblConsumeDate.AutoSize = true;
             this.lblConsumeDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConsumeDate.Location = new System.Drawing.Point(247, 172);
+            this.lblConsumeDate.Location = new System.Drawing.Point(659, 106);
             this.lblConsumeDate.Name = "lblConsumeDate";
             this.lblConsumeDate.Size = new System.Drawing.Size(117, 18);
             this.lblConsumeDate.TabIndex = 82;
@@ -189,7 +189,7 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(92, 45);
+            this.lblID.Location = new System.Drawing.Point(92, 35);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(23, 18);
             this.lblID.TabIndex = 81;
@@ -201,7 +201,7 @@
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.Black;
-            this.txtID.Location = new System.Drawing.Point(117, 43);
+            this.txtID.Location = new System.Drawing.Point(117, 33);
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(31, 23);
@@ -211,9 +211,10 @@
             // 
             this.DataGriewConsumptions.AllowUserToDeleteRows = false;
             this.DataGriewConsumptions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGriewConsumptions.Location = new System.Drawing.Point(60, 281);
+            this.DataGriewConsumptions.Location = new System.Drawing.Point(48, 293);
             this.DataGriewConsumptions.Name = "DataGriewConsumptions";
             this.DataGriewConsumptions.ReadOnly = true;
+            this.DataGriewConsumptions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGriewConsumptions.Size = new System.Drawing.Size(894, 219);
             this.DataGriewConsumptions.TabIndex = 92;
             this.DataGriewConsumptions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGriewConsumptions_CellClick);
@@ -222,7 +223,7 @@
             // 
             this.lblTotalConsume.AutoSize = true;
             this.lblTotalConsume.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalConsume.Location = new System.Drawing.Point(488, 172);
+            this.lblTotalConsume.Location = new System.Drawing.Point(214, 173);
             this.lblTotalConsume.Name = "lblTotalConsume";
             this.lblTotalConsume.Size = new System.Drawing.Size(116, 18);
             this.lblTotalConsume.TabIndex = 94;
@@ -234,7 +235,7 @@
             this.txtTotalConsume.Enabled = false;
             this.txtTotalConsume.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalConsume.ForeColor = System.Drawing.Color.Black;
-            this.txtTotalConsume.Location = new System.Drawing.Point(607, 170);
+            this.txtTotalConsume.Location = new System.Drawing.Point(333, 171);
             this.txtTotalConsume.Multiline = true;
             this.txtTotalConsume.Name = "txtTotalConsume";
             this.txtTotalConsume.Size = new System.Drawing.Size(70, 23);
@@ -245,7 +246,7 @@
             // 
             this.lblContractType.AutoSize = true;
             this.lblContractType.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContractType.Location = new System.Drawing.Point(673, 41);
+            this.lblContractType.Location = new System.Drawing.Point(673, 31);
             this.lblContractType.Name = "lblContractType";
             this.lblContractType.Size = new System.Drawing.Size(111, 18);
             this.lblContractType.TabIndex = 96;
@@ -257,7 +258,7 @@
             this.txtContractType.Enabled = false;
             this.txtContractType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContractType.ForeColor = System.Drawing.Color.Black;
-            this.txtContractType.Location = new System.Drawing.Point(786, 40);
+            this.txtContractType.Location = new System.Drawing.Point(786, 30);
             this.txtContractType.Multiline = true;
             this.txtContractType.Name = "txtContractType";
             this.txtContractType.Size = new System.Drawing.Size(125, 23);
@@ -268,7 +269,7 @@
             this.txtEchelons.BackColor = System.Drawing.SystemColors.Control;
             this.txtEchelons.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEchelons.ForeColor = System.Drawing.Color.Black;
-            this.txtEchelons.Location = new System.Drawing.Point(217, 99);
+            this.txtEchelons.Location = new System.Drawing.Point(238, 105);
             this.txtEchelons.Multiline = true;
             this.txtEchelons.Name = "txtEchelons";
             this.txtEchelons.Size = new System.Drawing.Size(62, 23);
@@ -282,7 +283,7 @@
             // 
             this.lblClient.AutoSize = true;
             this.lblClient.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClient.Location = new System.Drawing.Point(455, 41);
+            this.lblClient.Location = new System.Drawing.Point(455, 31);
             this.lblClient.Name = "lblClient";
             this.lblClient.Size = new System.Drawing.Size(51, 18);
             this.lblClient.TabIndex = 86;
@@ -294,7 +295,7 @@
             this.txtUnitaryValue.Enabled = false;
             this.txtUnitaryValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnitaryValue.ForeColor = System.Drawing.Color.Black;
-            this.txtUnitaryValue.Location = new System.Drawing.Point(454, 99);
+            this.txtUnitaryValue.Location = new System.Drawing.Point(495, 105);
             this.txtUnitaryValue.Multiline = true;
             this.txtUnitaryValue.Name = "txtUnitaryValue";
             this.txtUnitaryValue.Size = new System.Drawing.Size(71, 23);
@@ -305,7 +306,7 @@
             // 
             this.lblUnitaryValue.AutoSize = true;
             this.lblUnitaryValue.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnitaryValue.Location = new System.Drawing.Point(348, 101);
+            this.lblUnitaryValue.Location = new System.Drawing.Point(389, 107);
             this.lblUnitaryValue.Name = "lblUnitaryValue";
             this.lblUnitaryValue.Size = new System.Drawing.Size(107, 18);
             this.lblUnitaryValue.TabIndex = 99;
@@ -317,7 +318,7 @@
             this.txtClients.Enabled = false;
             this.txtClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClients.ForeColor = System.Drawing.Color.Black;
-            this.txtClients.Location = new System.Drawing.Point(506, 39);
+            this.txtClients.Location = new System.Drawing.Point(506, 29);
             this.txtClients.Multiline = true;
             this.txtClients.Name = "txtClients";
             this.txtClients.Size = new System.Drawing.Size(125, 23);
@@ -331,7 +332,7 @@
             this.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerate.Location = new System.Drawing.Point(656, 91);
+            this.btnGenerate.Location = new System.Drawing.Point(556, 161);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(92, 43);
             this.btnGenerate.TabIndex = 115;
@@ -347,7 +348,7 @@
             this.btnEstimate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnEstimate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstimate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstimate.Location = new System.Drawing.Point(796, 92);
+            this.btnEstimate.Location = new System.Drawing.Point(696, 162);
             this.btnEstimate.Name = "btnEstimate";
             this.btnEstimate.Size = new System.Drawing.Size(84, 43);
             this.btnEstimate.TabIndex = 117;
@@ -358,7 +359,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::ProjetoAguas.Properties.Resources.Estimate;
-            this.pictureBox5.Location = new System.Drawing.Point(772, 100);
+            this.pictureBox5.Location = new System.Drawing.Point(672, 170);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(31, 26);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -368,7 +369,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ProjetoAguas.Properties.Resources.Calculator;
-            this.pictureBox4.Location = new System.Drawing.Point(631, 99);
+            this.pictureBox4.Location = new System.Drawing.Point(531, 169);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 26);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -378,7 +379,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ProjetoAguas.Properties.Resources.Euro;
-            this.pictureBox2.Location = new System.Drawing.Point(673, 166);
+            this.pictureBox2.Location = new System.Drawing.Point(399, 167);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -388,7 +389,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::ProjetoAguas.Properties.Resources.Euro;
-            this.pictureBox3.Location = new System.Drawing.Point(521, 94);
+            this.pictureBox3.Location = new System.Drawing.Point(562, 100);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 31);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -398,7 +399,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjetoAguas.Properties.Resources.m_3;
-            this.pictureBox1.Location = new System.Drawing.Point(266, 94);
+            this.pictureBox1.Location = new System.Drawing.Point(287, 100);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(53, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -408,7 +409,7 @@
             // picUpdate
             // 
             this.picUpdate.Image = global::ProjetoAguas.Properties.Resources.Update;
-            this.picUpdate.Location = new System.Drawing.Point(361, 230);
+            this.picUpdate.Location = new System.Drawing.Point(361, 236);
             this.picUpdate.Name = "picUpdate";
             this.picUpdate.Size = new System.Drawing.Size(31, 26);
             this.picUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -418,7 +419,7 @@
             // picDelete
             // 
             this.picDelete.Image = global::ProjetoAguas.Properties.Resources.Delete;
-            this.picDelete.Location = new System.Drawing.Point(542, 231);
+            this.picDelete.Location = new System.Drawing.Point(542, 237);
             this.picDelete.Name = "picDelete";
             this.picDelete.Size = new System.Drawing.Size(31, 26);
             this.picDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -428,7 +429,7 @@
             // picReset
             // 
             this.picReset.Image = global::ProjetoAguas.Properties.Resources.Reset;
-            this.picReset.Location = new System.Drawing.Point(724, 231);
+            this.picReset.Location = new System.Drawing.Point(724, 237);
             this.picReset.Name = "picReset";
             this.picReset.Size = new System.Drawing.Size(31, 26);
             this.picReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -438,7 +439,7 @@
             // picInsert
             // 
             this.picInsert.Image = global::ProjetoAguas.Properties.Resources.Insert;
-            this.picInsert.Location = new System.Drawing.Point(204, 231);
+            this.picInsert.Location = new System.Drawing.Point(204, 237);
             this.picInsert.Name = "picInsert";
             this.picInsert.Size = new System.Drawing.Size(31, 26);
             this.picInsert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

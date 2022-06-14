@@ -1,20 +1,19 @@
 ﻿namespace ProjetoAguas.UserControls
 {
-    using System.Windows.Forms;
     using System;
     using System.Linq;
+    using System.Text.RegularExpressions;
+    using System.Windows.Forms;
 
     public partial class UcClients : UserControl
     {
-        public UcClients() { InitializeComponent(); }
-
-        DcAguasDataContext dc = new DcAguasDataContext(); // Dataclasse - base de dados Aguas
+        public UcClients() { InitializeComponent(); } DcAguasDataContext dc = new DcAguasDataContext(); // Dataclasse - base de dados Aguas
 
         #region DataGridView
 
         // Preenche a datagridview com as colunas adequadas
 
-        public void AtualizaDataGriewClients() // Preenchimento da datagridview dos clientes
+        public void AtualizaDataGriewClients()
         {
             int linha = 0;
 
@@ -77,7 +76,7 @@
 
         #region LimpaCampos
 
-        // Ao clicar no botão Reset (por exemplo), os campos ficam limpos
+        // Ao executar este método os campos ficam limpos
 
         private void LimpaCampos()
         {
@@ -85,10 +84,10 @@
             txtName.ResetText();
             mtxtbTelephone.ResetText();
             mtxtbNIF.ResetText();
-            mtxtbNIF.Enabled = true;
             txtEmail.ResetText();
             txtAddress.ResetText();
             mtxtbPostalCode.ResetText();
+            mtxtbNIF.Enabled = true;
         }
 
 
@@ -103,8 +102,8 @@
             string NomeCliente = txtName.Text;
             string Ntelefone = mtxtbTelephone.Text;
             string NIF = mtxtbNIF.Text;
-            string Email = txtEmail.Text;
-            string Morada = txtAddress.Text;
+            string mail = txtEmail.Text;
+            string address = txtAddress.Text;
             string Cpostal = mtxtbPostalCode.Text;
 
             Clientes c = new Clientes
@@ -112,8 +111,8 @@
                 Nome = NomeCliente,
                 Telefone = Ntelefone,
                 NIF = NIF,
-                Email = Email,
-                Morada = Morada,
+                Email = mail,
+                Morada = address,
                 CodigoPostal = Cpostal
             };
 
@@ -133,21 +132,18 @@
             string NomeCliente = txtName.Text;
             string Ntelefone = mtxtbTelephone.Text;
             string NIF = mtxtbNIF.Text;
-            string Email = txtEmail.Text;
-            string Morada = txtAddress.Text;
+            string mail = txtEmail.Text;
+            string address = txtAddress.Text;
             string Cpostal = mtxtbPostalCode.Text;
 
-            Clientes c = (from Clientes in dc.Clientes
-                          where Clientes.IdCliente == Id
-                          select Clientes).First();
+            Clientes c = (from Clientes in dc.Clientes where Clientes.IdCliente == Id select Clientes).First();
 
             c.Nome = NomeCliente;
             c.Telefone = Ntelefone;
             c.NIF = NIF;
-            c.Email = Email;
-            c.Morada = Morada;
+            c.Email = mail;
+            c.Morada = address;
             c.CodigoPostal = Cpostal;
-
 
             try { dc.SubmitChanges(); } catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -159,10 +155,7 @@
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Clientes c = (from Clientes
-                          in dc.Clientes
-                          where Clientes.IdCliente == int.Parse(txtID.Text)
-                          select Clientes).First();
+            Clientes c = (from Clientes in dc.Clientes where Clientes.IdCliente == int.Parse(txtID.Text) select Clientes).First();
 
             dc.Clientes.DeleteOnSubmit(c);
 
@@ -184,13 +177,13 @@
 
         #region Validações
 
-        // Validações de todos os campos da parte dos clientes
+        // Validações de todos os campos da parte do UserControl clientes
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            foreach(char Nome in txtName.Text)
+            foreach (char Nome in txtName.Text)
             {
-                if(!(char.IsLetter(Nome) || Nome == ' '))
+                if (!(char.IsLetter(Nome) || Nome == ' '))
                 {
                     MessageBox.Show("Heads up! Enter letters and spaces only.", "Warning",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -202,9 +195,9 @@
 
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                if(txtName.Text.Length == 0)
+                if (txtName.Text.Length == 0)
                 {
                     MessageBox.Show("Required field! Fill in your name.",
                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -215,63 +208,69 @@
                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtName.Clear();
                 }
-                else
-                {
-                    txtEmail.Focus();
-                }
+                else txtEmail.Focus();
+
                 e.Handled = true; // Assinala que o evento já foi executado e não emite som
             }
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            foreach(char Email in txtEmail.Text)
+            foreach (char Email in txtEmail.Text)
             {
-                if(!(char.IsLetter(Email) || char.IsDigit(Email) || Email == '.' || Email == '@'))
+                if (!(char.IsLetter(Email) || char.IsDigit(Email) || Email == '.' || Email == '@'))
                 {
                     MessageBox.Show("Heads up! Enter only letters and digits.",
                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtEmail.Clear();
                     break;
-                }  
+                }
             }
         }
 
         private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            string mail = txtEmail.Text;
+            Regex reg = new Regex(@"(\w+@[a-zA-Z_]+?.[a-zA-Z]{2,6})");
+
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 if (txtEmail.Text.Length == 0)
                 {
                     MessageBox.Show("Required field! Fill in your email.",
                           "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                    mtxtbTelephone.Focus();
+                else if(reg.IsMatch(mail) == false)
+                {
+                    MessageBox.Show("Please enter a valid email!", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtEmail.Clear();
+                }
+                else mtxtbTelephone.Focus();
+
                 e.Handled = true; // Assinala que o evento já foi executado e não emite som
             }
         }
 
         private void mtxtbTelephone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                if(mtxtbTelephone.Text.Length != 11)
+                if (mtxtbTelephone.Text.Length != 11)
                 {
                     MessageBox.Show("Required field! Fill in your phone number.",
                          "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     mtxtbTelephone.Clear();
                 }
-                else
-                    txtAddress.Focus();
+                else txtAddress.Focus();
             }
         }
 
         private void txtAddress_TextChanged(object sender, EventArgs e)
         {
-            foreach(char Morada in txtAddress.Text)
+            foreach (char Morada in txtAddress.Text)
             {
-                if(!(char.IsLetter(Morada) || char.IsDigit(Morada) || Morada == ' '))
+                if (!(char.IsLetter(Morada) || char.IsDigit(Morada) || Morada == ' '))
                 {
                     MessageBox.Show("Heads up! Only enter letters, digits and spaces.",
                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -283,7 +282,7 @@
 
         private void txtAddress_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 if (txtAddress.Text.Length == 0)
                 {
@@ -296,8 +295,8 @@
                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtAddress.Clear();
                 }
-                else
-                    mtxtbNIF.Focus();
+                else mtxtbNIF.Focus();
+
                 e.Handled = true; // Assinala que o evento já foi executado e não emite som
             }
         }
@@ -312,8 +311,7 @@
                          "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     mtxtbNIF.Clear();
                 }
-                else
-                    mtxtbPostalCode.Focus();
+                else mtxtbPostalCode.Focus();
             }
         }
 

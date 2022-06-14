@@ -680,9 +680,9 @@ namespace ProjetoAguas
 		
 		private string _TipoContrato;
 		
-		private decimal _Escaloes;
+		private System.Nullable<decimal> _Escaloes;
 		
-		private decimal _ValorUnitario;
+		private System.Nullable<decimal> _ValorUnitario;
 		
 		private string _DataConsumo;
 		
@@ -708,9 +708,9 @@ namespace ProjetoAguas
     partial void OnNomeClienteChanged();
     partial void OnTipoContratoChanging(string value);
     partial void OnTipoContratoChanged();
-    partial void OnEscaloesChanging(decimal value);
+    partial void OnEscaloesChanging(System.Nullable<decimal> value);
     partial void OnEscaloesChanged();
-    partial void OnValorUnitarioChanging(decimal value);
+    partial void OnValorUnitarioChanging(System.Nullable<decimal> value);
     partial void OnValorUnitarioChanged();
     partial void OnDataConsumoChanging(string value);
     partial void OnDataConsumoChanged();
@@ -835,8 +835,8 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Escaloes", DbType="Decimal(5,2) NOT NULL")]
-		public decimal Escaloes
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Escaloes", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> Escaloes
 		{
 			get
 			{
@@ -855,8 +855,8 @@ namespace ProjetoAguas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValorUnitario", DbType="Decimal(5,2) NOT NULL")]
-		public decimal ValorUnitario
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValorUnitario", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> ValorUnitario
 		{
 			get
 			{

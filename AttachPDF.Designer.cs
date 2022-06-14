@@ -30,7 +30,6 @@
         {
             this.panelContent = new System.Windows.Forms.Panel();
             this.lblFile = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.picBack = new System.Windows.Forms.PictureBox();
             this.picSend = new System.Windows.Forms.PictureBox();
             this.picAttach = new System.Windows.Forms.PictureBox();
@@ -52,7 +51,6 @@
             this.panelContent.BackColor = System.Drawing.Color.Gainsboro;
             this.panelContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelContent.Controls.Add(this.lblFile);
-            this.panelContent.Controls.Add(this.label1);
             this.panelContent.Controls.Add(this.picBack);
             this.panelContent.Controls.Add(this.picSend);
             this.panelContent.Controls.Add(this.picAttach);
@@ -78,15 +76,6 @@
             this.lblFile.Size = new System.Drawing.Size(33, 18);
             this.lblFile.TabIndex = 22;
             this.lblFile.Text = "File";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(284, 173);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 18);
-            this.label1.TabIndex = 21;
             // 
             // picBack
             // 
@@ -133,7 +122,7 @@
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(93, 144);
+            this.txtMessage.Location = new System.Drawing.Point(95, 144);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(371, 170);
@@ -211,7 +200,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelContent;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picBack;
         private System.Windows.Forms.PictureBox picSend;
         private System.Windows.Forms.PictureBox picAttach;

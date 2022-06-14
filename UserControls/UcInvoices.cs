@@ -6,30 +6,25 @@
 
     public partial class UcInvoices : UserControl
     {
-        public UcInvoices() { InitializeComponent(); }
-
-        DcAguasDataContext dc = new DcAguasDataContext();
+        public UcInvoices() { InitializeComponent(); } DcAguasDataContext dc = new DcAguasDataContext();
 
         #region ConsumoMensal
+
+        // Consumo mensal de um cliente
 
         public void MonthConsume()
         {
             decimal mes = 0;
 
-            var consumoMes = (from Consumos
-                              in dc.Consumos
-                              where Consumos.IdContrato == int.Parse(cbIDcontracts.Text)
-                              select Consumos);
+            var consumoMes = (from Consumos in dc.Consumos where Consumos.IdContrato == int.Parse(cbIDcontracts.Text) select Consumos);
 
             if (consumoMes.Count() > 0)
             {
                 foreach (Consumos mensal in consumoMes)
                     mes += decimal.Parse(mensal.ConsumoTotal);
-                txtMonthlyConsumption.Text = (mes / consumoMes.Count()).ToString();
+                txtMonthlyConsumption.Text = (mes / consumoMes.Count()).ToString("#,0.00");
             }
-            else
-                txtMonthlyConsumption.Text = "0";
-
+            else txtMonthlyConsumption.Text = "0";
         }
 
         #endregion
@@ -102,6 +97,8 @@
 
         #region ComboBoxs
 
+        // Pesquisa para preencher a comboBox com os Id's dis contratos.
+
         private void ComboBoxs()
         {
             var IDcontract = from Contratos in dc.Contratos select Contratos;
@@ -110,14 +107,13 @@
             cbIDcontracts.DisplayMember = "IdContrato";
         }
 
+        // Preencher com o nome e tipo de pagamento respetivo dependendo do Idcontract
+
         private void cbIDcontracts_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                var cont = from Contratos
-                                    in dc.Contratos
-                           where Contratos.IdContrato == int.Parse(cbIDcontracts.Text)
-                           select Contratos;
+                var cont = from Contratos in dc.Contratos where Contratos.IdContrato == int.Parse(cbIDcontracts.Text) select Contratos;
 
                 foreach (Contratos contratos in cont)
                 {
@@ -125,12 +121,11 @@
                     txtPaymentType.Text = contratos.TipoPagamento;
                 }
 
+                // Cálculo do valor a pagar da fatura
+
                 decimal soma = 0;
 
-                var value = (from Consumos
-                            in dc.Consumos
-                             where Consumos.IdContrato == int.Parse(cbIDcontracts.Text)
-                             select Consumos);
+                var value = (from Consumos in dc.Consumos where Consumos.IdContrato == int.Parse(cbIDcontracts.Text) select Consumos);
 
                 foreach (Consumos consumos in value)
                 {
@@ -139,8 +134,7 @@
                         soma += decimal.Parse(consumos.ConsumoTotal);
                         txtAmountToPay.Text = (soma.ToString());
                     }
-                    else
-                        txtAmountToPay.Text = "0";
+                    else txtAmountToPay.Text = "0";
                 }
             }
             catch (Exception ex) { /* MessageBox.Show(ex.Message); */ }
@@ -191,9 +185,7 @@
             string month = txtMonthlyConsumption.Text;
             string amount = txtAmountToPay.Text;
 
-            Faturas f = (from Faturas in dc.Faturas
-                         where Faturas.IdFatura == Id
-                         select Faturas).First();
+            Faturas f = (from Faturas in dc.Faturas where Faturas.IdFatura == Id select Faturas).First();
 
             f.IdContrato = IdContract.IdContrato;
             f.Cliente = Client;
@@ -206,17 +198,13 @@
 
             AtualizaDataGriewInvoices();
             LimpaCampos();
-
         }
 
         // Elimina um contrato selecionado
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Faturas f = (from Faturas
-                        in dc.Faturas
-                         where Faturas.IdFatura == int.Parse(txtID.Text)
-                         select Faturas).First();
+            Faturas f = (from Faturas in dc.Faturas where Faturas.IdFatura == int.Parse(txtID.Text) select Faturas).First();
 
             dc.Faturas.DeleteOnSubmit(f);
 

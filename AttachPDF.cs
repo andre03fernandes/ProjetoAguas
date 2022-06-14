@@ -5,17 +5,19 @@
 
     public partial class AttachPDF : Form
     {
-        public AttachPDF()
-        {
-            InitializeComponent();
-            txtTo.Text = "andre2411fernandes@gmail.com";
-        }
+        public AttachPDF() { InitializeComponent(); txtTo.Text = "andre2411fernandes@gmail.com"; }
+
+        #region Métodos
+
+        // Informações necessárias para o envio do email
 
         public void Instance()
         {
             EnvioEmail email = new EnvioEmail();
             email.Envio(txtTo.Text, txtMessage.Text, txtSubject.Text, txtPDF.Text);
         }
+
+        // Método que valida os campos e apresenta uma menssagem a dizer que o email já foi enviado
 
         private bool Valida()
         {
@@ -34,10 +36,18 @@
             }
         }
 
+        #endregion
+
+        #region PictureBox's
+
+        // Esconde o forms
+
         private void picBack_Click_1(object sender, EventArgs e)
         {
             this.Hide();
         }
+
+        // Abre o file explorer e mostra todos os ficheiros do tipo pdf
 
         private void picAttach_Click_1(object sender, EventArgs e)
         {
@@ -51,9 +61,13 @@
             }
         }
 
+        // Envia o email
+
         private void picSend_Click_1(object sender, EventArgs e)
         {
             Valida();
         }
+
+        #endregion
     }
 }

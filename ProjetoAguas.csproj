@@ -53,12 +53,12 @@
     <Compile Include="AttachPDF.Designer.cs">
       <DependentUpon>AttachPDF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\EnvioEmail.cs" />
     <Compile Include="DcAguas.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DcAguas.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\EnvioEmail.cs" />
     <Compile Include="FormAguas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,12 +118,12 @@
     <EmbeddedResource Include="AttachPDF.resx">
       <DependentUpon>AttachPDF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UcStatistics.resx">
-      <DependentUpon>UcStatistics.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="DcAguas.dbml.layout">
       <DependentUpon>DcAguas.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="UserControls\UcStatistics.resx">
+      <DependentUpon>UcStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SendEmail.resx">
       <DependentUpon>SendEmail.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,9 +177,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -190,9 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Exit.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ExitLogIn.png" />
@@ -229,9 +223,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Update.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\User.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Username.png" />
@@ -316,6 +307,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Earth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Water.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

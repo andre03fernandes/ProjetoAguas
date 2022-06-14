@@ -117,7 +117,7 @@
             // picUsername
             // 
             this.picUsername.Image = global::ProjetoAguas.Properties.Resources.Username;
-            this.picUsername.Location = new System.Drawing.Point(312, 208);
+            this.picUsername.Location = new System.Drawing.Point(312, 219);
             this.picUsername.Name = "picUsername";
             this.picUsername.Size = new System.Drawing.Size(31, 31);
             this.picUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -127,7 +127,7 @@
             // picPassword
             // 
             this.picPassword.Image = global::ProjetoAguas.Properties.Resources.Password;
-            this.picPassword.Location = new System.Drawing.Point(312, 265);
+            this.picPassword.Location = new System.Drawing.Point(312, 276);
             this.picPassword.Name = "picPassword";
             this.picPassword.Size = new System.Drawing.Size(31, 31);
             this.picPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -139,7 +139,7 @@
             this.txtPassword.BackColor = System.Drawing.SystemColors.Control;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(349, 274);
+            this.txtPassword.Location = new System.Drawing.Point(358, 285);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
@@ -152,7 +152,7 @@
             this.txtLine1.BackColor = System.Drawing.SystemColors.Control;
             this.txtLine1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLine1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLine1.Location = new System.Drawing.Point(300, 267);
+            this.txtLine1.Location = new System.Drawing.Point(309, 278);
             this.txtLine1.Multiline = true;
             this.txtLine1.Name = "txtLine1";
             this.txtLine1.ReadOnly = true;
@@ -163,7 +163,7 @@
             // picLogIn
             // 
             this.picLogIn.Image = global::ProjetoAguas.Properties.Resources.LogIn;
-            this.picLogIn.Location = new System.Drawing.Point(332, 341);
+            this.picLogIn.Location = new System.Drawing.Point(340, 360);
             this.picLogIn.Name = "picLogIn";
             this.picLogIn.Size = new System.Drawing.Size(221, 139);
             this.picLogIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -173,10 +173,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(343, 34);
+            this.pictureBox1.Image = global::ProjetoAguas.Properties.Resources.Earth;
+            this.pictureBox1.Location = new System.Drawing.Point(356, 32);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 135);
+            this.pictureBox1.Size = new System.Drawing.Size(197, 148);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -186,7 +186,7 @@
             this.txtUsername.BackColor = System.Drawing.SystemColors.Control;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(349, 215);
+            this.txtUsername.Location = new System.Drawing.Point(358, 226);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(173, 19);
@@ -198,7 +198,7 @@
             this.txtLine2.BackColor = System.Drawing.SystemColors.Control;
             this.txtLine2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLine2.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLine2.Location = new System.Drawing.Point(300, 211);
+            this.txtLine2.Location = new System.Drawing.Point(309, 222);
             this.txtLine2.Multiline = true;
             this.txtLine2.Name = "txtLine2";
             this.txtLine2.ReadOnly = true;

@@ -1,8 +1,8 @@
 ﻿namespace ProjetoAguas
 {
-    using System.Windows.Forms;
-    using System.Drawing;
     using System;
+    using System.Drawing;
+    using System.Windows.Forms;
     using UserControls;
 
     public partial class FormAguas : Form
@@ -24,7 +24,7 @@
             addUserControl(About);
         }
 
-        // Método que substitui o panel do formAguas pelo respetivo UserControl pretendido
+        // Método que substitui o panel do FormAguas pelo respetivo UserControl pretendido
 
         private void addUserControl(UserControl userControl)
         {
@@ -38,7 +38,7 @@
 
         #region UserControls
 
-        // No evento Click de cada botão, o UserControl aparece novamente no lugar do panel do formAguas
+        // No evento Click de cada botão, o UserControl aparece novamente no lugar do panel do FormAguas
 
         private void btnStatistics_Click(object sender, EventArgs e)
         {
@@ -84,50 +84,44 @@
 
         private void timerDate_Tick_1(object sender, EventArgs e)
         {
-            lblData.Text = DateTime.Now.ToString("dd-MMM-yyyy HH:mm:ss tt");
+            lblData.Text = DateTime.Now.ToString("dd-MM-yyyy  " + " HH:mm:ss tt");
         }
 
         #endregion
 
         #region Sair
 
-        // Ao clicar no botão SignOut, o programa dá-te a opção de retornar ao formLogIn
+        // Ao clicar no botão SignOut, o programa dá-te a opção de retornar ao FormLogin
 
         private void btnSignOut_Click(object sender, EventArgs e)
         {
             btnSignOut.FlatAppearance.BorderColor = Color.Red;
-            DialogResult dr = MessageBox.Show("Do you want to return to LogIn?", "LogIn",
+
+            DialogResult dr = MessageBox.Show("Do you want to return to Login?", "Login",
                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                this.Close();
-                new FormLogIn().Show();
-            }
-            else
-            {
-                btnSignOut.FlatAppearance.BorderColor = Color.FromArgb(94, 148, 255);
-                return;
-            }
+
+            if (dr == DialogResult.Yes) { this.Close(); new FormLogIn().Show(); }
+
+            else { btnSignOut.FlatAppearance.BorderColor = Color.FromArgb(94, 148, 255); return; }
         }
 
-        // Ao clicar na imagem " em forma de x" ou seja a imagem de sair, terás a opção de
-        // sair do programa, senão permaneces no formAguas
+        // Ao clicar na imagem "exit" ou seja a imagem de sair, terás a opção de
+        // sair do programa, senão permaneces no FormAguas
 
         private void picExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want to leave?", "Leave",
-                              MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-                Application.Exit();
-            else
-                return;
+            DialogResult dr = MessageBox.Show("Do you want to leave?", "Leave", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes) Application.Exit();
+
+            else return;
         }
 
         #endregion
 
         #region BorderColor
 
-        // Ao clicar em um botão a sua borda ficará vermelha, se clicar noutro, a borda do anterior fica
+        // Ao clicar em um botão a sua borda ficará vermelha, se clicar em outro, a borda do anterior fica
         // com uma cor azul enquanto o novo botão fica com a borda vermelha, e por assim em diante
 
         private void btnStatistics_MouseClick(object sender, MouseEventArgs e)

@@ -77,7 +77,7 @@
             // picExit
             // 
             this.picExit.Image = global::ProjetoAguas.Properties.Resources.Exit;
-            this.picExit.Location = new System.Drawing.Point(934, 23);
+            this.picExit.Location = new System.Drawing.Point(927, 19);
             this.picExit.Name = "picExit";
             this.picExit.Size = new System.Drawing.Size(35, 35);
             this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -125,7 +125,7 @@
             // 
             // btnSignOut
             // 
-            this.btnSignOut.BackColor = System.Drawing.Color.White;
+            this.btnSignOut.BackColor = System.Drawing.SystemColors.Control;
             this.btnSignOut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSignOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignOut.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,7 +139,7 @@
             // 
             // btnAbout
             // 
-            this.btnAbout.BackColor = System.Drawing.Color.White;
+            this.btnAbout.BackColor = System.Drawing.SystemColors.Control;
             this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbout.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,7 +154,7 @@
             // 
             // btnClients
             // 
-            this.btnClients.BackColor = System.Drawing.Color.White;
+            this.btnClients.BackColor = System.Drawing.SystemColors.Control;
             this.btnClients.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClients.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,7 +169,7 @@
             // 
             // btnConsumptions
             // 
-            this.btnConsumptions.BackColor = System.Drawing.Color.White;
+            this.btnConsumptions.BackColor = System.Drawing.SystemColors.Control;
             this.btnConsumptions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnConsumptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsumptions.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,7 +184,7 @@
             // 
             // btnInvoices
             // 
-            this.btnInvoices.BackColor = System.Drawing.Color.White;
+            this.btnInvoices.BackColor = System.Drawing.SystemColors.Control;
             this.btnInvoices.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnInvoices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInvoices.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -199,7 +199,7 @@
             // 
             // btnContracts
             // 
-            this.btnContracts.BackColor = System.Drawing.Color.White;
+            this.btnContracts.BackColor = System.Drawing.SystemColors.Control;
             this.btnContracts.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnContracts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContracts.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,7 +214,7 @@
             // 
             // btnStatistics
             // 
-            this.btnStatistics.BackColor = System.Drawing.Color.White;
+            this.btnStatistics.BackColor = System.Drawing.SystemColors.Control;
             this.btnStatistics.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStatistics.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

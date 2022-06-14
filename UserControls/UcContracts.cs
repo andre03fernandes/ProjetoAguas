@@ -7,15 +7,13 @@
 
     public partial class UcContracts : UserControl
     {
-        public UcContracts() { InitializeComponent(); }
-
-        DcAguasDataContext dc = new DcAguasDataContext();
+        public UcContracts() { InitializeComponent(); }  DcAguasDataContext dc = new DcAguasDataContext();
 
         #region DataGridView
 
         // Atualiza a datagridview com os dados que correspondem a cada coluna 
 
-        public void AtualizaDataGriewContracts() // Preenchimento da datagridview dos clientes
+        public void AtualizaDataGriewContracts()
         {
             int linha = 0;
 
@@ -30,12 +28,9 @@
 
                 DataGriewContracts.Rows[linha].Cells[0].Value = contrato.IdContrato;
 
-                var listaClientes = (from Clientes in dc.Clientes
-                                     where Clientes.IdCliente == contrato.IdCliente
-                                     select Clientes).Single();
+                var listaClientes = (from Clientes in dc.Clientes where Clientes.IdCliente == contrato.IdCliente select Clientes).Single();
 
                 DataGriewContracts.Rows[linha].Cells[1].Value = listaClientes.Nome;
-
                 DataGriewContracts.Rows[linha].Cells[2].Value = contrato.TipoContrato;
                 DataGriewContracts.Rows[linha].Cells[3].Value = contrato.TipoPagamento;
                 DataGriewContracts.Rows[linha].Cells[4].Value = contrato.DataContrato;
@@ -111,10 +106,7 @@
         {
             try
             {
-                var dadosCliente = from Clientes
-                                   in dc.Clientes
-                                   where Clientes.Nome == cbClients.Text
-                                   select Clientes;
+                var dadosCliente = from Clientes in dc.Clientes where Clientes.Nome == cbClients.Text select Clientes;
 
                 foreach(Clientes c in dadosCliente)
                 {
@@ -171,9 +163,7 @@
             string PostalCode = mtxtbPostalCode.Text;
             string ContractDate = dtpContractDate.Text;
 
-            Contratos c = (from Contratos in dc.Contratos
-                           where Contratos.IdContrato == Id
-                           select Contratos).First();
+            Contratos c = (from Contratos in dc.Contratos where Contratos.IdContrato == Id select Contratos).First();
 
             c.Clientes = NomeCliente;
             c.TipoContrato = ContractType;
@@ -192,13 +182,9 @@
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Contratos c = (from Contratos
-                           in dc.Contratos
-                           where Contratos.IdContrato == int.Parse(txtID.Text)
-                           select Contratos).First();
+            Contratos c = (from Contratos in dc.Contratos where Contratos.IdContrato == int.Parse(txtID.Text) select Contratos).First();
 
             dc.Contratos.DeleteOnSubmit(c);
-
 
             try { dc.SubmitChanges(); } catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -230,11 +216,11 @@
             dtpContractDate.ResetText();
         }
 
-
-
         #endregion
 
         #region Validações
+
+        // Validações necessárias para os campos do UserControl Contracts
 
         private void cbClients_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -245,8 +231,7 @@
                     MessageBox.Show("Required field! Choose an option from the comboBox.",
                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                    cbContractType.Focus();
+                else cbContractType.Focus();
             }
         }
 
@@ -259,8 +244,7 @@
                     MessageBox.Show("Required field! Choose an option from the comboBox.",
                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                    cbPaymentType.Focus();
+                else cbPaymentType.Focus();
             }
         }
 
@@ -273,8 +257,7 @@
                     MessageBox.Show("Required field! Choose an option from the comboBox.",
                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
-                    cbPaymentType.Focus();
+                else cbPaymentType.Focus();
             }
         }
 
@@ -307,8 +290,8 @@
                         "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtAddress.Clear();
                 }
-                else
-                    dtpContractDate.Focus();
+                else dtpContractDate.Focus();
+
                 e.Handled = true; // Assinala que o evento já foi executado e não emite som
             }
         }

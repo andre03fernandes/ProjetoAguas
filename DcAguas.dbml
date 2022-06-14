@@ -34,8 +34,8 @@
       <Column Name="IdFatura" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NomeCliente" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="TipoContrato" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Escaloes" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
-      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Escaloes" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="ValorUnitario" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
       <Column Name="DataConsumo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ConsumoTotal" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="ModificacaoData" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
